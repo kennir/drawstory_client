@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3115249E7D0005D491 /* UserProfile.cpp */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -184,7 +185,6 @@
 		BEE31014152462FA00F8AAE7 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BEE31013152462FA00F8AAE7 /* AppController.mm */; };
 		BEE31017152462FA00F8AAE7 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BEE31016152462FA00F8AAE7 /* RootViewController.mm */; };
 		BEE3101B152462FA00F8AAE7 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */; };
-		BEE3101E152462FA00F8AAE7 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3101D152462FA00F8AAE7 /* HelloWorldScene.cpp */; };
 		BEE31020152462FA00F8AAE7 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE3101F152462FA00F8AAE7 /* blocks.png */; };
 		BEE310291524632200F8AAE7 /* LobbyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE310281524632200F8AAE7 /* LobbyScene.cpp */; };
 		BEE3105A152464CD00F8AAE7 /* LHAnimationsExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3102C152464CD00F8AAE7 /* LHAnimationsExt.cpp */; };
@@ -213,9 +213,12 @@
 		BEE310791524672200F8AAE7 /* lobbyscene.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BEE310751524672200F8AAE7 /* lobbyscene.plhs */; };
 		BEE3107A1524672200F8AAE7 /* lobbyscene.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE310761524672200F8AAE7 /* lobbyscene.png */; };
 		BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */ = {isa = PBXBuildFile; fileRef = BEE310771524672200F8AAE7 /* lobbyscene.pshs */; };
+		BEE3108C15246A4000F8AAE7 /* TextInputDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3108B15246A4000F8AAE7 /* TextInputDelegate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE5A7E3015249E6A0005D491 /* UserProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = Classes/UserProfile.h; sourceTree = "<group>"; };
+		BE5A7E3115249E7D0005D491 /* UserProfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserProfile.cpp; path = Classes/UserProfile.cpp; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -583,8 +586,6 @@
 		BEE31016152462FA00F8AAE7 /* RootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = "<group>"; };
 		BEE31019152462FA00F8AAE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		BEE3101C152462FA00F8AAE7 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		BEE3101D152462FA00F8AAE7 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		BEE3101F152462FA00F8AAE7 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		BEE310271524631800F8AAE7 /* LobbyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LobbyScene.h; path = Classes/LobbyScene.h; sourceTree = "<group>"; };
 		BEE310281524632200F8AAE7 /* LobbyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LobbyScene.cpp; path = Classes/LobbyScene.cpp; sourceTree = "<group>"; };
@@ -636,6 +637,8 @@
 		BEE310751524672200F8AAE7 /* lobbyscene.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lobbyscene.plhs; path = Resources/lobbyscene.plhs; sourceTree = "<group>"; };
 		BEE310761524672200F8AAE7 /* lobbyscene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lobbyscene.png; path = Resources/lobbyscene.png; sourceTree = "<group>"; };
 		BEE310771524672200F8AAE7 /* lobbyscene.pshs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lobbyscene.pshs; path = Resources/lobbyscene.pshs; sourceTree = "<group>"; };
+		BEE3108A152469FE00F8AAE7 /* TextInputDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextInputDelegate.h; path = Classes/TextInputDelegate.h; sourceTree = "<group>"; };
+		BEE3108B15246A4000F8AAE7 /* TextInputDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextInputDelegate.cpp; path = Classes/TextInputDelegate.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +660,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE5A7E2E15249CF50005D491 /* client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = client;
+			sourceTree = "<group>";
+		};
 		BEE30DC3152462F500F8AAE7 = {
 			isa = PBXGroup;
 			children = (
@@ -1390,11 +1400,13 @@
 		BEE31018152462FA00F8AAE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E2E15249CF50005D491 /* client */,
+				BEE31089152469CF00F8AAE7 /* common */,
 				BEE310261524630400F8AAE7 /* lobbyscene */,
 				BEE31019152462FA00F8AAE7 /* AppDelegate.h */,
 				BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */,
-				BEE3101C152462FA00F8AAE7 /* HelloWorldScene.h */,
-				BEE3101D152462FA00F8AAE7 /* HelloWorldScene.cpp */,
+				BE5A7E3015249E6A0005D491 /* UserProfile.h */,
+				BE5A7E3115249E7D0005D491 /* UserProfile.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1482,6 +1494,15 @@
 				BEE31059152464CD00F8AAE7 /* LHObject.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BEE31089152469CF00F8AAE7 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				BEE3108A152469FE00F8AAE7 /* TextInputDelegate.h */,
+				BEE3108B15246A4000F8AAE7 /* TextInputDelegate.cpp */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1719,7 +1740,6 @@
 				BEE31014152462FA00F8AAE7 /* AppController.mm in Sources */,
 				BEE31017152462FA00F8AAE7 /* RootViewController.mm in Sources */,
 				BEE3101B152462FA00F8AAE7 /* AppDelegate.cpp in Sources */,
-				BEE3101E152462FA00F8AAE7 /* HelloWorldScene.cpp in Sources */,
 				BEE310291524632200F8AAE7 /* LobbyScene.cpp in Sources */,
 				BEE3105A152464CD00F8AAE7 /* LHAnimationsExt.cpp in Sources */,
 				BEE3105B152464CD00F8AAE7 /* LHJointsExt.cpp in Sources */,
@@ -1742,6 +1762,8 @@
 				BEE3106D152464CD00F8AAE7 /* LHArray.cpp in Sources */,
 				BEE3106E152464CD00F8AAE7 /* LHDictionary.cpp in Sources */,
 				BEE3106F152464CD00F8AAE7 /* LHObject.cpp in Sources */,
+				BEE3108C15246A4000F8AAE7 /* TextInputDelegate.cpp in Sources */,
+				BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1857,6 +1879,7 @@
 				BEE31025152462FA00F8AAE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
