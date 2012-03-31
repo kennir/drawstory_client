@@ -89,9 +89,9 @@
 				<key>Frame-HD</key>
 				<string>{{0, 0}, {640, 960}}</string>
 				<key>FrameUV</key>
-				<string>{{0, 0}, {0.35320088, 0.62176168}}</string>
+				<string>{{0, 0}, {0.35714287, 0.61068702}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -105,7 +105,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -173,9 +173,9 @@
 				<key>Frame-HD</key>
 				<string>{{646, 0}, {640, 960}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0}, {0.70971304, 0.62176168}}</string>
+				<string>{{0.36049107, 0}, {0.7176339, 0.61068702}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -189,7 +189,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -257,9 +257,9 @@
 				<key>Frame-HD</key>
 				<string>{{0, 966}, {576, 576}}</string>
 				<key>FrameUV</key>
-				<string>{{0, 0.62564766}, {0.31788081, 0.99870467}}</string>
+				<string>{{0, 0.6145038}, {0.32142857, 0.98091602}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -273,7 +273,91 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>Fixtures</key>
+				<array/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsFixedRot</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocityX</key>
+				<real>0.0</real>
+				<key>LinearVelocityY</key>
+				<real>0.0</real>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>PhysicType</key>
+				<integer>3</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>SHHolesPoints</key>
+				<array/>
+				<key>SHShapePoints</key>
+				<array/>
+				<key>ShapeBorderH</key>
+				<integer>0</integer>
+				<key>ShapeBorderW</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetX</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetY</key>
+				<integer>0</integer>
+			</dict>
+			<key>TextureProperties</key>
+			<dict>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Frame</key>
+				<string>{{645, 0}, {250, 285}}</string>
+				<key>Frame-HD</key>
+				<string>{{1290, 0}, {500, 570}}</string>
+				<key>FrameUV</key>
+				<string>{{0.7198661, 0}, {0.9988839, 0.36259541}}</string>
+				<key>HD_ImageSize</key>
+				<string>{1792, 1572}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>Image-HD</key>
+				<string>lobbyscene-hd.png</string>
+				<key>ImageURL</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
+				<key>ImageURL-HD</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
+				<key>Name</key>
+				<string>email_background</string>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>SD_ImageSize</key>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -341,9 +425,9 @@
 				<key>Frame-HD</key>
 				<string>{{646, 966}, {640, 116}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0.62564766}, {0.70971304, 0.70077717}}</string>
+				<string>{{0.36049107, 0.6145038}, {0.7176339, 0.68829519}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -357,7 +441,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -425,9 +509,9 @@
 				<key>Frame-HD</key>
 				<string>{{646, 1086}, {640, 114}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0.70336789}, {0.70971304, 0.77720207}}</string>
+				<string>{{0.36049107, 0.69083971}, {0.7176339, 0.76335877}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -441,7 +525,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -505,13 +589,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{645, 0}, {261, 67}}</string>
+				<string>{{323, 603}, {261, 67}}</string>
 				<key>Frame-HD</key>
-				<string>{{1290, 0}, {522, 134}}</string>
+				<string>{{646, 1206}, {522, 134}}</string>
 				<key>FrameUV</key>
-				<string>{{0.71192056, 0}, {1, 0.086787567}}</string>
+				<string>{{0.36049107, 0.76717556}, {0.65178573, 0.85241729}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -525,7 +609,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -589,13 +673,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{323, 603}, {276, 55}}</string>
+				<string>{{323, 672}, {276, 55}}</string>
 				<key>Frame-HD</key>
-				<string>{{646, 1206}, {552, 110}}</string>
+				<string>{{646, 1344}, {552, 110}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0.78108805}, {0.66114789, 0.85233158}}</string>
+				<string>{{0.36049107, 0.85496181}, {0.66852677, 0.92493641}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -609,7 +693,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -673,13 +757,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{323, 660}, {265, 55}}</string>
+				<string>{{323, 730}, {265, 55}}</string>
 				<key>Frame-HD</key>
-				<string>{{646, 1320}, {530, 110}}</string>
+				<string>{{646, 1460}, {530, 110}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0.85492229}, {0.64900661, 0.92616582}}</string>
+				<string>{{0.36049107, 0.9287532}, {0.65625, 0.99872774}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -693,7 +777,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -757,181 +841,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{645, 70}, {250, 49}}</string>
+				<string>{{645, 288}, {250, 49}}</string>
 				<key>Frame-HD</key>
-				<string>{{1290, 140}, {500, 98}}</string>
+				<string>{{1290, 576}, {500, 98}}</string>
 				<key>FrameUV</key>
-				<string>{{0.71192056, 0.090673573}, {0.98785871, 0.15414508}}</string>
+				<string>{{0.7198661, 0.36641222}, {0.9988839, 0.42875317}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
-				<key>Image</key>
-				<string>lobbyscene.png</string>
-				<key>Image-HD</key>
-				<string>lobbyscene-hd.png</string>
-				<key>ImageURL</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
-				<key>ImageURL-HD</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
-				<key>Name</key>
-				<string>ui_random</string>
-				<key>Opacity</key>
-				<real>1</real>
-				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
-				<key>Scale</key>
-				<string>{1, 1}</string>
-				<key>ZOrder</key>
-				<integer>0</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>PhysicProperties</key>
-			<dict>
-				<key>AngularDamping</key>
-				<real>0.0</real>
-				<key>AngularVelocity</key>
-				<real>0.0</real>
-				<key>CanSleep</key>
-				<true/>
-				<key>Category</key>
-				<integer>1</integer>
-				<key>Density</key>
-				<real>0.20000000298023224</real>
-				<key>Fixtures</key>
-				<array/>
-				<key>Friction</key>
-				<real>0.20000000298023224</real>
-				<key>Group</key>
-				<integer>0</integer>
-				<key>IsBullet</key>
-				<false/>
-				<key>IsCircle</key>
-				<false/>
-				<key>IsFixedRot</key>
-				<false/>
-				<key>IsSensor</key>
-				<false/>
-				<key>LinearDamping</key>
-				<real>0.0</real>
-				<key>LinearVelocityX</key>
-				<real>0.0</real>
-				<key>LinearVelocityY</key>
-				<real>0.0</real>
-				<key>Mask</key>
-				<integer>65535</integer>
-				<key>PhysicType</key>
-				<integer>3</integer>
-				<key>Restitution</key>
-				<real>0.20000000298023224</real>
-				<key>SHHolesPoints</key>
-				<array/>
-				<key>SHShapePoints</key>
-				<array/>
-				<key>ShapeBorderH</key>
-				<integer>0</integer>
-				<key>ShapeBorderW</key>
-				<integer>0</integer>
-				<key>ShapePositionOffsetX</key>
-				<integer>0</integer>
-				<key>ShapePositionOffsetY</key>
-				<integer>0</integer>
-			</dict>
-			<key>TextureProperties</key>
-			<dict>
-				<key>Color</key>
-				<string>{{1, 1}, {1, 0}}</string>
-				<key>Frame</key>
-				<string>{{645, 121}, {250, 49}}</string>
-				<key>Frame-HD</key>
-				<string>{{1290, 242}, {500, 98}}</string>
-				<key>FrameUV</key>
-				<string>{{0.71192056, 0.15673575}, {0.98785871, 0.22020726}}</string>
-				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
-				<key>Image</key>
-				<string>lobbyscene.png</string>
-				<key>Image-HD</key>
-				<string>lobbyscene-hd.png</string>
-				<key>ImageURL</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
-				<key>ImageURL-HD</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
-				<key>Name</key>
-				<string>ui_mail</string>
-				<key>Opacity</key>
-				<real>1</real>
-				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
-				<key>Scale</key>
-				<string>{1, 1}</string>
-				<key>ZOrder</key>
-				<integer>0</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>PhysicProperties</key>
-			<dict>
-				<key>AngularDamping</key>
-				<real>0.0</real>
-				<key>AngularVelocity</key>
-				<real>0.0</real>
-				<key>CanSleep</key>
-				<true/>
-				<key>Category</key>
-				<integer>1</integer>
-				<key>Density</key>
-				<real>0.20000000298023224</real>
-				<key>Fixtures</key>
-				<array/>
-				<key>Friction</key>
-				<real>0.20000000298023224</real>
-				<key>Group</key>
-				<integer>0</integer>
-				<key>IsBullet</key>
-				<false/>
-				<key>IsCircle</key>
-				<false/>
-				<key>IsFixedRot</key>
-				<false/>
-				<key>IsSensor</key>
-				<false/>
-				<key>LinearDamping</key>
-				<real>0.0</real>
-				<key>LinearVelocityX</key>
-				<real>0.0</real>
-				<key>LinearVelocityY</key>
-				<real>0.0</real>
-				<key>Mask</key>
-				<integer>65535</integer>
-				<key>PhysicType</key>
-				<integer>3</integer>
-				<key>Restitution</key>
-				<real>0.20000000298023224</real>
-				<key>SHHolesPoints</key>
-				<array/>
-				<key>SHShapePoints</key>
-				<array/>
-				<key>ShapeBorderH</key>
-				<integer>0</integer>
-				<key>ShapeBorderW</key>
-				<integer>0</integer>
-				<key>ShapePositionOffsetX</key>
-				<integer>0</integer>
-				<key>ShapePositionOffsetY</key>
-				<integer>0</integer>
-			</dict>
-			<key>TextureProperties</key>
-			<dict>
-				<key>Color</key>
-				<string>{{1, 1}, {1, 0}}</string>
-				<key>Frame</key>
-				<string>{{645, 173}, {250, 49}}</string>
-				<key>Frame-HD</key>
-				<string>{{1290, 346}, {500, 98}}</string>
-				<key>FrameUV</key>
-				<string>{{0.71192056, 0.22409326}, {0.98785871, 0.28756475}}</string>
-				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -945,7 +861,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -1009,13 +925,265 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{645, 224}, {46, 47}}</string>
+				<string>{{645, 339}, {250, 49}}</string>
 				<key>Frame-HD</key>
-				<string>{{1290, 448}, {92, 94}}</string>
+				<string>{{1290, 678}, {500, 98}}</string>
 				<key>FrameUV</key>
-				<string>{{0.71192056, 0.29015544}, {0.76269317, 0.35103628}}</string>
+				<string>{{0.7198661, 0.43129772}, {0.9988839, 0.49363866}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>Image-HD</key>
+				<string>lobbyscene-hd.png</string>
+				<key>ImageURL</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
+				<key>ImageURL-HD</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
+				<key>Name</key>
+				<string>ui_mail</string>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>SD_ImageSize</key>
+				<string>{896, 786}</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>Fixtures</key>
+				<array/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsFixedRot</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocityX</key>
+				<real>0.0</real>
+				<key>LinearVelocityY</key>
+				<real>0.0</real>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>PhysicType</key>
+				<integer>3</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>SHHolesPoints</key>
+				<array/>
+				<key>SHShapePoints</key>
+				<array/>
+				<key>ShapeBorderH</key>
+				<integer>0</integer>
+				<key>ShapeBorderW</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetX</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetY</key>
+				<integer>0</integer>
+			</dict>
+			<key>TextureProperties</key>
+			<dict>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Frame</key>
+				<string>{{645, 391}, {250, 49}}</string>
+				<key>Frame-HD</key>
+				<string>{{1290, 782}, {500, 98}}</string>
+				<key>FrameUV</key>
+				<string>{{0.7198661, 0.49745548}, {0.9988839, 0.55979645}}</string>
+				<key>HD_ImageSize</key>
+				<string>{1792, 1572}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>Image-HD</key>
+				<string>lobbyscene-hd.png</string>
+				<key>ImageURL</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
+				<key>ImageURL-HD</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
+				<key>Name</key>
+				<string>ui_random</string>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>SD_ImageSize</key>
+				<string>{896, 786}</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>Fixtures</key>
+				<array/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsFixedRot</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocityX</key>
+				<real>0.0</real>
+				<key>LinearVelocityY</key>
+				<real>0.0</real>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>PhysicType</key>
+				<integer>3</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>SHHolesPoints</key>
+				<array/>
+				<key>SHShapePoints</key>
+				<array/>
+				<key>ShapeBorderH</key>
+				<integer>0</integer>
+				<key>ShapeBorderW</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetX</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetY</key>
+				<integer>0</integer>
+			</dict>
+			<key>TextureProperties</key>
+			<dict>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Frame</key>
+				<string>{{645, 442}, {199, 26}}</string>
+				<key>Frame-HD</key>
+				<string>{{1290, 884}, {398, 52}}</string>
+				<key>FrameUV</key>
+				<string>{{0.7198661, 0.56234097}, {0.94196427, 0.59541982}}</string>
+				<key>HD_ImageSize</key>
+				<string>{1792, 1572}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>Image-HD</key>
+				<string>lobbyscene-hd.png</string>
+				<key>ImageURL</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
+				<key>ImageURL-HD</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
+				<key>Name</key>
+				<string>textfield</string>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>SD_ImageSize</key>
+				<string>{896, 786}</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>Fixtures</key>
+				<array/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsFixedRot</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocityX</key>
+				<real>0.0</real>
+				<key>LinearVelocityY</key>
+				<real>0.0</real>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>PhysicType</key>
+				<integer>3</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>SHHolesPoints</key>
+				<array/>
+				<key>SHShapePoints</key>
+				<array/>
+				<key>ShapeBorderH</key>
+				<integer>0</integer>
+				<key>ShapeBorderW</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetX</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetY</key>
+				<integer>0</integer>
+			</dict>
+			<key>TextureProperties</key>
+			<dict>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Frame</key>
+				<string>{{586, 603}, {46, 47}}</string>
+				<key>Frame-HD</key>
+				<string>{{1172, 1206}, {92, 94}}</string>
+				<key>FrameUV</key>
+				<string>{{0.65401787, 0.76717556}, {0.70535713, 0.82697201}}</string>
+				<key>HD_ImageSize</key>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -1029,7 +1197,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -1093,13 +1261,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{323, 718}, {261, 8}}</string>
+				<string>{{0, 773}, {261, 8}}</string>
 				<key>Frame-HD</key>
-				<string>{{646, 1436}, {522, 16}}</string>
+				<string>{{0, 1546}, {522, 16}}</string>
 				<key>FrameUV</key>
-				<string>{{0.35651213, 0.9300518}, {0.64459163, 0.94041449}}</string>
+				<string>{{0, 0.98346055}, {0.29129463, 0.99363869}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -1113,7 +1281,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -1177,13 +1345,97 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{645, 274}, {41, 41}}</string>
+				<string>{{645, 483}, {115, 15.5}}</string>
 				<key>Frame-HD</key>
-				<string>{{1290, 548}, {82, 82}}</string>
+				<string>{{1290, 966}, {230, 31}}</string>
 				<key>FrameUV</key>
-				<string>{{0.71192056, 0.35492229}, {0.75717437, 0.40803108}}</string>
+				<string>{{0.7198661, 0.6145038}, {0.84821427, 0.63422394}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>Image-HD</key>
+				<string>lobbyscene-hd.png</string>
+				<key>ImageURL</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.png</string>
+				<key>ImageURL-HD</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene-hd.png</string>
+				<key>Name</key>
+				<string>email_start</string>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>SD_ImageSize</key>
+				<string>{896, 786}</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>Fixtures</key>
+				<array/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsFixedRot</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocityX</key>
+				<real>0.0</real>
+				<key>LinearVelocityY</key>
+				<real>0.0</real>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>PhysicType</key>
+				<integer>3</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>SHHolesPoints</key>
+				<array/>
+				<key>SHShapePoints</key>
+				<array/>
+				<key>ShapeBorderH</key>
+				<integer>0</integer>
+				<key>ShapeBorderW</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetX</key>
+				<integer>0</integer>
+				<key>ShapePositionOffsetY</key>
+				<integer>0</integer>
+			</dict>
+			<key>TextureProperties</key>
+			<dict>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Frame</key>
+				<string>{{601, 672}, {41, 41}}</string>
+				<key>Frame-HD</key>
+				<string>{{1202, 1344}, {82, 82}}</string>
+				<key>FrameUV</key>
+				<string>{{0.6707589, 0.85496181}, {0.71651787, 0.9071247}}</string>
+				<key>HD_ImageSize</key>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -1197,7 +1449,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -1261,13 +1513,13 @@
 				<key>Color</key>
 				<string>{{1, 1}, {1, 0}}</string>
 				<key>Frame</key>
-				<string>{{645, 317}, {38, 38}}</string>
+				<string>{{847, 442}, {38, 38}}</string>
 				<key>Frame-HD</key>
-				<string>{{1290, 634}, {76, 76}}</string>
+				<string>{{1694, 884}, {76, 76}}</string>
 				<key>FrameUV</key>
-				<string>{{0.71192056, 0.41062176}, {0.75386316, 0.45984456}}</string>
+				<string>{{0.9453125, 0.56234097}, {0.98772323, 0.61068702}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -1281,7 +1533,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>
@@ -1349,9 +1601,9 @@
 				<key>Frame-HD</key>
 				<string>{{582, 966}, {46, 46}}</string>
 				<key>FrameUV</key>
-				<string>{{0.32119206, 0.62564766}, {0.34657836, 0.65544039}}</string>
+				<string>{{0.3247768, 0.6145038}, {0.35044643, 0.64376593}}</string>
 				<key>HD_ImageSize</key>
-				<string>{1812, 1544}</string>
+				<string>{1792, 1572}</string>
 				<key>Image</key>
 				<string>lobbyscene.png</string>
 				<key>Image-HD</key>
@@ -1365,7 +1617,7 @@
 				<key>Opacity</key>
 				<real>1</real>
 				<key>SD_ImageSize</key>
-				<string>{906, 772}</string>
+				<string>{896, 786}</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>ZOrder</key>

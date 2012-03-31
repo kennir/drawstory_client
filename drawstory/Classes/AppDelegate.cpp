@@ -10,6 +10,7 @@
 
 #include "cocos2d.h"
 #include "LobbyScene.h"
+#include "curl/curl.h"
 
 USING_NS_CC;
 
@@ -20,6 +21,7 @@ AppDelegate::AppDelegate()
 
 AppDelegate::~AppDelegate()
 {
+    curl_global_cleanup();
 }
 
 bool AppDelegate::initInstance()
@@ -78,10 +80,14 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
 
     // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
-    // pDirector->enableRetinaDisplay(true);
+    pDirector->enableRetinaDisplay(true);
 
 	// sets landscape mode
 	// pDirector->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
+    
+    // Initialize CURL
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    
 
 	// turn on display FPS
 	pDirector->setDisplayFPS(true);

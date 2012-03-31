@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3115249E7D0005D491 /* UserProfile.cpp */; };
+		BE5A7E401524CF820005D491 /* LobbySceneLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */; };
+		BE5A7E47152586CE0005D491 /* RegisterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */; };
+		BE5A7E501525CFCF0005D491 /* SimpleHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E4F1525CFCE0005D491 /* SimpleHttpRequest.cpp */; };
+		BE5A7E521525DD520005D491 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A7E511525DD520005D491 /* libcurl.a */; };
+		BE5A7E581525DDF50005D491 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E571525DDF50005D491 /* jsoncpp.cpp */; };
+		BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */; };
+		BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */; };
+		BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5F152700EF0005D491 /* gamelist.plhs */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -219,6 +227,21 @@
 /* Begin PBXFileReference section */
 		BE5A7E3015249E6A0005D491 /* UserProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = Classes/UserProfile.h; sourceTree = "<group>"; };
 		BE5A7E3115249E7D0005D491 /* UserProfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserProfile.cpp; path = Classes/UserProfile.cpp; sourceTree = "<group>"; };
+		BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LobbySceneLogic.h; path = Classes/LobbySceneLogic.h; sourceTree = "<group>"; };
+		BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LobbySceneLogic.cpp; path = Classes/LobbySceneLogic.cpp; sourceTree = "<group>"; };
+		BE5A7E45152586BC0005D491 /* RegisterLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegisterLayer.h; path = Classes/RegisterLayer.h; sourceTree = "<group>"; };
+		BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RegisterLayer.cpp; path = Classes/RegisterLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E4E1525CFBF0005D491 /* SimpleHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleHttpRequest.h; path = Classes/SimpleHttpRequest.h; sourceTree = "<group>"; };
+		BE5A7E4F1525CFCE0005D491 /* SimpleHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpleHttpRequest.cpp; path = Classes/SimpleHttpRequest.cpp; sourceTree = "<group>"; };
+		BE5A7E511525DD520005D491 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = drawstory/libs/cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+		BE5A7E551525DDF50005D491 /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		BE5A7E561525DDF50005D491 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		BE5A7E571525DDF50005D491 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
+		BE5A7E5915262B2B0005D491 /* WaitingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaitingLayer.h; path = Classes/WaitingLayer.h; sourceTree = "<group>"; };
+		BE5A7E5A1526F72A0005D491 /* LoginLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginLayer.h; path = Classes/LoginLayer.h; sourceTree = "<group>"; };
+		BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoginLayer.cpp; path = Classes/LoginLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = registerlayer.plhs; path = Resources/registerlayer.plhs; sourceTree = "<group>"; };
+		BE5A7E5F152700EF0005D491 /* gamelist.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gamelist.plhs; path = Resources/gamelist.plhs; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -646,6 +669,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5A7E521525DD520005D491 /* libcurl.a in Frameworks */,
 				BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */,
 				BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */,
 				BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */,
@@ -663,8 +687,36 @@
 		BE5A7E2E15249CF50005D491 /* client */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E4E1525CFBF0005D491 /* SimpleHttpRequest.h */,
+				BE5A7E4F1525CFCE0005D491 /* SimpleHttpRequest.cpp */,
 			);
 			name = client;
+			sourceTree = "<group>";
+		};
+		BE5A7E3C1524CF240005D491 /* paintscene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = paintscene;
+			sourceTree = "<group>";
+		};
+		BE5A7E531525DDF50005D491 /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A7E541525DDF50005D491 /* json */,
+				BE5A7E571525DDF50005D491 /* jsoncpp.cpp */,
+			);
+			name = jsoncpp;
+			path = Classes/jsoncpp;
+			sourceTree = "<group>";
+		};
+		BE5A7E541525DDF50005D491 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A7E551525DDF50005D491 /* json-forwards.h */,
+				BE5A7E561525DDF50005D491 /* json.h */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 		BEE30DC3152462F500F8AAE7 = {
@@ -687,6 +739,7 @@
 		BEE30DD1152462F500F8AAE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E511525DD520005D491 /* libcurl.a */,
 				BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */,
 				BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */,
 				BEE30DD6152462F500F8AAE7 /* OpenAL.framework */,
@@ -714,6 +767,7 @@
 		BEE30DE3152462F500F8AAE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */,
 				BEE310741524672200F8AAE7 /* lobbyscene-hd.png */,
 				BEE310751524672200F8AAE7 /* lobbyscene.plhs */,
 				BEE310761524672200F8AAE7 /* lobbyscene.png */,
@@ -726,6 +780,7 @@
 				BEE30DEE152462F500F8AAE7 /* Icon-Small-50.png */,
 				BEE30DF0152462F500F8AAE7 /* Icon-Small.png */,
 				BEE30DF2152462F500F8AAE7 /* Icon-Small@2x.png */,
+				BE5A7E5F152700EF0005D491 /* gamelist.plhs */,
 				BEE30DF4152462F500F8AAE7 /* Icon.png */,
 				BEE30DF6152462F500F8AAE7 /* Icon@2x.png */,
 				BEE30DF8152462F500F8AAE7 /* Info.plist */,
@@ -738,6 +793,7 @@
 		BEE30DFB152462F500F8AAE7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E531525DDF50005D491 /* jsoncpp */,
 				BEE3102A152464CD00F8AAE7 /* LevelHelper */,
 				BEE30DFC152462F500F8AAE7 /* cocos2dx */,
 				BEE30F69152462F900F8AAE7 /* CocosDenshion */,
@@ -1400,6 +1456,7 @@
 		BEE31018152462FA00F8AAE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E3C1524CF240005D491 /* paintscene */,
 				BE5A7E2E15249CF50005D491 /* client */,
 				BEE31089152469CF00F8AAE7 /* common */,
 				BEE310261524630400F8AAE7 /* lobbyscene */,
@@ -1416,6 +1473,13 @@
 			children = (
 				BEE310271524631800F8AAE7 /* LobbyScene.h */,
 				BEE310281524632200F8AAE7 /* LobbyScene.cpp */,
+				BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */,
+				BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */,
+				BE5A7E45152586BC0005D491 /* RegisterLayer.h */,
+				BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */,
+				BE5A7E5915262B2B0005D491 /* WaitingLayer.h */,
+				BE5A7E5A1526F72A0005D491 /* LoginLayer.h */,
+				BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */,
 			);
 			name = lobbyscene;
 			sourceTree = "<group>";
@@ -1572,6 +1636,8 @@
 				BEE310791524672200F8AAE7 /* lobbyscene.plhs in Resources */,
 				BEE3107A1524672200F8AAE7 /* lobbyscene.png in Resources */,
 				BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */,
+				BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */,
+				BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1764,6 +1830,11 @@
 				BEE3106F152464CD00F8AAE7 /* LHObject.cpp in Sources */,
 				BEE3108C15246A4000F8AAE7 /* TextInputDelegate.cpp in Sources */,
 				BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */,
+				BE5A7E401524CF820005D491 /* LobbySceneLogic.cpp in Sources */,
+				BE5A7E47152586CE0005D491 /* RegisterLayer.cpp in Sources */,
+				BE5A7E501525CFCF0005D491 /* SimpleHttpRequest.cpp in Sources */,
+				BE5A7E581525DDF50005D491 /* jsoncpp.cpp in Sources */,
+				BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1790,8 +1861,10 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
 					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/Classes/Jsoncpp\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1813,8 +1886,10 @@
 					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
 					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/Classes/Jsoncpp\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -1830,6 +1905,10 @@
 				GCC_PREFIX_HEADER = drawstory/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = drawstory/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/drawstory/libs/cocos2dx/platform/third_party/ios/libraries\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
@@ -1849,6 +1928,10 @@
 				GCC_PREFIX_HEADER = drawstory/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = drawstory/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/drawstory/libs/cocos2dx/platform/third_party/ios/libraries\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
