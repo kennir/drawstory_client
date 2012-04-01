@@ -10,17 +10,9 @@
 #define drawstory_LobbySceneLogic_h
 
 #include "SimpleHttpRequest.h"
+#include <list>
+#include "types.h"
 
-typedef enum 
-{
-    kLobbyStateUnhandle,
-    kLobbyStateRegisterUser,
-    kLobbyStateWaitingForRegisterUser,
-    kLobbyStateLoginUser,
-    kLobbyStateWaitingForLoginUser,
-    kLobbyStateIdle,
-    kLobbyStateWaitingForRandomGame,
-} LobbyState;
 
 
 class LobbyScene;
@@ -35,19 +27,37 @@ public:
     void registerUser(const std::string& email,const std::string& username);
     // get email and password from user default
     void loginUser();
+    // create a random game
+    void createRandomGame();
+    void queryCurrentRandomGame();
+    void cancelQueryCurrentRandomGame();
+    void queryGamesForUser();
     
-    void onResponse(bool result,const Json::Value& response);
+    void onResponse(bool result,const Json::Value& response,SimpleHttpRequest* request);
     
     void setCurrentState(LobbyState newState);
     LobbyState currentState() const { return state_; }
+    LobbyState previousState() const { return previousState_; }
 protected:
     void processResponseForRegisterUser(bool curlState,const Json::Value& response);
     void processResponseForLoginUser(bool curlState,const Json::Value& response);
+    void processResponseForCreateRandomGame(bool curlState,const Json::Value& response);
+    void processResponseForQueryCurrentRandomGame(bool curlState,const Json::Value& response);
+    void processResponseForQueryGamesForUser(bool curlState,const Json::Value& response);
+    
+    void addReqeust(SimpleHttpRequest* request);
+    void cancelAllQueryRandomGameRequests();
 protected:
     LobbyScene* scene_;
+    LobbyState previousState_;
     LobbyState state_;
     
-    SimpleHttpRequest* currentRequest_;
+    std::list<SimpleHttpRequest*> runningRequests_;
+    pthread_mutex_t requestMutex_;
+    
+    bool logined_;
+    
+    std::string objectIdForCurrentGameId_;
 };
 
 #endif

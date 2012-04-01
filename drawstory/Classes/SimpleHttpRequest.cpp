@@ -12,9 +12,10 @@ using namespace cocos2d;
 
 SimpleHttpRequest* SimpleHttpRequest::simpleHttpRequestWithURL(const std::string &url,
                                                                HttpMethod method,
-                                                               SimpleHttpRequestDelegate* delegate)
+                                                               SimpleHttpRequestDelegate* delegate,
+                                                               int tag)
 {
-    SimpleHttpRequest* request = new SimpleHttpRequest(url,method,delegate);
+    SimpleHttpRequest* request = new SimpleHttpRequest(url,method,delegate,tag);
     CCLOG("SimpleHttpRequest::simpleHttpRequestWithURL:%s",url.c_str());
     if(request)
         request->autorelease();
@@ -38,12 +39,14 @@ void* SimpleHttpRequest::doRequest(void *param)
         curl_easy_setopt(handle, CURLOPT_URL, request->url().c_str());
         curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, SimpleHttpRequest::writeData);
         curl_easy_setopt(handle, CURLOPT_WRITEDATA, request );
+        
         switch(request->httpMethod())
         {
             case SimpleHttpRequest::kHttpMethodPost:
                 curl_easy_setopt(handle, CURLOPT_POSTFIELDS,request->postField().c_str());
                 break;
             case SimpleHttpRequest::kHttpMethodDelete:
+                curl_easy_setopt(handle, CURLOPT_POSTFIELDS,request->postField().c_str());
                 curl_easy_setopt(handle, CURLOPT_CUSTOMREQUEST,"DELETE");
                 break;
             default:
@@ -74,7 +77,8 @@ void* SimpleHttpRequest::doRequest(void *param)
             successed = false;
         }
 
-        request->delegate_->onResponse(successed, jsonRoot);
+        CCLOG("RESPONSE:%s",request->buffer().c_str());
+        request->delegate_->onResponse(successed, jsonRoot,request);
     }
     
     request->release();
@@ -82,9 +86,10 @@ void* SimpleHttpRequest::doRequest(void *param)
     return (void*)0;
 }
 
-SimpleHttpRequest::SimpleHttpRequest(const std::string& url,HttpMethod method,SimpleHttpRequestDelegate* delegate)
+SimpleHttpRequest::SimpleHttpRequest(const std::string& url,HttpMethod method,SimpleHttpRequestDelegate* delegate,int tag)
 : thread_(NULL)
 , delegate_(delegate)
+, tag_(tag)
 , url_(url)
 , method_(method)
 , cancelled_(false)

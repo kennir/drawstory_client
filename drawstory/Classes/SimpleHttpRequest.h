@@ -16,10 +16,11 @@
 #include <string>
 
 
+class SimpleHttpRequest;
 class SimpleHttpRequestDelegate
 {
 public:
-    virtual void onResponse(bool result,const Json::Value& response) = 0;
+    virtual void onResponse(bool result,const Json::Value& response,SimpleHttpRequest* request) = 0;
 };
 
 
@@ -36,9 +37,10 @@ public:
 public:
     static SimpleHttpRequest* simpleHttpRequestWithURL(const std::string& url,
                                                        HttpMethod method,
-                                                       SimpleHttpRequestDelegate* delegate);
+                                                       SimpleHttpRequestDelegate* delegate,
+                                                       int tag = 0);
 public:
-    SimpleHttpRequest(const std::string& url,HttpMethod method,SimpleHttpRequestDelegate* delegate);
+    SimpleHttpRequest(const std::string& url,HttpMethod method,SimpleHttpRequestDelegate* delegate,int tag);
     virtual ~SimpleHttpRequest();
     
     // Operator
@@ -58,7 +60,8 @@ public:
     void setPostField(const std::string& postField) { postField_ = postField; }
     const std::string& postField() const { return postField_; }
     
-
+    int tag() const { return tag_; }
+    void setTag(int tag) { tag_ = tag; }
 protected:    
     static size_t writeData(char *data, size_t size, size_t nmemb, SimpleHttpRequest *userdata);
     std::string& buffer() { return buffer_; }
@@ -68,6 +71,8 @@ protected:
 protected:
     pthread_t thread_; 
     pthread_mutex_t mutex_;
+    
+    int tag_;
     
     // need lock mutex
     bool cancelled_;

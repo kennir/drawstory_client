@@ -16,6 +16,9 @@
 		BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */; };
 		BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */; };
 		BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5F152700EF0005D491 /* gamelist.plhs */; };
+		BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E6815275D3E0005D491 /* messagelayer.plhs */; };
+		BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6A15275D640005D491 /* MessageLayer.cpp */; };
+		BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6D15282C6C0005D491 /* Game.cpp */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -237,11 +240,16 @@
 		BE5A7E551525DDF50005D491 /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
 		BE5A7E561525DDF50005D491 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
 		BE5A7E571525DDF50005D491 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
-		BE5A7E5915262B2B0005D491 /* WaitingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaitingLayer.h; path = Classes/WaitingLayer.h; sourceTree = "<group>"; };
+		BE5A7E5915262B2B0005D491 /* MessageLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageLayer.h; path = Classes/MessageLayer.h; sourceTree = "<group>"; };
 		BE5A7E5A1526F72A0005D491 /* LoginLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginLayer.h; path = Classes/LoginLayer.h; sourceTree = "<group>"; };
 		BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoginLayer.cpp; path = Classes/LoginLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = registerlayer.plhs; path = Resources/registerlayer.plhs; sourceTree = "<group>"; };
 		BE5A7E5F152700EF0005D491 /* gamelist.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gamelist.plhs; path = Resources/gamelist.plhs; sourceTree = "<group>"; };
+		BE5A7E6815275D3E0005D491 /* messagelayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = messagelayer.plhs; path = Resources/messagelayer.plhs; sourceTree = "<group>"; };
+		BE5A7E6A15275D640005D491 /* MessageLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MessageLayer.cpp; path = Classes/MessageLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E6C15282C580005D491 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Classes/Game.h; sourceTree = "<group>"; };
+		BE5A7E6D15282C6C0005D491 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = Classes/Game.cpp; sourceTree = "<group>"; };
+		BE5A7E741528C2C50005D491 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = Classes/types.h; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -719,6 +727,17 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		BE5A7E731528418C0005D491 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A7E6C15282C580005D491 /* Game.h */,
+				BE5A7E6D15282C6C0005D491 /* Game.cpp */,
+				BE5A7E3015249E6A0005D491 /* UserProfile.h */,
+				BE5A7E3115249E7D0005D491 /* UserProfile.cpp */,
+			);
+			name = Profiles;
+			sourceTree = "<group>";
+		};
 		BEE30DC3152462F500F8AAE7 = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +790,7 @@
 				BEE310741524672200F8AAE7 /* lobbyscene-hd.png */,
 				BEE310751524672200F8AAE7 /* lobbyscene.plhs */,
 				BEE310761524672200F8AAE7 /* lobbyscene.png */,
+				BE5A7E6815275D3E0005D491 /* messagelayer.plhs */,
 				BEE310771524672200F8AAE7 /* lobbyscene.pshs */,
 				BEE30DE4152462F500F8AAE7 /* CloseNormal.png */,
 				BEE30DE6152462F500F8AAE7 /* CloseSelected.png */,
@@ -1456,14 +1476,14 @@
 		BEE31018152462FA00F8AAE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E731528418C0005D491 /* Profiles */,
 				BE5A7E3C1524CF240005D491 /* paintscene */,
 				BE5A7E2E15249CF50005D491 /* client */,
 				BEE31089152469CF00F8AAE7 /* common */,
 				BEE310261524630400F8AAE7 /* lobbyscene */,
 				BEE31019152462FA00F8AAE7 /* AppDelegate.h */,
 				BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */,
-				BE5A7E3015249E6A0005D491 /* UserProfile.h */,
-				BE5A7E3115249E7D0005D491 /* UserProfile.cpp */,
+				BE5A7E741528C2C50005D491 /* types.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1477,7 +1497,8 @@
 				BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */,
 				BE5A7E45152586BC0005D491 /* RegisterLayer.h */,
 				BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */,
-				BE5A7E5915262B2B0005D491 /* WaitingLayer.h */,
+				BE5A7E5915262B2B0005D491 /* MessageLayer.h */,
+				BE5A7E6A15275D640005D491 /* MessageLayer.cpp */,
 				BE5A7E5A1526F72A0005D491 /* LoginLayer.h */,
 				BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */,
 			);
@@ -1638,6 +1659,7 @@
 				BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */,
 				BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */,
 				BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */,
+				BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1835,6 +1857,8 @@
 				BE5A7E501525CFCF0005D491 /* SimpleHttpRequest.cpp in Sources */,
 				BE5A7E581525DDF50005D491 /* jsoncpp.cpp in Sources */,
 				BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */,
+				BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */,
+				BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

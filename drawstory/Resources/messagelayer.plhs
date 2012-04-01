@@ -77,23 +77,23 @@
 				<key>PathStartPoint</key>
 				<integer>0</integer>
 				<key>Position</key>
-				<string>{130.5, 33.5}</string>
+				<string>{160, 240}</string>
 				<key>SHName</key>
-				<string>ui_banner</string>
+				<string>background</string>
 				<key>SHScene</key>
 				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>Size</key>
-				<string>{261, 67}</string>
+				<string>{320, 480}</string>
 				<key>Tag</key>
 				<integer>0</integer>
 				<key>TagName</key>
 				<string>DEFAULT</string>
 				<key>UV</key>
-				<string>{{323, 603}, {261, 67}}</string>
+				<string>{{0, 0}, {320, 480}}</string>
 				<key>UniqueName</key>
-				<string>ui_banner</string>
+				<string>background</string>
 				<key>ZOrder</key>
 				<integer>0</integer>
 			</dict>
@@ -191,23 +191,23 @@
 				<key>PathStartPoint</key>
 				<integer>0</integer>
 				<key>Position</key>
-				<string>{86.917729458919496, 33.107697074013061}</string>
+				<string>{283.17952802190484, 32.961373695481655}</string>
 				<key>SHName</key>
-				<string>ui_pencil</string>
+				<string>ui_button</string>
 				<key>SHScene</key>
 				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>Size</key>
-				<string>{46, 47}</string>
+				<string>{38, 38}</string>
 				<key>Tag</key>
 				<integer>0</integer>
 				<key>TagName</key>
 				<string>DEFAULT</string>
 				<key>UV</key>
-				<string>{{586, 603}, {46, 47}}</string>
+				<string>{{847, 442}, {38, 38}}</string>
 				<key>UniqueName</key>
-				<string>ui_pencil</string>
+				<string>ui_button_cancel</string>
 				<key>ZOrder</key>
 				<integer>0</integer>
 			</dict>
@@ -263,11 +263,11 @@
 		<key>BackgroundColor</key>
 		<string>{{0, 0}, {0, 486}}</string>
 		<key>GameWorld</key>
-		<string>{{0, 0}, {261, 67}}</string>
+		<string>{{0, 0}, {320, 480}}</string>
 		<key>LevelsPath</key>
 		<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/</string>
 		<key>PanValue</key>
-		<string>{143.37685731485109, 55.569749326042974}</string>
+		<string>{148.38658150443732, 257.36527348433816}</string>
 		<key>ProjectName</key>
 		<string>drawstory</string>
 		<key>SHScenesPath</key>
@@ -281,7 +281,7 @@
 			<string>DEFAULT</string>
 		</array>
 		<key>ZoomValue</key>
-		<real>0.67240148782730103</real>
+		<real>1.5060664415359497</real>
 	</dict>
 </dict>
 </plist>

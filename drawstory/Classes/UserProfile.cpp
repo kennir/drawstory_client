@@ -10,6 +10,28 @@
 
 using namespace cocos2d;
 
+
+#pragma mark static functions
+
+struct FindGameById
+{
+    FindGameById(const char* _id) : id(_id) { }
+    
+    bool operator()(const Game* game) const {
+        return (strcmp(game->objectId().c_str(), id) == 0);
+    }
+                 
+    const char* id;
+};
+
+
+static void removeAllGames(std::list<Game*>& games){
+    std::list<Game*>::iterator it = games.begin();
+    for(; it != games.end(); ++it)
+        delete (*it);
+    games.clear();
+}
+
 #pragma mark static variables
 
 static UserProfile* _userProfile = NULL;
@@ -37,6 +59,10 @@ void UserProfile::purgeUserProfile()
     CC_SAFE_DELETE(_userProfile);
 }
 
+UserProfile::~UserProfile(){
+    removeAllGames(games_);
+}
+
 bool UserProfile::init()
 {    
     CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
@@ -48,6 +74,7 @@ bool UserProfile::init()
     
     // get email address
     email_ = userDefault->getStringForKey("email");
+    objectId_ = userDefault->getStringForKey("objectid");
     password_ = userDefault->getStringForKey("password");
     
     return true;
@@ -66,6 +93,18 @@ void UserProfile::setEmail(const std::string &newEmail)
     }
 }
 
+void UserProfile::setObjectId(const std::string &newObjId)
+{
+    if(objectId_ != newObjId)
+    {
+        objectId_ = newObjId;
+        
+        CCUserDefault* ud = CCUserDefault::sharedUserDefault();
+        ud->setStringForKey("objectid", objectId_);
+        ud->flush();
+    }
+}
+
 void UserProfile::setPassword(const std::string &newPassword)
 {
     if(password_ != newPassword)
@@ -77,3 +116,37 @@ void UserProfile::setPassword(const std::string &newPassword)
         ud->flush();
     }
 }
+
+void UserProfile::synchronizeGameList(const Json::Value &games) {
+    std::list<Game*> temporary;
+    std::swap(temporary, games_);
+    CC_ASSERT(games_.empty());
+    
+    std::string gid;    // for cache
+    for(int idx = 0; idx < games.size(); ++idx){
+        const Json::Value& game = games[idx];
+        const Json::Value& detail = game["detail"];
+        
+        gid = detail["_id"].asString();
+        std::list<Game*>::iterator it = std::find_if(temporary.begin(),temporary.end(),FindGameById(gid.c_str()));
+        if(it == temporary.end()){
+            // Insert a game to list
+            Game* ng = Game::gameFromJson(game);
+            CC_ASSERT(ng != NULL);
+            // push game to list
+            games_.push_back(ng);
+        } else {
+            // Update game and remove to games_
+            (*it)->updateFromJson(game);
+            games_.push_back(*it);
+            temporary.erase(it);
+        }   
+    }
+    
+    CCLOG("UserProfile::synchronizeGameList:%d games synchronized. %d games removed.",games_.size(),temporary.size());
+    
+    // remove all games still in the temporary
+    removeAllGames(temporary);
+}
+
+    

@@ -69,7 +69,7 @@ void TextInputDelegate::keyboardWillShow(cocos2d::CCIMEKeyboardNotificationInfo 
 void TextInputDelegate::onEnter()
 {
     CCLayer::onEnter();
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, false);
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, -1, true);
 }
 
 void TextInputDelegate::onExit()
