@@ -55,6 +55,8 @@ void* SimpleHttpRequest::doRequest(void *param)
                
                
         CURLcode curlErr = curl_easy_perform(handle);
+        curl_easy_cleanup(handle);
+        
         if(curlErr)
         {
             // Write error message to buffer
@@ -77,7 +79,7 @@ void* SimpleHttpRequest::doRequest(void *param)
             successed = false;
         }
 
-        CCLOG("RESPONSE:%s",request->buffer().c_str());
+//        CCLOG("RESPONSE:%s",request->buffer().c_str());
         request->delegate_->onResponse(successed, jsonRoot,request);
     }
     
