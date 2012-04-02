@@ -22,7 +22,10 @@ public:
     bool init();
     
     const cocos2d::ccColor3B& color() const { return color_; }
+    void setColor(const cocos2d::ccColor3B& color);
+    
     BrushWidth width() const { return width_; }
+    void setWidth(BrushWidth width);
     
     void setPosition(const cocos2d::CCPoint& pos);
     void visit();

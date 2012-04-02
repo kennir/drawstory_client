@@ -30,12 +30,14 @@ public:
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);    
 protected:
     Brush* brush_;
+
     CommandQueue commandQueue_;
     
     bool drawing_;
-    cocos2d::CCPoint previousLocalPosition_;
     
+    cocos2d::CCPoint previousLocalPosition_;
     cocos2d::CCRenderTexture* target_;
+    cocos2d::CCRect layerRect_;
 };
 
 #endif

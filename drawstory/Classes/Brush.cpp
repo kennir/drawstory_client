@@ -17,7 +17,7 @@ enum {
     kTextureLength = kBrushMax + 2,
 };
 
-Brush::Brush() : texture_(NULL), width_(kBrushWidth4), color_(ccRED) {
+Brush::Brush() : texture_(NULL), width_(kBrushWidth8), color_(ccRED) {
     
 }
 
@@ -59,6 +59,20 @@ void Brush::visit() {
 
 void Brush::setPosition(const cocos2d::CCPoint &pos) {
     texture_->getSprite()->setPosition(pos);
+}
+
+void Brush::setWidth(BrushWidth width) {
+    if(width_ != width) {
+        width_ = width;
+        updateTexture();
+    }
+}
+
+void Brush::setColor(const cocos2d::ccColor3B &color) {
+    if(color_.r != color.r || color_.g != color.g || color_.b != color.b) {
+        color_ = color;
+        updateTexture();
+    }
 }
 
 

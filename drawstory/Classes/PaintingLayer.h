@@ -29,8 +29,11 @@ public:
     virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+protected:    
+    cocos2d::CCNode* hitTest(const cocos2d::CCPoint& localPos);
 protected:
     CanvasLayer* canvas_;
+    cocos2d::CCNode* trackingNode_;
 };
 
 #endif
