@@ -39,3 +39,33 @@ void Game::updateFromJson(const Json::Value &game) {
     opponentObjectId_ = detail["opponent"].asString();
 }
 
+
+std::string Game::stateString() const {
+    std::string message;
+    if(isOwner()) {
+        switch (state()) {
+            case kGameStateWaitingOwnerDraw:
+                message = "绘图回合";
+                break;
+            case kGameStateWaitingOpponentAnswer:
+                message = "等待中";
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (state()) {
+            case kGameStateWaitingOwnerDraw:
+                message = "等待中";
+                break;
+            case kGameStateWaitingOpponentAnswer:
+                message = "答题回合";
+                break;
+            default:
+                break;
+        }
+    }
+    return message;
+}
+
+

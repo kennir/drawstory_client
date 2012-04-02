@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include "TextInputDelegate.h"
+#include "types.h"
 
 
 class RegisterLayer : public TextInputDelegate
@@ -29,8 +30,10 @@ protected:
     virtual void onTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void onTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);   
     
+    virtual int touchPriority() const { return kTouchPriorityRegisterLayer; }
     virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField);
     virtual int getMaximumCharacters(cocos2d::CCTextFieldTTF* textField) const;
+    
 protected:
     cocos2d::CCSprite* hitTestWithButton(const cocos2d::CCPoint& localPos);
 protected:

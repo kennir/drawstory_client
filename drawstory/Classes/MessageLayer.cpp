@@ -7,6 +7,7 @@
 //
 
 #include "MessageLayer.h"
+#include "types.h"
 
 using namespace cocos2d;
 
@@ -102,7 +103,7 @@ void MessageLayer::setCancelButton(bool showCancelButton,cocos2d::CCObject* dele
 void MessageLayer::onEnter()
 {
     CCLayer::onEnter();
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, -1, true);
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, kTouchPriorityMessageLayer, true);
 }
 
 void MessageLayer::onExit()

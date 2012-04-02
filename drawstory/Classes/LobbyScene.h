@@ -14,7 +14,8 @@
 
 #include <queue>
 
-
+class PaintingLayer;
+class GameListLayer;
 class RegisterLayer;
 class MessageLayer;
 class LobbySceneLogic;
@@ -55,6 +56,9 @@ protected:
                          cocos2d::SEL_CallFunc selector,
                          int msgTag);
     void removeMessageLayer();
+    
+    void addPaintingLayer();
+    void removePaintingLayer();
 
     void onMessageLayerForQueryRandomGameCancelled();
     
@@ -68,10 +72,13 @@ protected:
     // tracking node for touch
     cocos2d::CCSprite* trackingNode_;
     
-    
     // popup layers
     RegisterLayer* registerLayer_;
     MessageLayer* messageLayer_;
+    PaintingLayer* paintingLayer_;
+    
+    // game list node
+    GameListLayer* gameListLayer_;
     
     pthread_mutex_t stateMutex_;
     std::queue<std::pair<int,int> > stateQueue_;

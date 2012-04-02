@@ -1,24 +1,23 @@
 //
-//  PaintingLayer.h
+//  CanvasLayer.h
 //  drawstory
 //
-//  Created by 张 靖宇 on 12-4-2.
+//  Created by 张 靖宇 on 12-4-3.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef drawstory_PaintingLayer_h
-#define drawstory_PaintingLayer_h
+#ifndef drawstory_CanvasLayer_h
+#define drawstory_CanvasLayer_h
 
 #include "cocos2d.h"
 #include "Brush.h"
 #include "PaintCommand.h"
 
-class CanvasLayer;
-class PaintingLayer : public cocos2d::CCLayer{
+class CanvasLayer : public cocos2d::CCLayer {
 public:
-    LAYER_NODE_FUNC(PaintingLayer)
-    PaintingLayer();
-    virtual ~PaintingLayer();
+    LAYER_NODE_FUNC(CanvasLayer)
+    CanvasLayer();
+    virtual ~CanvasLayer();
     
     virtual bool init();
     virtual void onEnter();
@@ -28,9 +27,15 @@ public:
     virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);    
 protected:
-    CanvasLayer* canvas_;
+    Brush* brush_;
+    CommandQueue commandQueue_;
+    
+    bool drawing_;
+    cocos2d::CCPoint previousLocalPosition_;
+    
+    cocos2d::CCRenderTexture* target_;
 };
 
 #endif

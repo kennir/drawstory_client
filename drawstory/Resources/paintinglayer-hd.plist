@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>pl_background_title</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 0}, {640, 180}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {640, 180}}</string>
+			<key>sourceSize</key>
+			<string>{640, 180}</string>
+		</dict>
+		<key>pl_ball_1x_blue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{406, 352}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{406, 352}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_1x_white</key>
+		<dict>
+			<key>frame</key>
+			<string>{{484, 380}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{484, 380}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_2x_blue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{560, 306}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{560, 306}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_2x_white</key>
+		<dict>
+			<key>frame</key>
+			<string>{{484, 306}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{484, 306}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_3x_blue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{406, 426}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{406, 426}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_3x_white</key>
+		<dict>
+			<key>frame</key>
+			<string>{{330, 426}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{330, 426}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_4x_blue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{244, 390}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{244, 390}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_ball_4x_white</key>
+		<dict>
+			<key>frame</key>
+			<string>{{330, 352}, {70, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{330, 352}, {70, 69}}</string>
+			<key>sourceSize</key>
+			<string>{70, 69}</string>
+		</dict>
+		<key>pl_black_mask</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 186}, {640, 115}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 186}, {640, 115}}</string>
+			<key>sourceSize</key>
+			<string>{640, 115}</string>
+		</dict>
+		<key>pl_c_black</key>
+		<dict>
+			<key>frame</key>
+			<string>{{560, 380}, {57, 43}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{560, 380}, {57, 43}}</string>
+			<key>sourceSize</key>
+			<string>{57, 43}</string>
+		</dict>
+		<key>pl_c_blue</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 378}, {57, 43}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 378}, {57, 43}}</string>
+			<key>sourceSize</key>
+			<string>{57, 43}</string>
+		</dict>
+		<key>pl_c_red</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 426}, {57, 43}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 426}, {57, 43}}</string>
+			<key>sourceSize</key>
+			<string>{57, 43}</string>
+		</dict>
+		<key>pl_c_yellow</key>
+		<dict>
+			<key>frame</key>
+			<string>{{484, 454}, {57, 43}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{484, 454}, {57, 43}}</string>
+			<key>sourceSize</key>
+			<string>{57, 43}</string>
+		</dict>
+		<key>pl_del</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 464}, {36, 38}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 464}, {36, 38}}</string>
+			<key>sourceSize</key>
+			<string>{36, 38}</string>
+		</dict>
+		<key>pl_down</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 306}, {238, 68}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 306}, {238, 68}}</string>
+			<key>sourceSize</key>
+			<string>{238, 68}</string>
+		</dict>
+		<key>pl_eraser</key>
+		<dict>
+			<key>frame</key>
+			<string>{{244, 306}, {82, 80}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{244, 306}, {82, 80}}</string>
+			<key>sourceSize</key>
+			<string>{82, 80}</string>
+		</dict>
+		<key>pl_morecolor</key>
+		<dict>
+			<key>frame</key>
+			<string>{{330, 306}, {149, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{330, 306}, {149, 42}}</string>
+			<key>sourceSize</key>
+			<string>{149, 42}</string>
+		</dict>
+		<key>pl_pencil_c</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 378}, {82, 80}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 378}, {82, 80}}</string>
+			<key>sourceSize</key>
+			<string>{82, 80}</string>
+		</dict>
+		<key>pl_pencil_s</key>
+		<dict>
+			<key>frame</key>
+			<string>{{88, 378}, {82, 80}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{88, 378}, {82, 80}}</string>
+			<key>sourceSize</key>
+			<string>{82, 80}</string>
+		</dict>
+		<key>pl_setup</key>
+		<dict>
+			<key>frame</key>
+			<string>{{560, 428}, {41, 39}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{560, 428}, {41, 39}}</string>
+			<key>sourceSize</key>
+			<string>{41, 39}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+	</dict>
+</dict>
+</plist>

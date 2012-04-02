@@ -21,6 +21,15 @@
 		BE5A7E8B1529A3FA0005D491 /* textures-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E871529A3FA0005D491 /* textures-hd.png */; };
 		BE5A7E8C1529A3FA0005D491 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E881529A3FA0005D491 /* textures.plist */; };
 		BE5A7E8D1529A3FA0005D491 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E891529A3FA0005D491 /* textures.png */; };
+		BE5A7E951529CA5A0005D491 /* GameLabelNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E941529CA5A0005D491 /* GameLabelNode.cpp */; };
+		BE5A7E981529CC6A0005D491 /* GameListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E971529CC6A0005D491 /* GameListLayer.cpp */; };
+		BE5A7EA81529FA280005D491 /* Brush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EA71529FA270005D491 /* Brush.cpp */; };
+		BE5A7EAB152A0C9D0005D491 /* CanvasLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EAA152A0C9C0005D491 /* CanvasLayer.cpp */; };
+		BE5A7EB0152A24B90005D491 /* paintinglayer-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7EAC152A24B80005D491 /* paintinglayer-hd.plist */; };
+		BE5A7EB1152A24B90005D491 /* paintinglayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7EAD152A24B90005D491 /* paintinglayer-hd.png */; };
+		BE5A7EB2152A24B90005D491 /* paintinglayer.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7EAE152A24B90005D491 /* paintinglayer.plist */; };
+		BE5A7EB3152A24B90005D491 /* paintinglayer.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7EAF152A24B90005D491 /* paintinglayer.png */; };
+		BE5A7EB6152A25410005D491 /* DrawSolidCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EB5152A25400005D491 /* DrawSolidCircle.cpp */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -228,6 +237,21 @@
 		BE5A7E871529A3FA0005D491 /* textures-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textures-hd.png"; path = "Resources/textures-hd.png"; sourceTree = "<group>"; };
 		BE5A7E881529A3FA0005D491 /* textures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = textures.plist; path = Resources/textures.plist; sourceTree = "<group>"; };
 		BE5A7E891529A3FA0005D491 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textures.png; path = Resources/textures.png; sourceTree = "<group>"; };
+		BE5A7E931529CA4E0005D491 /* GameLabelNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameLabelNode.h; path = Classes/GameLabelNode.h; sourceTree = "<group>"; };
+		BE5A7E941529CA5A0005D491 /* GameLabelNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameLabelNode.cpp; path = Classes/GameLabelNode.cpp; sourceTree = "<group>"; };
+		BE5A7E961529CC5F0005D491 /* GameListLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameListLayer.h; path = Classes/GameListLayer.h; sourceTree = "<group>"; };
+		BE5A7E971529CC6A0005D491 /* GameListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameListLayer.cpp; path = Classes/GameListLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E9D1529E5390005D491 /* PaintCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintCommand.h; path = Classes/PaintCommand.h; sourceTree = "<group>"; };
+		BE5A7EA61529F90E0005D491 /* Brush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Brush.h; path = Classes/Brush.h; sourceTree = "<group>"; };
+		BE5A7EA71529FA270005D491 /* Brush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Brush.cpp; path = Classes/Brush.cpp; sourceTree = "<group>"; };
+		BE5A7EA9152A0C900005D491 /* CanvasLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CanvasLayer.h; path = Classes/CanvasLayer.h; sourceTree = "<group>"; };
+		BE5A7EAA152A0C9C0005D491 /* CanvasLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CanvasLayer.cpp; path = Classes/CanvasLayer.cpp; sourceTree = "<group>"; };
+		BE5A7EAC152A24B80005D491 /* paintinglayer-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "paintinglayer-hd.plist"; path = "Resources/paintinglayer-hd.plist"; sourceTree = "<group>"; };
+		BE5A7EAD152A24B90005D491 /* paintinglayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paintinglayer-hd.png"; path = "Resources/paintinglayer-hd.png"; sourceTree = "<group>"; };
+		BE5A7EAE152A24B90005D491 /* paintinglayer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = paintinglayer.plist; path = Resources/paintinglayer.plist; sourceTree = "<group>"; };
+		BE5A7EAF152A24B90005D491 /* paintinglayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paintinglayer.png; path = Resources/paintinglayer.png; sourceTree = "<group>"; };
+		BE5A7EB5152A25400005D491 /* DrawSolidCircle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DrawSolidCircle.cpp; path = Classes/DrawSolidCircle.cpp; sourceTree = "<group>"; };
+		BE5A7EB7152A25970005D491 /* DrawSolidCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawSolidCircle.h; path = Classes/DrawSolidCircle.h; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -633,6 +657,13 @@
 		BE5A7E3C1524CF240005D491 /* paintscene */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E751528DB330005D491 /* PaintingLayer.h */,
+				BE5A7E761528DB400005D491 /* PaintingLayer.cpp */,
+				BE5A7E9D1529E5390005D491 /* PaintCommand.h */,
+				BE5A7EA61529F90E0005D491 /* Brush.h */,
+				BE5A7EA71529FA270005D491 /* Brush.cpp */,
+				BE5A7EA9152A0C900005D491 /* CanvasLayer.h */,
+				BE5A7EAA152A0C9C0005D491 /* CanvasLayer.cpp */,
 			);
 			name = paintscene;
 			sourceTree = "<group>";
@@ -670,6 +701,10 @@
 		BE5A7E801529899B0005D491 /* GameListNode */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E931529CA4E0005D491 /* GameLabelNode.h */,
+				BE5A7E941529CA5A0005D491 /* GameLabelNode.cpp */,
+				BE5A7E961529CC5F0005D491 /* GameListLayer.h */,
+				BE5A7E971529CC6A0005D491 /* GameListLayer.cpp */,
 			);
 			name = GameListNode;
 			sourceTree = "<group>";
@@ -722,6 +757,10 @@
 		BEE30DE3152462F500F8AAE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7EAC152A24B80005D491 /* paintinglayer-hd.plist */,
+				BE5A7EAD152A24B90005D491 /* paintinglayer-hd.png */,
+				BE5A7EAE152A24B90005D491 /* paintinglayer.plist */,
+				BE5A7EAF152A24B90005D491 /* paintinglayer.png */,
 				BEE30DE4152462F500F8AAE7 /* CloseNormal.png */,
 				BE5A7E861529A3FA0005D491 /* textures-hd.plist */,
 				BE5A7E871529A3FA0005D491 /* textures-hd.png */,
@@ -1407,6 +1446,8 @@
 		BEE31018152462FA00F8AAE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7EB7152A25970005D491 /* DrawSolidCircle.h */,
+				BE5A7EB5152A25400005D491 /* DrawSolidCircle.cpp */,
 				BE5A7E731528418C0005D491 /* Profiles */,
 				BE5A7E3C1524CF240005D491 /* paintscene */,
 				BE5A7E2E15249CF50005D491 /* client */,
@@ -1415,8 +1456,6 @@
 				BEE31019152462FA00F8AAE7 /* AppDelegate.h */,
 				BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */,
 				BE5A7E741528C2C50005D491 /* types.h */,
-				BE5A7E751528DB330005D491 /* PaintingLayer.h */,
-				BE5A7E761528DB400005D491 /* PaintingLayer.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1513,6 +1552,10 @@
 				BE5A7E8B1529A3FA0005D491 /* textures-hd.png in Resources */,
 				BE5A7E8C1529A3FA0005D491 /* textures.plist in Resources */,
 				BE5A7E8D1529A3FA0005D491 /* textures.png in Resources */,
+				BE5A7EB0152A24B90005D491 /* paintinglayer-hd.plist in Resources */,
+				BE5A7EB1152A24B90005D491 /* paintinglayer-hd.png in Resources */,
+				BE5A7EB2152A24B90005D491 /* paintinglayer.plist in Resources */,
+				BE5A7EB3152A24B90005D491 /* paintinglayer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1692,6 +1735,11 @@
 				BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */,
 				BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */,
 				BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */,
+				BE5A7E951529CA5A0005D491 /* GameLabelNode.cpp in Sources */,
+				BE5A7E981529CC6A0005D491 /* GameListLayer.cpp in Sources */,
+				BE5A7EA81529FA280005D491 /* Brush.cpp in Sources */,
+				BE5A7EAB152A0C9D0005D491 /* CanvasLayer.cpp in Sources */,
+				BE5A7EB6152A25410005D491 /* DrawSolidCircle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

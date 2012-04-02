@@ -47,7 +47,7 @@ public:
     virtual void onTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event) { }
     virtual void onTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event) { }
     virtual void onTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event) { }
-    
+    virtual int touchPriority() const { return -1; }
     virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField) { return textField->boundingBox(); }
     virtual int getMaximumCharacters(cocos2d::CCTextFieldTTF* textField) const { return kDefaultMaximumCharacter; }
     

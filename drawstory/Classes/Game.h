@@ -28,6 +28,10 @@ public:
     
     bool isOwner() const { return isOwner_; }
     
+    const std::string& otherPlayerName() const { 
+        return (isOwner()) ? ownerName() : opponentName();
+    }
+    
     GameState state() const { return state_; }
     void setState(GameState newState) { state_ = newState; }
     
@@ -42,6 +46,8 @@ public:
     
     const std::string& opponentObjectId() const { return opponentObjectId_; }
     const std::string& opponentName() const { return opponentName_; }
+    
+    std::string stateString() const;
     
     int turn() const { return turn_; }
     void setTurn(int newTurn) { turn_ = newTurn; }
