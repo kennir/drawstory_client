@@ -10,11 +10,13 @@
 #include "LobbySceneLogic.h"
 #include "RegisterLayer.h"
 #include "MessageLayer.h"
+#include "GameListLayer.h"
 
 using namespace cocos2d;
 
 
-enum { kTagRegisterLayer = 1000,kTagMessageLayer, };
+enum { kTagRegisterLayer = 1000,kTagGameListLayer,kTagMessageLayer, };
+enum { kZGameListLayer = 10 };
 enum { kMsgTagWaitingQueryRandomGame = 1, };
 
 CCScene* LobbyScene::scene()
@@ -34,6 +36,7 @@ LobbyScene::LobbyScene()
 : level_(NULL)
 , logic_(NULL)
 , trackingNode_(NULL)
+, gameListLayer_(NULL)
 , registerLayer_(NULL)
 , messageLayer_(NULL)
 {
@@ -46,6 +49,7 @@ LobbyScene::~LobbyScene()
     pthread_mutex_destroy(&stateMutex_);
     pthread_mutex_destroy(&eventMutex_);
     
+    CC_SAFE_RELEASE_NULL(gameListLayer_);
     CC_SAFE_RELEASE_NULL(registerLayer_);
     CC_SAFE_RELEASE_NULL(messageLayer_);
     
@@ -67,8 +71,14 @@ bool LobbyScene::init()
         logic_ = new LobbySceneLogic(this);
         CC_BREAK_IF(!logic_->init());
         
+        // create game list layer
+        gameListLayer_ = GameListLayer::node();
+        CC_BREAK_IF(!gameListLayer_);
+        gameListLayer_->retain();
+        gameListLayer_->setPosition(CCPointMake(29.5f,30.0f));
+        addChild(gameListLayer_,kZGameListLayer,kTagGameListLayer);
         
-
+        
         
         result = true;
     } while (0);
@@ -162,6 +172,8 @@ void LobbyScene::processLogicEvent() {
             case kLogicEventQueryGameForUserFinished:
                 CCLOG("==========scheduled: refreshGamesForUser");
                 schedule(schedule_selector(LobbyScene::refreshGamesForUser),30.0f);
+                // update game list
+                gameListLayer_->synchronizeGameList();
                 break;
             default:
                 break;

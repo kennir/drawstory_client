@@ -15,10 +15,13 @@
 		BE5A7E581525DDF50005D491 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E571525DDF50005D491 /* jsoncpp.cpp */; };
 		BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */; };
 		BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */; };
-		BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5F152700EF0005D491 /* gamelist.plhs */; };
 		BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E6815275D3E0005D491 /* messagelayer.plhs */; };
 		BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6A15275D640005D491 /* MessageLayer.cpp */; };
 		BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6D15282C6C0005D491 /* Game.cpp */; };
+		BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E761528DB400005D491 /* PaintingLayer.cpp */; };
+		BE5A7E7A152988F70005D491 /* GameListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E79152988F60005D491 /* GameListLayer.cpp */; };
+		BE5A7E7C152989720005D491 /* gamelabel.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E7B152989720005D491 /* gamelabel.plhs */; };
+		BE5A7E7F1529898E0005D491 /* GameLabelLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -244,12 +247,18 @@
 		BE5A7E5A1526F72A0005D491 /* LoginLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginLayer.h; path = Classes/LoginLayer.h; sourceTree = "<group>"; };
 		BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoginLayer.cpp; path = Classes/LoginLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = registerlayer.plhs; path = Resources/registerlayer.plhs; sourceTree = "<group>"; };
-		BE5A7E5F152700EF0005D491 /* gamelist.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gamelist.plhs; path = Resources/gamelist.plhs; sourceTree = "<group>"; };
 		BE5A7E6815275D3E0005D491 /* messagelayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = messagelayer.plhs; path = Resources/messagelayer.plhs; sourceTree = "<group>"; };
 		BE5A7E6A15275D640005D491 /* MessageLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MessageLayer.cpp; path = Classes/MessageLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E6C15282C580005D491 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Classes/Game.h; sourceTree = "<group>"; };
 		BE5A7E6D15282C6C0005D491 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = Classes/Game.cpp; sourceTree = "<group>"; };
 		BE5A7E741528C2C50005D491 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = Classes/types.h; sourceTree = "<group>"; };
+		BE5A7E751528DB330005D491 /* PaintingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingLayer.h; path = Classes/PaintingLayer.h; sourceTree = "<group>"; };
+		BE5A7E761528DB400005D491 /* PaintingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingLayer.cpp; path = Classes/PaintingLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E78152988E50005D491 /* GameListLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameListLayer.h; path = Classes/GameListLayer.h; sourceTree = "<group>"; };
+		BE5A7E79152988F60005D491 /* GameListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameListLayer.cpp; path = Classes/GameListLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E7B152989720005D491 /* gamelabel.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gamelabel.plhs; path = Resources/gamelabel.plhs; sourceTree = "<group>"; };
+		BE5A7E7D152989820005D491 /* GameLabelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameLabelLayer.h; path = Classes/GameLabelLayer.h; sourceTree = "<group>"; };
+		BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameLabelLayer.cpp; path = Classes/GameLabelLayer.cpp; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -738,6 +747,17 @@
 			name = Profiles;
 			sourceTree = "<group>";
 		};
+		BE5A7E801529899B0005D491 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A7E78152988E50005D491 /* GameListLayer.h */,
+				BE5A7E79152988F60005D491 /* GameListLayer.cpp */,
+				BE5A7E7D152989820005D491 /* GameLabelLayer.h */,
+				BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */,
+			);
+			name = GameList;
+			sourceTree = "<group>";
+		};
 		BEE30DC3152462F500F8AAE7 = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +806,7 @@
 		BEE30DE3152462F500F8AAE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E7B152989720005D491 /* gamelabel.plhs */,
 				BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */,
 				BEE310741524672200F8AAE7 /* lobbyscene-hd.png */,
 				BEE310751524672200F8AAE7 /* lobbyscene.plhs */,
@@ -800,7 +821,6 @@
 				BEE30DEE152462F500F8AAE7 /* Icon-Small-50.png */,
 				BEE30DF0152462F500F8AAE7 /* Icon-Small.png */,
 				BEE30DF2152462F500F8AAE7 /* Icon-Small@2x.png */,
-				BE5A7E5F152700EF0005D491 /* gamelist.plhs */,
 				BEE30DF4152462F500F8AAE7 /* Icon.png */,
 				BEE30DF6152462F500F8AAE7 /* Icon@2x.png */,
 				BEE30DF8152462F500F8AAE7 /* Info.plist */,
@@ -1484,6 +1504,8 @@
 				BEE31019152462FA00F8AAE7 /* AppDelegate.h */,
 				BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */,
 				BE5A7E741528C2C50005D491 /* types.h */,
+				BE5A7E751528DB330005D491 /* PaintingLayer.h */,
+				BE5A7E761528DB400005D491 /* PaintingLayer.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1491,6 +1513,7 @@
 		BEE310261524630400F8AAE7 /* lobbyscene */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7E801529899B0005D491 /* GameList */,
 				BEE310271524631800F8AAE7 /* LobbyScene.h */,
 				BEE310281524632200F8AAE7 /* LobbyScene.cpp */,
 				BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */,
@@ -1658,8 +1681,8 @@
 				BEE3107A1524672200F8AAE7 /* lobbyscene.png in Resources */,
 				BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */,
 				BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */,
-				BE5A7E60152700EF0005D491 /* gamelist.plhs in Resources */,
 				BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */,
+				BE5A7E7C152989720005D491 /* gamelabel.plhs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1859,6 +1882,9 @@
 				BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */,
 				BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */,
 				BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */,
+				BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */,
+				BE5A7E7A152988F70005D491 /* GameListLayer.cpp in Sources */,
+				BE5A7E7F1529898E0005D491 /* GameLabelLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

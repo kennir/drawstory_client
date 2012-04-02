@@ -651,7 +651,7 @@
 				<key>SHName</key>
 				<string>gameplay</string>
 				<key>SHScene</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
+				<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>Size</key>
@@ -723,7 +723,7 @@
 		<key>LevelsPath</key>
 		<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/</string>
 		<key>PanValue</key>
-		<string>{187.86036127772658, 214.77057279184532}</string>
+		<string>{117.2784141127417, 281.37006630572421}</string>
 		<key>ProjectName</key>
 		<string>drawstory</string>
 		<key>SHScenesPath</key>
@@ -737,7 +737,7 @@
 			<string>DEFAULT</string>
 		</array>
 		<key>ZoomValue</key>
-		<real>1.3099443912506104</real>
+		<real>0.9013293981552124</real>
 	</dict>
 </dict>
 </plist>

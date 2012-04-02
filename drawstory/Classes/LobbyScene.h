@@ -12,8 +12,10 @@
 #include "cocos2d.h"
 #include "LevelHelperLoader.h"
 #include "types.h"
+
 #include <queue>
 
+class GameListLayer;
 class RegisterLayer;
 class MessageLayer;
 class LobbySceneLogic;
@@ -67,6 +69,8 @@ protected:
     
     // tracking node for touch
     LHSprite* trackingNode_;
+    
+    GameListLayer* gameListLayer_;
     
     // popup layers
     RegisterLayer* registerLayer_;

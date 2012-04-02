@@ -37,6 +37,7 @@ public:
     
     void synchronizeGameList(const Json::Value& games);
     
+    const std::list<Game*>& games() const { return games_; }
 protected:
     std::string email_;
     std::string objectId_;

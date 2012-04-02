@@ -11,7 +11,7 @@
 	<key>Engine</key>
 	<integer>4</integer>
 	<key>LastLevelLoaded</key>
-	<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/gamelist.plhs</string>
+	<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/gamelabel.plhs</string>
 	<key>LevelsPathRelative</key>
 	<string>drawstory/Resources/</string>
 	<key>ProjectName</key>

@@ -81,7 +81,7 @@
 				<key>SHName</key>
 				<string>ui_banner</string>
 				<key>SHScene</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
+				<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>Size</key>
@@ -195,7 +195,7 @@
 				<key>SHName</key>
 				<string>ui_pencil</string>
 				<key>SHScene</key>
-				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
+				<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
 				<key>Scale</key>
 				<string>{1, 1}</string>
 				<key>Size</key>
@@ -257,6 +257,234 @@
 				<integer>3</integer>
 			</dict>
 		</dict>
+		<dict>
+			<key>GeneralProperties</key>
+			<dict>
+				<key>Angle</key>
+				<integer>0</integer>
+				<key>AnimAtStart</key>
+				<false/>
+				<key>AnimLoop</key>
+				<false/>
+				<key>AnimName</key>
+				<string></string>
+				<key>AnimRepetitions</key>
+				<integer>0</integer>
+				<key>AnimSpeed</key>
+				<real>0.0</real>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>IsDrawable</key>
+				<true/>
+				<key>IsInParallax</key>
+				<false/>
+				<key>Locked</key>
+				<false/>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>PathFlipX</key>
+				<false/>
+				<key>PathFlipY</key>
+				<false/>
+				<key>PathIsCyclic</key>
+				<false/>
+				<key>PathMoveDelta</key>
+				<true/>
+				<key>PathName</key>
+				<string></string>
+				<key>PathOrientation</key>
+				<integer>0</integer>
+				<key>PathOtherEnd</key>
+				<false/>
+				<key>PathSpeed</key>
+				<real>0.20000000298023224</real>
+				<key>PathStartAtLaunch</key>
+				<true/>
+				<key>PathStartPoint</key>
+				<integer>0</integer>
+				<key>Position</key>
+				<string>{241.88367528155069, 31.363295764260137}</string>
+				<key>SHName</key>
+				<string>ui_banner_button</string>
+				<key>SHScene</key>
+				<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>Size</key>
+				<string>{23, 23}</string>
+				<key>Tag</key>
+				<integer>0</integer>
+				<key>TagName</key>
+				<string>DEFAULT</string>
+				<key>UV</key>
+				<string>{{291, 483}, {23, 23}}</string>
+				<key>UniqueName</key>
+				<string>ui_banner_button</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>FixedRot</key>
+				<false/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>GravityScale</key>
+				<real>1</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>HandledBySH</key>
+				<true/>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocity</key>
+				<string>{0, 0}</string>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>ShapeBorder</key>
+				<string>{0, 0}</string>
+				<key>ShapeFixtures</key>
+				<array/>
+				<key>ShapePositionOffset</key>
+				<string>{0, 0}</string>
+				<key>Type</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>GeneralProperties</key>
+			<dict>
+				<key>Angle</key>
+				<integer>0</integer>
+				<key>AnimAtStart</key>
+				<false/>
+				<key>AnimLoop</key>
+				<false/>
+				<key>AnimName</key>
+				<string></string>
+				<key>AnimRepetitions</key>
+				<integer>0</integer>
+				<key>AnimSpeed</key>
+				<real>0.0</real>
+				<key>Color</key>
+				<string>{{1, 1}, {1, 0}}</string>
+				<key>Image</key>
+				<string>lobbyscene.png</string>
+				<key>IsDrawable</key>
+				<true/>
+				<key>IsInParallax</key>
+				<false/>
+				<key>Locked</key>
+				<false/>
+				<key>Opacity</key>
+				<real>1</real>
+				<key>PathFlipX</key>
+				<false/>
+				<key>PathFlipY</key>
+				<false/>
+				<key>PathIsCyclic</key>
+				<false/>
+				<key>PathMoveDelta</key>
+				<true/>
+				<key>PathName</key>
+				<string></string>
+				<key>PathOrientation</key>
+				<integer>0</integer>
+				<key>PathOtherEnd</key>
+				<false/>
+				<key>PathSpeed</key>
+				<real>0.20000000298023224</real>
+				<key>PathStartAtLaunch</key>
+				<true/>
+				<key>PathStartPoint</key>
+				<integer>0</integer>
+				<key>Position</key>
+				<string>{30, 12}</string>
+				<key>SHName</key>
+				<string>ui_banner_button</string>
+				<key>SHScene</key>
+				<string>/Users/ken/Development/projects/native/drawstory/drawstory/Resources/lobbyscene.pshs</string>
+				<key>Scale</key>
+				<string>{1, 1}</string>
+				<key>Size</key>
+				<string>{23, 23}</string>
+				<key>Tag</key>
+				<integer>0</integer>
+				<key>TagName</key>
+				<string>DEFAULT</string>
+				<key>UV</key>
+				<string>{{291, 483}, {23, 23}}</string>
+				<key>UniqueName</key>
+				<string>ui_banner_button_1</string>
+				<key>ZOrder</key>
+				<integer>0</integer>
+			</dict>
+			<key>PhysicProperties</key>
+			<dict>
+				<key>AngularDamping</key>
+				<real>0.0</real>
+				<key>AngularVelocity</key>
+				<real>0.0</real>
+				<key>CanSleep</key>
+				<true/>
+				<key>Category</key>
+				<integer>1</integer>
+				<key>Density</key>
+				<real>0.20000000298023224</real>
+				<key>FixedRot</key>
+				<false/>
+				<key>Friction</key>
+				<real>0.20000000298023224</real>
+				<key>GravityScale</key>
+				<real>1</real>
+				<key>Group</key>
+				<integer>0</integer>
+				<key>HandledBySH</key>
+				<true/>
+				<key>IsBullet</key>
+				<false/>
+				<key>IsCircle</key>
+				<false/>
+				<key>IsSensor</key>
+				<false/>
+				<key>LinearDamping</key>
+				<real>0.0</real>
+				<key>LinearVelocity</key>
+				<string>{0, 0}</string>
+				<key>Mask</key>
+				<integer>65535</integer>
+				<key>Restitution</key>
+				<real>0.20000000298023224</real>
+				<key>ShapeBorder</key>
+				<string>{0, 0}</string>
+				<key>ShapeFixtures</key>
+				<array/>
+				<key>ShapePositionOffset</key>
+				<string>{0, 0}</string>
+				<key>Type</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
 	</array>
 	<key>ScenePreference</key>
 	<dict>
@@ -267,7 +495,7 @@
 		<key>LevelsPath</key>
 		<string>file://localhost/Users/ken/Development/projects/native/drawstory/drawstory/Resources/</string>
 		<key>PanValue</key>
-		<string>{143.37685731485109, 55.569749326042974}</string>
+		<string>{135.98044112756472, 62.966165692143285}</string>
 		<key>ProjectName</key>
 		<string>drawstory</string>
 		<key>SHScenesPath</key>
