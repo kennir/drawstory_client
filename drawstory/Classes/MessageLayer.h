@@ -10,7 +10,7 @@
 #define drawstory_MessageLayer_h
 
 #include "cocos2d.h"
-#include "LevelHelperLoader.h"
+
 
 class MessageLayer : public cocos2d::CCLayer
 {
@@ -38,13 +38,11 @@ public:
     virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
 protected:
-    
-    LHSprite* hitTest(const cocos2d::CCPoint& localPos) const;
+    cocos2d::CCSprite* hitTest(const cocos2d::CCPoint& localPos);
 protected:
-    LevelHelperLoader* level_;
     cocos2d::CCLabelTTF* label_;
     
-    LHSprite* trackingNode_;
+    cocos2d::CCSprite* trackingNode_;
     
     bool cancelButtonVisibled_;
     cocos2d::CCObject* delegate_;

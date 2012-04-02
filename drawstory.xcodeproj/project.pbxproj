@@ -14,14 +14,13 @@
 		BE5A7E521525DD520005D491 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A7E511525DD520005D491 /* libcurl.a */; };
 		BE5A7E581525DDF50005D491 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E571525DDF50005D491 /* jsoncpp.cpp */; };
 		BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */; };
-		BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */; };
-		BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E6815275D3E0005D491 /* messagelayer.plhs */; };
 		BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6A15275D640005D491 /* MessageLayer.cpp */; };
 		BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6D15282C6C0005D491 /* Game.cpp */; };
 		BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E761528DB400005D491 /* PaintingLayer.cpp */; };
-		BE5A7E7A152988F70005D491 /* GameListLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E79152988F60005D491 /* GameListLayer.cpp */; };
-		BE5A7E7C152989720005D491 /* gamelabel.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E7B152989720005D491 /* gamelabel.plhs */; };
-		BE5A7E7F1529898E0005D491 /* GameLabelLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */; };
+		BE5A7E8A1529A3FA0005D491 /* textures-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E861529A3FA0005D491 /* textures-hd.plist */; };
+		BE5A7E8B1529A3FA0005D491 /* textures-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E871529A3FA0005D491 /* textures-hd.png */; };
+		BE5A7E8C1529A3FA0005D491 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E881529A3FA0005D491 /* textures.plist */; };
+		BE5A7E8D1529A3FA0005D491 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E891529A3FA0005D491 /* textures.png */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
 		BEE30DD7152462F500F8AAE7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD6152462F500F8AAE7 /* OpenAL.framework */; };
@@ -199,34 +198,7 @@
 		BEE31014152462FA00F8AAE7 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BEE31013152462FA00F8AAE7 /* AppController.mm */; };
 		BEE31017152462FA00F8AAE7 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BEE31016152462FA00F8AAE7 /* RootViewController.mm */; };
 		BEE3101B152462FA00F8AAE7 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */; };
-		BEE31020152462FA00F8AAE7 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE3101F152462FA00F8AAE7 /* blocks.png */; };
 		BEE310291524632200F8AAE7 /* LobbyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE310281524632200F8AAE7 /* LobbyScene.cpp */; };
-		BEE3105A152464CD00F8AAE7 /* LHAnimationsExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3102C152464CD00F8AAE7 /* LHAnimationsExt.cpp */; };
-		BEE3105B152464CD00F8AAE7 /* LHJointsExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3102E152464CD00F8AAE7 /* LHJointsExt.cpp */; };
-		BEE3105C152464CD00F8AAE7 /* LHPathExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31030152464CD00F8AAE7 /* LHPathExt.cpp */; };
-		BEE3105D152464CD00F8AAE7 /* LHSpritesExt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31032152464CD00F8AAE7 /* LHSpritesExt.cpp */; };
-		BEE3105E152464CD00F8AAE7 /* LevelHelperLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31034152464CD00F8AAE7 /* LevelHelperLoader.cpp */; };
-		BEE3105F152464CD00F8AAE7 /* LICENSE_LevelHelper.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEE31037152464CD00F8AAE7 /* LICENSE_LevelHelper.txt */; };
-		BEE31060152464CD00F8AAE7 /* LHAnimationNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31039152464CD00F8AAE7 /* LHAnimationNode.cpp */; };
-		BEE31061152464CD00F8AAE7 /* LHBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3103B152464CD00F8AAE7 /* LHBatch.cpp */; };
-		BEE31062152464CD00F8AAE7 /* LHBezierNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3103D152464CD00F8AAE7 /* LHBezierNode.cpp */; };
-		BEE31063152464CD00F8AAE7 /* LHContactInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3103F152464CD00F8AAE7 /* LHContactInfo.cpp */; };
-		BEE31064152464CD00F8AAE7 /* LHContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31041152464CD00F8AAE7 /* LHContactListener.cpp */; };
-		BEE31065152464CD00F8AAE7 /* LHContactNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31043152464CD00F8AAE7 /* LHContactNode.cpp */; };
-		BEE31066152464CD00F8AAE7 /* LHCustomSpriteMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31045152464CD00F8AAE7 /* LHCustomSpriteMgr.cpp */; };
-		BEE31067152464CD00F8AAE7 /* LHJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31047152464CD00F8AAE7 /* LHJoint.cpp */; };
-		BEE31068152464CD00F8AAE7 /* LHParallaxNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31049152464CD00F8AAE7 /* LHParallaxNode.cpp */; };
-		BEE31069152464CD00F8AAE7 /* LHPathNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3104B152464CD00F8AAE7 /* LHPathNode.cpp */; };
-		BEE3106A152464CD00F8AAE7 /* LHSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3104D152464CD00F8AAE7 /* LHSettings.cpp */; };
-		BEE3106B152464CD00F8AAE7 /* LHSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3104F152464CD00F8AAE7 /* LHSprite.cpp */; };
-		BEE3106C152464CD00F8AAE7 /* LHTouchMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31051152464CD00F8AAE7 /* LHTouchMgr.cpp */; };
-		BEE3106D152464CD00F8AAE7 /* LHArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31054152464CD00F8AAE7 /* LHArray.cpp */; };
-		BEE3106E152464CD00F8AAE7 /* LHDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31056152464CD00F8AAE7 /* LHDictionary.cpp */; };
-		BEE3106F152464CD00F8AAE7 /* LHObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE31058152464CD00F8AAE7 /* LHObject.cpp */; };
-		BEE310781524672200F8AAE7 /* lobbyscene-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE310741524672200F8AAE7 /* lobbyscene-hd.png */; };
-		BEE310791524672200F8AAE7 /* lobbyscene.plhs in Resources */ = {isa = PBXBuildFile; fileRef = BEE310751524672200F8AAE7 /* lobbyscene.plhs */; };
-		BEE3107A1524672200F8AAE7 /* lobbyscene.png in Resources */ = {isa = PBXBuildFile; fileRef = BEE310761524672200F8AAE7 /* lobbyscene.png */; };
-		BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */ = {isa = PBXBuildFile; fileRef = BEE310771524672200F8AAE7 /* lobbyscene.pshs */; };
 		BEE3108C15246A4000F8AAE7 /* TextInputDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEE3108B15246A4000F8AAE7 /* TextInputDelegate.cpp */; };
 /* End PBXBuildFile section */
 
@@ -246,19 +218,16 @@
 		BE5A7E5915262B2B0005D491 /* MessageLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageLayer.h; path = Classes/MessageLayer.h; sourceTree = "<group>"; };
 		BE5A7E5A1526F72A0005D491 /* LoginLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginLayer.h; path = Classes/LoginLayer.h; sourceTree = "<group>"; };
 		BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoginLayer.cpp; path = Classes/LoginLayer.cpp; sourceTree = "<group>"; };
-		BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = registerlayer.plhs; path = Resources/registerlayer.plhs; sourceTree = "<group>"; };
-		BE5A7E6815275D3E0005D491 /* messagelayer.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = messagelayer.plhs; path = Resources/messagelayer.plhs; sourceTree = "<group>"; };
 		BE5A7E6A15275D640005D491 /* MessageLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MessageLayer.cpp; path = Classes/MessageLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E6C15282C580005D491 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Classes/Game.h; sourceTree = "<group>"; };
 		BE5A7E6D15282C6C0005D491 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = Classes/Game.cpp; sourceTree = "<group>"; };
 		BE5A7E741528C2C50005D491 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = Classes/types.h; sourceTree = "<group>"; };
 		BE5A7E751528DB330005D491 /* PaintingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingLayer.h; path = Classes/PaintingLayer.h; sourceTree = "<group>"; };
 		BE5A7E761528DB400005D491 /* PaintingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingLayer.cpp; path = Classes/PaintingLayer.cpp; sourceTree = "<group>"; };
-		BE5A7E78152988E50005D491 /* GameListLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameListLayer.h; path = Classes/GameListLayer.h; sourceTree = "<group>"; };
-		BE5A7E79152988F60005D491 /* GameListLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameListLayer.cpp; path = Classes/GameListLayer.cpp; sourceTree = "<group>"; };
-		BE5A7E7B152989720005D491 /* gamelabel.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gamelabel.plhs; path = Resources/gamelabel.plhs; sourceTree = "<group>"; };
-		BE5A7E7D152989820005D491 /* GameLabelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameLabelLayer.h; path = Classes/GameLabelLayer.h; sourceTree = "<group>"; };
-		BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameLabelLayer.cpp; path = Classes/GameLabelLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E861529A3FA0005D491 /* textures-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "textures-hd.plist"; path = "Resources/textures-hd.plist"; sourceTree = "<group>"; };
+		BE5A7E871529A3FA0005D491 /* textures-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textures-hd.png"; path = "Resources/textures-hd.png"; sourceTree = "<group>"; };
+		BE5A7E881529A3FA0005D491 /* textures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = textures.plist; path = Resources/textures.plist; sourceTree = "<group>"; };
+		BE5A7E891529A3FA0005D491 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textures.png; path = Resources/textures.png; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -626,57 +595,8 @@
 		BEE31016152462FA00F8AAE7 /* RootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = "<group>"; };
 		BEE31019152462FA00F8AAE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		BEE3101A152462FA00F8AAE7 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		BEE3101F152462FA00F8AAE7 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		BEE310271524631800F8AAE7 /* LobbyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LobbyScene.h; path = Classes/LobbyScene.h; sourceTree = "<group>"; };
 		BEE310281524632200F8AAE7 /* LobbyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LobbyScene.cpp; path = Classes/LobbyScene.cpp; sourceTree = "<group>"; };
-		BEE3102C152464CD00F8AAE7 /* LHAnimationsExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimationsExt.cpp; sourceTree = "<group>"; };
-		BEE3102D152464CD00F8AAE7 /* LHAnimationsExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimationsExt.h; sourceTree = "<group>"; };
-		BEE3102E152464CD00F8AAE7 /* LHJointsExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHJointsExt.cpp; sourceTree = "<group>"; };
-		BEE3102F152464CD00F8AAE7 /* LHJointsExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJointsExt.h; sourceTree = "<group>"; };
-		BEE31030152464CD00F8AAE7 /* LHPathExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPathExt.cpp; sourceTree = "<group>"; };
-		BEE31031152464CD00F8AAE7 /* LHPathExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPathExt.h; sourceTree = "<group>"; };
-		BEE31032152464CD00F8AAE7 /* LHSpritesExt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSpritesExt.cpp; sourceTree = "<group>"; };
-		BEE31033152464CD00F8AAE7 /* LHSpritesExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSpritesExt.h; sourceTree = "<group>"; };
-		BEE31034152464CD00F8AAE7 /* LevelHelperLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelHelperLoader.cpp; sourceTree = "<group>"; };
-		BEE31035152464CD00F8AAE7 /* LevelHelperLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelHelperLoader.h; sourceTree = "<group>"; };
-		BEE31036152464CD00F8AAE7 /* lhConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhConfig.h; sourceTree = "<group>"; };
-		BEE31037152464CD00F8AAE7 /* LICENSE_LevelHelper.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_LevelHelper.txt; sourceTree = "<group>"; };
-		BEE31039152464CD00F8AAE7 /* LHAnimationNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHAnimationNode.cpp; sourceTree = "<group>"; };
-		BEE3103A152464CD00F8AAE7 /* LHAnimationNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHAnimationNode.h; sourceTree = "<group>"; };
-		BEE3103B152464CD00F8AAE7 /* LHBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBatch.cpp; sourceTree = "<group>"; };
-		BEE3103C152464CD00F8AAE7 /* LHBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBatch.h; sourceTree = "<group>"; };
-		BEE3103D152464CD00F8AAE7 /* LHBezierNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHBezierNode.cpp; sourceTree = "<group>"; };
-		BEE3103E152464CD00F8AAE7 /* LHBezierNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHBezierNode.h; sourceTree = "<group>"; };
-		BEE3103F152464CD00F8AAE7 /* LHContactInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHContactInfo.cpp; sourceTree = "<group>"; };
-		BEE31040152464CD00F8AAE7 /* LHContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHContactInfo.h; sourceTree = "<group>"; };
-		BEE31041152464CD00F8AAE7 /* LHContactListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHContactListener.cpp; sourceTree = "<group>"; };
-		BEE31042152464CD00F8AAE7 /* LHContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHContactListener.h; sourceTree = "<group>"; };
-		BEE31043152464CD00F8AAE7 /* LHContactNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHContactNode.cpp; sourceTree = "<group>"; };
-		BEE31044152464CD00F8AAE7 /* LHContactNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHContactNode.h; sourceTree = "<group>"; };
-		BEE31045152464CD00F8AAE7 /* LHCustomSpriteMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHCustomSpriteMgr.cpp; sourceTree = "<group>"; };
-		BEE31046152464CD00F8AAE7 /* LHCustomSpriteMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCustomSpriteMgr.h; sourceTree = "<group>"; };
-		BEE31047152464CD00F8AAE7 /* LHJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHJoint.cpp; sourceTree = "<group>"; };
-		BEE31048152464CD00F8AAE7 /* LHJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJoint.h; sourceTree = "<group>"; };
-		BEE31049152464CD00F8AAE7 /* LHParallaxNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHParallaxNode.cpp; sourceTree = "<group>"; };
-		BEE3104A152464CD00F8AAE7 /* LHParallaxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHParallaxNode.h; sourceTree = "<group>"; };
-		BEE3104B152464CD00F8AAE7 /* LHPathNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHPathNode.cpp; sourceTree = "<group>"; };
-		BEE3104C152464CD00F8AAE7 /* LHPathNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHPathNode.h; sourceTree = "<group>"; };
-		BEE3104D152464CD00F8AAE7 /* LHSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSettings.cpp; sourceTree = "<group>"; };
-		BEE3104E152464CD00F8AAE7 /* LHSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSettings.h; sourceTree = "<group>"; };
-		BEE3104F152464CD00F8AAE7 /* LHSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHSprite.cpp; sourceTree = "<group>"; };
-		BEE31050152464CD00F8AAE7 /* LHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSprite.h; sourceTree = "<group>"; };
-		BEE31051152464CD00F8AAE7 /* LHTouchMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHTouchMgr.cpp; sourceTree = "<group>"; };
-		BEE31052152464CD00F8AAE7 /* LHTouchMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTouchMgr.h; sourceTree = "<group>"; };
-		BEE31054152464CD00F8AAE7 /* LHArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHArray.cpp; sourceTree = "<group>"; };
-		BEE31055152464CD00F8AAE7 /* LHArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHArray.h; sourceTree = "<group>"; };
-		BEE31056152464CD00F8AAE7 /* LHDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHDictionary.cpp; sourceTree = "<group>"; };
-		BEE31057152464CD00F8AAE7 /* LHDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDictionary.h; sourceTree = "<group>"; };
-		BEE31058152464CD00F8AAE7 /* LHObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LHObject.cpp; sourceTree = "<group>"; };
-		BEE31059152464CD00F8AAE7 /* LHObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHObject.h; sourceTree = "<group>"; };
-		BEE310741524672200F8AAE7 /* lobbyscene-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lobbyscene-hd.png"; path = "Resources/lobbyscene-hd.png"; sourceTree = "<group>"; };
-		BEE310751524672200F8AAE7 /* lobbyscene.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lobbyscene.plhs; path = Resources/lobbyscene.plhs; sourceTree = "<group>"; };
-		BEE310761524672200F8AAE7 /* lobbyscene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lobbyscene.png; path = Resources/lobbyscene.png; sourceTree = "<group>"; };
-		BEE310771524672200F8AAE7 /* lobbyscene.pshs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lobbyscene.pshs; path = Resources/lobbyscene.pshs; sourceTree = "<group>"; };
 		BEE3108A152469FE00F8AAE7 /* TextInputDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextInputDelegate.h; path = Classes/TextInputDelegate.h; sourceTree = "<group>"; };
 		BEE3108B15246A4000F8AAE7 /* TextInputDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextInputDelegate.cpp; path = Classes/TextInputDelegate.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -747,15 +667,11 @@
 			name = Profiles;
 			sourceTree = "<group>";
 		};
-		BE5A7E801529899B0005D491 /* GameList */ = {
+		BE5A7E801529899B0005D491 /* GameListNode */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A7E78152988E50005D491 /* GameListLayer.h */,
-				BE5A7E79152988F60005D491 /* GameListLayer.cpp */,
-				BE5A7E7D152989820005D491 /* GameLabelLayer.h */,
-				BE5A7E7E1529898D0005D491 /* GameLabelLayer.cpp */,
 			);
-			name = GameList;
+			name = GameListNode;
 			sourceTree = "<group>";
 		};
 		BEE30DC3152462F500F8AAE7 = {
@@ -806,14 +722,11 @@
 		BEE30DE3152462F500F8AAE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A7E7B152989720005D491 /* gamelabel.plhs */,
-				BE5A7E5D1526F84E0005D491 /* registerlayer.plhs */,
-				BEE310741524672200F8AAE7 /* lobbyscene-hd.png */,
-				BEE310751524672200F8AAE7 /* lobbyscene.plhs */,
-				BEE310761524672200F8AAE7 /* lobbyscene.png */,
-				BE5A7E6815275D3E0005D491 /* messagelayer.plhs */,
-				BEE310771524672200F8AAE7 /* lobbyscene.pshs */,
 				BEE30DE4152462F500F8AAE7 /* CloseNormal.png */,
+				BE5A7E861529A3FA0005D491 /* textures-hd.plist */,
+				BE5A7E871529A3FA0005D491 /* textures-hd.png */,
+				BE5A7E881529A3FA0005D491 /* textures.plist */,
+				BE5A7E891529A3FA0005D491 /* textures.png */,
 				BEE30DE6152462F500F8AAE7 /* CloseSelected.png */,
 				BEE30DE8152462F500F8AAE7 /* Default.png */,
 				BEE30DEA152462F500F8AAE7 /* HelloWorld.png */,
@@ -825,7 +738,6 @@
 				BEE30DF6152462F500F8AAE7 /* Icon@2x.png */,
 				BEE30DF8152462F500F8AAE7 /* Info.plist */,
 				BEE30DF9152462F500F8AAE7 /* iTunesArtwork */,
-				BEE3101F152462FA00F8AAE7 /* blocks.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -834,7 +746,6 @@
 			isa = PBXGroup;
 			children = (
 				BE5A7E531525DDF50005D491 /* jsoncpp */,
-				BEE3102A152464CD00F8AAE7 /* LevelHelper */,
 				BEE30DFC152462F500F8AAE7 /* cocos2dx */,
 				BEE30F69152462F900F8AAE7 /* CocosDenshion */,
 				BEE30F7D152462F900F8AAE7 /* Box2D */,
@@ -1513,7 +1424,7 @@
 		BEE310261524630400F8AAE7 /* lobbyscene */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A7E801529899B0005D491 /* GameList */,
+				BE5A7E801529899B0005D491 /* GameListNode */,
 				BEE310271524631800F8AAE7 /* LobbyScene.h */,
 				BEE310281524632200F8AAE7 /* LobbyScene.cpp */,
 				BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */,
@@ -1526,82 +1437,6 @@
 				BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */,
 			);
 			name = lobbyscene;
-			sourceTree = "<group>";
-		};
-		BEE3102A152464CD00F8AAE7 /* LevelHelper */ = {
-			isa = PBXGroup;
-			children = (
-				BEE3102B152464CD00F8AAE7 /* ExtendingCategories */,
-				BEE31034152464CD00F8AAE7 /* LevelHelperLoader.cpp */,
-				BEE31035152464CD00F8AAE7 /* LevelHelperLoader.h */,
-				BEE31036152464CD00F8AAE7 /* lhConfig.h */,
-				BEE31037152464CD00F8AAE7 /* LICENSE_LevelHelper.txt */,
-				BEE31038152464CD00F8AAE7 /* Nodes */,
-				BEE31053152464CD00F8AAE7 /* Utilities */,
-			);
-			name = LevelHelper;
-			path = Classes/LevelHelper;
-			sourceTree = "<group>";
-		};
-		BEE3102B152464CD00F8AAE7 /* ExtendingCategories */ = {
-			isa = PBXGroup;
-			children = (
-				BEE3102C152464CD00F8AAE7 /* LHAnimationsExt.cpp */,
-				BEE3102D152464CD00F8AAE7 /* LHAnimationsExt.h */,
-				BEE3102E152464CD00F8AAE7 /* LHJointsExt.cpp */,
-				BEE3102F152464CD00F8AAE7 /* LHJointsExt.h */,
-				BEE31030152464CD00F8AAE7 /* LHPathExt.cpp */,
-				BEE31031152464CD00F8AAE7 /* LHPathExt.h */,
-				BEE31032152464CD00F8AAE7 /* LHSpritesExt.cpp */,
-				BEE31033152464CD00F8AAE7 /* LHSpritesExt.h */,
-			);
-			path = ExtendingCategories;
-			sourceTree = "<group>";
-		};
-		BEE31038152464CD00F8AAE7 /* Nodes */ = {
-			isa = PBXGroup;
-			children = (
-				BEE31039152464CD00F8AAE7 /* LHAnimationNode.cpp */,
-				BEE3103A152464CD00F8AAE7 /* LHAnimationNode.h */,
-				BEE3103B152464CD00F8AAE7 /* LHBatch.cpp */,
-				BEE3103C152464CD00F8AAE7 /* LHBatch.h */,
-				BEE3103D152464CD00F8AAE7 /* LHBezierNode.cpp */,
-				BEE3103E152464CD00F8AAE7 /* LHBezierNode.h */,
-				BEE3103F152464CD00F8AAE7 /* LHContactInfo.cpp */,
-				BEE31040152464CD00F8AAE7 /* LHContactInfo.h */,
-				BEE31041152464CD00F8AAE7 /* LHContactListener.cpp */,
-				BEE31042152464CD00F8AAE7 /* LHContactListener.h */,
-				BEE31043152464CD00F8AAE7 /* LHContactNode.cpp */,
-				BEE31044152464CD00F8AAE7 /* LHContactNode.h */,
-				BEE31045152464CD00F8AAE7 /* LHCustomSpriteMgr.cpp */,
-				BEE31046152464CD00F8AAE7 /* LHCustomSpriteMgr.h */,
-				BEE31047152464CD00F8AAE7 /* LHJoint.cpp */,
-				BEE31048152464CD00F8AAE7 /* LHJoint.h */,
-				BEE31049152464CD00F8AAE7 /* LHParallaxNode.cpp */,
-				BEE3104A152464CD00F8AAE7 /* LHParallaxNode.h */,
-				BEE3104B152464CD00F8AAE7 /* LHPathNode.cpp */,
-				BEE3104C152464CD00F8AAE7 /* LHPathNode.h */,
-				BEE3104D152464CD00F8AAE7 /* LHSettings.cpp */,
-				BEE3104E152464CD00F8AAE7 /* LHSettings.h */,
-				BEE3104F152464CD00F8AAE7 /* LHSprite.cpp */,
-				BEE31050152464CD00F8AAE7 /* LHSprite.h */,
-				BEE31051152464CD00F8AAE7 /* LHTouchMgr.cpp */,
-				BEE31052152464CD00F8AAE7 /* LHTouchMgr.h */,
-			);
-			path = Nodes;
-			sourceTree = "<group>";
-		};
-		BEE31053152464CD00F8AAE7 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BEE31054152464CD00F8AAE7 /* LHArray.cpp */,
-				BEE31055152464CD00F8AAE7 /* LHArray.h */,
-				BEE31056152464CD00F8AAE7 /* LHDictionary.cpp */,
-				BEE31057152464CD00F8AAE7 /* LHDictionary.h */,
-				BEE31058152464CD00F8AAE7 /* LHObject.cpp */,
-				BEE31059152464CD00F8AAE7 /* LHObject.h */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		BEE31089152469CF00F8AAE7 /* common */ = {
@@ -1674,15 +1509,10 @@
 				BEE30DF5152462F500F8AAE7 /* Icon.png in Resources */,
 				BEE30DF7152462F500F8AAE7 /* Icon@2x.png in Resources */,
 				BEE30DFA152462F500F8AAE7 /* iTunesArtwork in Resources */,
-				BEE31020152462FA00F8AAE7 /* blocks.png in Resources */,
-				BEE3105F152464CD00F8AAE7 /* LICENSE_LevelHelper.txt in Resources */,
-				BEE310781524672200F8AAE7 /* lobbyscene-hd.png in Resources */,
-				BEE310791524672200F8AAE7 /* lobbyscene.plhs in Resources */,
-				BEE3107A1524672200F8AAE7 /* lobbyscene.png in Resources */,
-				BEE3107B1524672200F8AAE7 /* lobbyscene.pshs in Resources */,
-				BE5A7E5E1526F84E0005D491 /* registerlayer.plhs in Resources */,
-				BE5A7E6915275D3E0005D491 /* messagelayer.plhs in Resources */,
-				BE5A7E7C152989720005D491 /* gamelabel.plhs in Resources */,
+				BE5A7E8A1529A3FA0005D491 /* textures-hd.plist in Resources */,
+				BE5A7E8B1529A3FA0005D491 /* textures-hd.png in Resources */,
+				BE5A7E8C1529A3FA0005D491 /* textures.plist in Resources */,
+				BE5A7E8D1529A3FA0005D491 /* textures.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1852,27 +1682,6 @@
 				BEE31017152462FA00F8AAE7 /* RootViewController.mm in Sources */,
 				BEE3101B152462FA00F8AAE7 /* AppDelegate.cpp in Sources */,
 				BEE310291524632200F8AAE7 /* LobbyScene.cpp in Sources */,
-				BEE3105A152464CD00F8AAE7 /* LHAnimationsExt.cpp in Sources */,
-				BEE3105B152464CD00F8AAE7 /* LHJointsExt.cpp in Sources */,
-				BEE3105C152464CD00F8AAE7 /* LHPathExt.cpp in Sources */,
-				BEE3105D152464CD00F8AAE7 /* LHSpritesExt.cpp in Sources */,
-				BEE3105E152464CD00F8AAE7 /* LevelHelperLoader.cpp in Sources */,
-				BEE31060152464CD00F8AAE7 /* LHAnimationNode.cpp in Sources */,
-				BEE31061152464CD00F8AAE7 /* LHBatch.cpp in Sources */,
-				BEE31062152464CD00F8AAE7 /* LHBezierNode.cpp in Sources */,
-				BEE31063152464CD00F8AAE7 /* LHContactInfo.cpp in Sources */,
-				BEE31064152464CD00F8AAE7 /* LHContactListener.cpp in Sources */,
-				BEE31065152464CD00F8AAE7 /* LHContactNode.cpp in Sources */,
-				BEE31066152464CD00F8AAE7 /* LHCustomSpriteMgr.cpp in Sources */,
-				BEE31067152464CD00F8AAE7 /* LHJoint.cpp in Sources */,
-				BEE31068152464CD00F8AAE7 /* LHParallaxNode.cpp in Sources */,
-				BEE31069152464CD00F8AAE7 /* LHPathNode.cpp in Sources */,
-				BEE3106A152464CD00F8AAE7 /* LHSettings.cpp in Sources */,
-				BEE3106B152464CD00F8AAE7 /* LHSprite.cpp in Sources */,
-				BEE3106C152464CD00F8AAE7 /* LHTouchMgr.cpp in Sources */,
-				BEE3106D152464CD00F8AAE7 /* LHArray.cpp in Sources */,
-				BEE3106E152464CD00F8AAE7 /* LHDictionary.cpp in Sources */,
-				BEE3106F152464CD00F8AAE7 /* LHObject.cpp in Sources */,
 				BEE3108C15246A4000F8AAE7 /* TextInputDelegate.cpp in Sources */,
 				BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */,
 				BE5A7E401524CF820005D491 /* LobbySceneLogic.cpp in Sources */,
@@ -1883,8 +1692,6 @@
 				BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */,
 				BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */,
 				BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */,
-				BE5A7E7A152988F70005D491 /* GameListLayer.cpp in Sources */,
-				BE5A7E7F1529898E0005D491 /* GameLabelLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

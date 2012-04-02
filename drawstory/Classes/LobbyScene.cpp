@@ -10,13 +10,14 @@
 #include "LobbySceneLogic.h"
 #include "RegisterLayer.h"
 #include "MessageLayer.h"
-#include "GameListLayer.h"
+
 
 using namespace cocos2d;
 
 
-enum { kTagRegisterLayer = 1000,kTagGameListLayer,kTagMessageLayer, };
-enum { kZGameListLayer = 10 };
+enum { kTagRegisterLayer = 1000,kTagGameListLayer,kTagMessageLayer, kTagStartGameButton };
+enum { kZUIButtons = 1, kZUILabels = 1,kZGameListLayer = 10 };
+
 enum { kMsgTagWaitingQueryRandomGame = 1, };
 
 CCScene* LobbyScene::scene()
@@ -33,10 +34,8 @@ CCScene* LobbyScene::scene()
 
 
 LobbyScene::LobbyScene()
-: level_(NULL)
-, logic_(NULL)
+: logic_(NULL)
 , trackingNode_(NULL)
-, gameListLayer_(NULL)
 , registerLayer_(NULL)
 , messageLayer_(NULL)
 {
@@ -49,12 +48,10 @@ LobbyScene::~LobbyScene()
     pthread_mutex_destroy(&stateMutex_);
     pthread_mutex_destroy(&eventMutex_);
     
-    CC_SAFE_RELEASE_NULL(gameListLayer_);
     CC_SAFE_RELEASE_NULL(registerLayer_);
     CC_SAFE_RELEASE_NULL(messageLayer_);
     
     delete logic_;
-    delete level_;
 }
 
 bool LobbyScene::init()
@@ -63,20 +60,35 @@ bool LobbyScene::init()
     do 
     {
         CC_BREAK_IF(!CCLayer::init());
-        // load level's
-        level_ = new LevelHelperLoader("lobbyscene.plhs");
-        CC_BREAK_IF(!level_);
-        level_->addObjectsToWorld(NULL, this);
+        // initialize levels
+        
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+
+        
+        //== background
+        CCSprite* background = CCSprite::spriteWithSpriteFrameName("background");
+        background->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height * 0.5f));
+        CC_BREAK_IF(!background);
+        addChild(background);
+        
+        //== top bar
+        CCSprite* bannerup = CCSprite::spriteWithSpriteFrameName("banner_up");
+        bannerup->setPosition(CCPointMake(winSize.width * 0.5f, 
+                                          winSize.height - (bannerup->getContentSize().height * 0.5f)));
+        CC_BREAK_IF(!bannerup);
+        addChild(bannerup);
+        
+        //== start button
+        CCSprite* startgame = CCSprite::spriteWithSpriteFrameName("startgame");
+        startgame->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 100.0f));
+        CC_BREAK_IF(!startgame);
+        addChild(startgame,kZUIButtons,kTagStartGameButton);
+        
+
         
         logic_ = new LobbySceneLogic(this);
         CC_BREAK_IF(!logic_->init());
         
-        // create game list layer
-        gameListLayer_ = GameListLayer::node();
-        CC_BREAK_IF(!gameListLayer_);
-        gameListLayer_->retain();
-        gameListLayer_->setPosition(CCPointMake(29.5f,30.0f));
-        addChild(gameListLayer_,kZGameListLayer,kTagGameListLayer);
         
         
         
@@ -173,7 +185,6 @@ void LobbyScene::processLogicEvent() {
                 CCLOG("==========scheduled: refreshGamesForUser");
                 schedule(schedule_selector(LobbyScene::refreshGamesForUser),30.0f);
                 // update game list
-                gameListLayer_->synchronizeGameList();
                 break;
             default:
                 break;
@@ -227,7 +238,7 @@ void LobbyScene::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {
     if(trackingNode_)
     {
-        LHSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
+        CCSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
         if(node != trackingNode_)
         {
             trackingNode_->setScale(1.0f);
@@ -240,7 +251,7 @@ void LobbyScene::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {
     if(trackingNode_)
     {
-        LHSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
+        CCSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
         if(node == trackingNode_)
         {
             // on button clicked
@@ -262,11 +273,12 @@ void LobbyScene::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *eve
 }
 
 
-LHSprite* LobbyScene::hitTestWithButton(const cocos2d::CCPoint &localPos) const
+CCSprite* LobbyScene::hitTestWithButton(const cocos2d::CCPoint &localPos)
 {
-    LHSprite* node = NULL;
+    CCSprite* node = NULL;
 
-    LHSprite* button = level_->spriteWithUniqueName("startgame");
+    CCSprite* button = static_cast<CCSprite*>(getChildByTag(kTagStartGameButton));
+    CC_ASSERT(button != NULL);
     if(CCRect::CCRectContainsPoint(button->boundingBox(), localPos))
         node = button;
     return node;

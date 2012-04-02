@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>background</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 0}, {320, 480}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {320, 480}}</string>
+			<key>sourceSize</key>
+			<string>{329, 480}</string>
+		</dict>
+		<key>banner_down</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 773}, {261, 8}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 773}, {261, 8}}</string>
+			<key>sourceSize</key>
+			<string>{261, 8}</string>
+		</dict>
+		<key>banner_up</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 483}, {320, 58}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 483}, {320, 58}}</string>
+			<key>sourceSize</key>
+			<string>{320, 58}</string>
+		</dict>
+		<key>bill</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 543}, {320, 57}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 543}, {320, 57}}</string>
+			<key>sourceSize</key>
+			<string>{320, 57}</string>
+		</dict>
+		<key>email_background</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 0}, {250, 285}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 0}, {250, 285}}</string>
+			<key>sourceSize</key>
+			<string>{250, 285}</string>
+		</dict>
+		<key>email_start</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 483}, {115, 15}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 483}, {115, 15}}</string>
+			<key>sourceSize</key>
+			<string>{115, 15}</string>
+		</dict>
+		<key>gameplay</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 672}, {276, 55}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 672}, {276, 55}}</string>
+			<key>sourceSize</key>
+			<string>{276, 55}</string>
+		</dict>
+		<key>startgame</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 730}, {265, 55}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 730}, {265, 55}}</string>
+			<key>sourceSize</key>
+			<string>{265, 55}</string>
+		</dict>
+		<key>textfield</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 442}, {199, 26}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 442}, {199, 26}}</string>
+			<key>sourceSize</key>
+			<string>{199, 26}</string>
+		</dict>
+		<key>ui_banner</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 603}, {261, 67}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 603}, {261, 67}}</string>
+			<key>sourceSize</key>
+			<string>{261, 67}</string>
+		</dict>
+		<key>ui_banner_button</key>
+		<dict>
+			<key>frame</key>
+			<string>{{291, 483}, {23, 23}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{291, 483}, {23, 23}}</string>
+			<key>sourceSize</key>
+			<string>{23, 23}</string>
+		</dict>
+		<key>ui_button</key>
+		<dict>
+			<key>frame</key>
+			<string>{{847, 442}, {38, 38}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{847, 442}, {38, 38}}</string>
+			<key>sourceSize</key>
+			<string>{38, 38}</string>
+		</dict>
+		<key>ui_mail</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 339}, {250, 49}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 339}, {250, 49}}</string>
+			<key>sourceSize</key>
+			<string>{250, 49}</string>
+		</dict>
+		<key>ui_mask</key>
+		<dict>
+			<key>frame</key>
+			<string>{{323, 0}, {320, 480}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{323, 0}, {320, 480}}</string>
+			<key>sourceSize</key>
+			<string>{320, 480}</string>
+		</dict>
+		<key>ui_pencil</key>
+		<dict>
+			<key>frame</key>
+			<string>{{586, 603}, {46, 47}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{586, 603}, {46, 47}}</string>
+			<key>sourceSize</key>
+			<string>{46, 47}</string>
+		</dict>
+		<key>ui_random</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 391}, {250, 49}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 391}, {250, 49}}</string>
+			<key>sourceSize</key>
+			<string>{250, 49}</string>
+		</dict>
+		<key>ui_set</key>
+		<dict>
+			<key>frame</key>
+			<string>{{601, 672}, {41, 41}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{601, 672}, {41, 41}}</string>
+			<key>sourceSize</key>
+			<string>{41, 41}</string>
+		</dict>
+		<key>ui_start</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 483}, {288, 288}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 483}, {288, 288}}</string>
+			<key>sourceSize</key>
+			<string>{288, 288}</string>
+		</dict>
+		<key>ui_user</key>
+		<dict>
+			<key>frame</key>
+			<string>{{645, 288}, {250, 49}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{645, 288}, {250, 49}}</string>
+			<key>sourceSize</key>
+			<string>{250, 49}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{896, 786}</string>
+	</dict>
+</dict>
+</plist>

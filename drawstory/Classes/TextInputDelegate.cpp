@@ -24,6 +24,7 @@ TextInputDelegate::~TextInputDelegate()
 
 
 CCTextFieldTTF* TextInputDelegate::addTextField(const cocos2d::CCPoint &pos, 
+                                                int z,
                                                 int tag, 
                                                 const char *placehold, 
                                                 const char *fontName, 
@@ -35,7 +36,7 @@ CCTextFieldTTF* TextInputDelegate::addTextField(const cocos2d::CCPoint &pos,
     CC_ASSERT(field != NULL);
     field->setPosition(pos);
     field->setDelegate(this);
-    addChild(field, 0, tag);
+    addChild(field, z, tag);
     
     // add to text field arrays
     textFields_.push_back(field);

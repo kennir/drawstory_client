@@ -11,6 +11,9 @@
 using namespace cocos2d;
 
 
+enum { kTagCancelButton = 1000 };
+enum { kZUIButtons = 1, kZUILabels = 1, };
+
 MessageLayer* MessageLayer::layerWithLabel(const std::string &label,                                        
                                            bool showCancelButton,
                                            CCObject* delegate,
@@ -28,8 +31,7 @@ MessageLayer* MessageLayer::layerWithLabel(const std::string &label,
 
 
 MessageLayer::MessageLayer()
-: level_(NULL)
-, label_(NULL)
+: label_(NULL)
 , trackingNode_(NULL)
 , cancelButtonVisibled_(true)
 , delegate_(NULL)
@@ -41,7 +43,6 @@ MessageLayer::MessageLayer()
 
 MessageLayer::~MessageLayer()
 {
-    delete level_;
 }
 
 
@@ -50,17 +51,24 @@ bool MessageLayer::init()
     bool result = false;
     do {
         CC_BREAK_IF(!CCLayer::init());
+
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
         
-        level_ = new LevelHelperLoader("messagelayer.plhs");
-        CC_BREAK_IF(!level_);
-        level_->addObjectsToWorld(NULL, this);
+        CCSprite* background = CCSprite::spriteWithSpriteFrameName("background");
+        background->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height * 0.5f));
+        addChild(background);
+        
+        // cancel button
+        CCSprite* cancelbutton = CCSprite::spriteWithSpriteFrameName("ui_banner_button");
+        cancelbutton->setPosition(CCPointMake(300.0f,460.0f));
+        addChild(cancelbutton,kZUIButtons,kTagCancelButton);
         
         // create label
         label_ = CCLabelTTF::labelWithString("", 
                                              CCSizeMake(320, 480), 
                                              CCTextAlignmentCenter, 
-                                             "Verdana", 
-                                             16.0f);
+                                             "Verdana-Bold", 
+                                             18.0f);
         label_->setPosition(CCPointMake(160,240));
         addChild(label_);
 
@@ -80,7 +88,8 @@ void MessageLayer::setCancelButton(bool showCancelButton,cocos2d::CCObject* dele
 {
     if(showCancelButton != cancelButtonVisibled_)
     {
-        LHSprite* button = level_->spriteWithUniqueName("ui_button_cancel");
+        CCSprite* button = static_cast<CCSprite*>(getChildByTag(kTagCancelButton));
+        CC_ASSERT(button != NULL);
         button->setIsVisible(showCancelButton);
         
         cancelButtonVisibled_ = showCancelButton;
@@ -113,7 +122,7 @@ bool MessageLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event
 
 void MessageLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
     if(trackingNode_) {
-        LHSprite* node = hitTest(convertTouchToNodeSpace(touch));
+        CCSprite* node = hitTest(convertTouchToNodeSpace(touch));
         if(node != trackingNode_) {
             trackingNode_->setScale(1.0f);
             trackingNode_ = NULL;
@@ -123,8 +132,10 @@ void MessageLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event
 
 void MessageLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
     if(trackingNode_) {
-        LHSprite* node = hitTest(convertTouchToNodeSpace(touch));
+        CCSprite* node = hitTest(convertTouchToNodeSpace(touch));
         if(node == trackingNode_ && selector_ && delegate_) {
+            CCLOG("MessageLayer::ccTouchEnded:Cancel button clicked");
+            label_->setString("正在取消...");
             (delegate_->*selector_)();
         }
         
@@ -141,12 +152,10 @@ void MessageLayer::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *e
 }
 
 
-LHSprite* MessageLayer::hitTest(const cocos2d::CCPoint &localPos) const 
-{
-    LHSprite* node = NULL;
-    if(cancelButtonVisibled_)
-    {
-        LHSprite* cancelButton = level_->spriteWithUniqueName("ui_button_cancel");
+CCSprite* MessageLayer::hitTest(const cocos2d::CCPoint &localPos) {
+    CCSprite* node = NULL;
+    if(cancelButtonVisibled_) {
+        CCSprite* cancelButton = static_cast<CCSprite*>(getChildByTag(kTagCancelButton)); 
         if(CCRect::CCRectContainsPoint(cancelButton->boundingBox(), localPos))
             node = cancelButton;
     }

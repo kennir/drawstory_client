@@ -25,6 +25,7 @@ public:
     virtual void onTextFieldClicked(cocos2d::CCTextFieldTTF* field, bool clicked);
     
     cocos2d::CCTextFieldTTF* addTextField(const cocos2d::CCPoint& pos,
+                                          int z,
                                           int tag,
                                           const char* placehold,
                                           const char* fontName,
@@ -47,7 +48,7 @@ public:
     virtual void onTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event) { }
     virtual void onTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event) { }
     
-    virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField) const { return textField->boundingBox(); }
+    virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField) { return textField->boundingBox(); }
     virtual int getMaximumCharacters(cocos2d::CCTextFieldTTF* textField) const { return kDefaultMaximumCharacter; }
     
 protected:

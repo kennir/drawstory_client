@@ -11,7 +11,7 @@
 
 #include "cocos2d.h"
 #include "TextInputDelegate.h"
-#include "LevelHelperLoader.h"
+
 
 class RegisterLayer : public TextInputDelegate
 {
@@ -22,8 +22,6 @@ public:
     virtual ~RegisterLayer();
     
     virtual bool init();
-    
-
 protected:    
     virtual void onEnter();
     virtual void onTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
@@ -31,13 +29,12 @@ protected:
     virtual void onTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void onTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);   
     
-    virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField) const;
+    virtual cocos2d::CCRect getTextFieldRect(cocos2d::CCTextFieldTTF* textField);
     virtual int getMaximumCharacters(cocos2d::CCTextFieldTTF* textField) const;
 protected:
-    LHSprite* hitTestWithButton(const cocos2d::CCPoint& localPos);
+    cocos2d::CCSprite* hitTestWithButton(const cocos2d::CCPoint& localPos);
 protected:
-    LevelHelperLoader* level_;
-    LHSprite* trackingButton_;
+    cocos2d::CCSprite* trackingButton_;
 };
 
 

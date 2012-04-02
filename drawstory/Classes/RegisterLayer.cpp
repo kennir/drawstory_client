@@ -11,9 +11,20 @@
 #include "LobbySceneLogic.h"
 #include "UserProfile.h"
 
+using namespace cocos2d;
+
+
+enum {
+    kZUILabel = 1,
+    kZUITextField = 2,
+};
+
 enum {
     kTagEmail       = 1000,
+    kTagEmailBG,
     kTagUsername,
+    kTagUsernameBG,
+    kTagStartButton,
 }; 
 
 enum { 
@@ -23,8 +34,7 @@ enum {
 
 
 RegisterLayer::RegisterLayer()
-: level_(NULL)
-, trackingButton_(NULL)
+: trackingButton_(NULL)
 {
     
 }
@@ -32,7 +42,7 @@ RegisterLayer::RegisterLayer()
 RegisterLayer::~RegisterLayer()
 {
     CCLOG("RegisterLayer::~RegisterLayer()");
-    delete level_;
+
 }
 
 bool RegisterLayer::init()
@@ -41,20 +51,34 @@ bool RegisterLayer::init()
     do {
         CC_BREAK_IF(!TextInputDelegate::init()); 
         
-        // initialize level helper
-        level_ = new LevelHelperLoader("registerlayer.plhs");
-        CC_BREAK_IF(!level_);
-        level_->addObjectsToWorld(NULL, this);
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+
+        // add background
+        CCSprite* background = CCSprite::spriteWithSpriteFrameName("email_background");
+        background->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height * 0.5f));
+        CC_ASSERT(background);
+        addChild(background);
         
-        // create email text filed
-//        CCTextFieldTTF* field = addTextField(CCPointMake(60.0f, 308.0f), kTagEmail, "输入邮件地址登陆", "Thonburi", 14);
-        CCTextFieldTTF* field = addTextField(CCPointMake(160.0f, 308.0f), kTagEmail, "输入邮件地址登陆", "Thonburi", 14);
-//        field->setAnchorPoint(CCPointMake(0.0f, 0.5f));
+        
+        CCPoint emailTextFieldPos = CCPointMake(158.0f, 308.0f);
+        CCSprite* emailbg = CCSprite::spriteWithSpriteFrameName("textfield");
+        emailbg->setPosition(emailTextFieldPos);
+        addChild(emailbg,kZUILabel,kTagEmailBG);
+        CCTextFieldTTF* field = addTextField(emailTextFieldPos, kZUITextField,kTagEmail, "输入邮件地址登陆", "Thonburi", 14);
         field->setColor(ccBLUE);
-        // create user name text field
-        field = addTextField(CCPointMake(160.0f, 221.0f), kTagUsername, "输入用户名(推荐)",  "Thonburi", 14);
-//        field->setAnchorPoint(CCPointMake(0.0f, 0.5f));
+        
+        CCPoint nameTextFieldPos = CCPointMake(158.0f,221.0f);
+        CCSprite* namebg = CCSprite::spriteWithSpriteFrameName("textfield");
+        namebg->setPosition(nameTextFieldPos);
+        addChild(namebg,kZUILabel,kTagUsernameBG);
+        field = addTextField(nameTextFieldPos, kZUITextField, kTagUsername, "输入用户名(推荐)",  "Thonburi", 14);
         field->setColor(ccBLACK);
+        
+        CCSprite* startbutton = CCSprite::spriteWithSpriteFrameName("email_start");
+        startbutton->setPosition(CCPointMake(160.0f, 180.0f));
+        addChild(startbutton,kZUILabel,kTagStartButton);
+        
+        
         
         result = true;
     } while (0);
@@ -84,7 +108,7 @@ void RegisterLayer::onTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *even
 {
     if(trackingButton_)
     {
-        LHSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
+        CCSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
         if(node != trackingButton_)
         {
             trackingButton_->setScale(1.0f);
@@ -131,29 +155,16 @@ int RegisterLayer::getMaximumCharacters(cocos2d::CCTextFieldTTF *textField) cons
     return maxChar;
 }
 
-CCRect RegisterLayer::getTextFieldRect(cocos2d::CCTextFieldTTF *textField) const
-{
-    CCRect rect = textField->boundingBox();
-    switch (textField->getTag()) {
-        case kTagEmail:
-            rect = level_->spriteWithUniqueName("textfield_email")->boundingBox();
-            break;
-        case kTagUsername:
-            rect = level_->spriteWithUniqueName("textfield_username")->boundingBox();
-            break;
-        default:
-            break;
-    }
-    
-    return rect;
+CCRect RegisterLayer::getTextFieldRect(cocos2d::CCTextFieldTTF *textField) {
+    return static_cast<CCSprite*>(getChildByTag(textField->getTag() + 1))->boundingBox();    
 }
 
 
-LHSprite* RegisterLayer::hitTestWithButton(const cocos2d::CCPoint &localPos)
+CCSprite* RegisterLayer::hitTestWithButton(const cocos2d::CCPoint &localPos)
 {
-    LHSprite* node = NULL;
+    CCSprite* node = NULL;
     
-    LHSprite* startButton = level_->spriteWithUniqueName("email_start");
+    CCSprite* startButton = static_cast<CCSprite*>(getChildByTag(kTagStartButton));
     CC_ASSERT(startButton);
     
     if(CCRect::CCRectContainsPoint(startButton->boundingBox(), localPos))

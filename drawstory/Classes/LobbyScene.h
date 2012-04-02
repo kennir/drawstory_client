@@ -10,12 +10,11 @@
 #define drawstory_LobbyScene_h
 
 #include "cocos2d.h"
-#include "LevelHelperLoader.h"
 #include "types.h"
 
 #include <queue>
 
-class GameListLayer;
+
 class RegisterLayer;
 class MessageLayer;
 class LobbySceneLogic;
@@ -62,15 +61,13 @@ protected:
     void queryCurrentRandomGame();
     void refreshGamesForUser();
     
-    LHSprite* hitTestWithButton(const cocos2d::CCPoint& localPos) const;
+    cocos2d::CCSprite* hitTestWithButton(const cocos2d::CCPoint& localPos);
 protected:
-    LevelHelperLoader* level_;
     LobbySceneLogic* logic_;
     
     // tracking node for touch
-    LHSprite* trackingNode_;
+    cocos2d::CCSprite* trackingNode_;
     
-    GameListLayer* gameListLayer_;
     
     // popup layers
     RegisterLayer* registerLayer_;
