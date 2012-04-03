@@ -10,6 +10,9 @@
 #include "GameLabelNode.h"
 #include "UserProfile.h"
 #include "Game.h"
+#include "types.h"
+#include "LobbyScene.h"
+#include "LobbySceneLogic.h"
 
 using namespace cocos2d;
 
@@ -53,6 +56,34 @@ bool GameListLayer::init(){
     return result;
 }
 
+
+void GameListLayer::onEnter() {
+    CCLayer::onEnter();
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, kTouchPriorityGameListLayer, true);
+}
+
+void GameListLayer::onExit() {
+    CCLayer::onExit();
+    CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
+}
+
+bool GameListLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+    bool handled = false;
+    
+    return handled;
+}
+
+void GameListLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+    
+}
+
+void GameListLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+    static_cast<LobbyScene*>(getParent())->logic()->createRandomGame();
+}
+
+void GameListLayer::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+    
+}
 
 void GameListLayer::synchronizeGameList() {
     removeAllNodes();

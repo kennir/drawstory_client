@@ -32,7 +32,7 @@ typedef enum
 
 // priority of touch for layers
 typedef enum {
-    kTouchPriorityLobbyScene = 0,
+    kTouchPriorityGameListLayer = 0,
     kTouchPriorityRegisterLayer = -1, 
     kTouchPriorityMessageLayer = -2,
 
