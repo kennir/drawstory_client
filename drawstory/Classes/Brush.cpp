@@ -17,7 +17,7 @@ enum {
     kTextureLength = kBrushMax + 2,
 };
 
-Brush::Brush() : texture_(NULL), width_(kBrushWidth8), color_(ccRED) {
+Brush::Brush() : texture_(NULL), width_(kBrushWidth2), color_(ccBLACK) {
     
 }
 

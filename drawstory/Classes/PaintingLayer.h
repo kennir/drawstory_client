@@ -13,6 +13,7 @@
 #include "Brush.h"
 #include "PaintCommand.h"
 
+class CommandBarLayer;
 class CanvasLayer;
 class PaintingLayer : public cocos2d::CCLayer{
 public:
@@ -26,14 +27,10 @@ public:
     
     
     virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+//    virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+//    virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+//    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
 protected:    
-    cocos2d::CCNode* hitTest(const cocos2d::CCPoint& localPos);
-protected:
-    CanvasLayer* canvas_;
-    cocos2d::CCNode* trackingNode_;
 };
 
 #endif

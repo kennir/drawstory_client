@@ -14,13 +14,19 @@ using namespace cocos2d;
 enum { kTagRenderTexture = 1000 };
 enum { kCanvasHeight = 333 };
 
-CanvasLayer::CanvasLayer() : brush_(NULL), drawing_(false), target_(NULL) {    
+CanvasLayer::CanvasLayer() 
+: brush_(NULL)
+, eraser_(NULL)
+, paintMode_(kPaintModeDraw)
+, drawing_(false)
+, target_(NULL) {    
 }
 
 
 CanvasLayer::~CanvasLayer() {
     CC_SAFE_RELEASE(target_);
     delete brush_;
+    delete eraser_;
 }
 
 
@@ -40,6 +46,10 @@ bool CanvasLayer::init(){
         brush_ = new Brush;
         CC_BREAK_IF(!brush_ || !brush_->init());
         
+        eraser_ = new Brush;
+        CC_BREAK_IF(!eraser_ || !eraser_->init());
+        eraser_->setColor(ccWHITE); // eraser is white always
+        
         // initialize texture to white
         target_->beginWithClear(255, 255, 255, 255);
         target_->end(true);
@@ -53,7 +63,12 @@ bool CanvasLayer::init(){
     return result;
 }
 
-
+void CanvasLayer::reset() {
+    commandQueue_.beginCommand(new ResetCommand);
+    
+    target_->beginWithClear(255, 255, 255, 255);
+    target_->end(true);
+}
 
 void CanvasLayer::onEnter() {
     CCLayer::onEnter();

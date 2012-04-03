@@ -32,23 +32,35 @@ typedef enum
 // priority of touch for layers
 typedef enum {
     kTouchPriorityLobbyScene = 0,
-    kTouchPriorityRegisterLayer = -1,
+    kTouchPriorityRegisterLayer = -1, 
+    kTouchPriorityMessageLayer = -2,
+
     kTouchPriorityPaintingLayer = -1,
     kTouchPriorityCanvasLayer = -2,
-    kTouchPriorityMessageLayer = -2,
+    kTouchPriorityCommandBarLayer = -3,
+
+    
+   
 
 } TouchPriority;
 
 
 // width of brush
 typedef enum {
-    kBrushWidth4 = 4,
-    kBrushWidth8 = 8,
-    kBrushWidth16 = 16,
-    kBrushWidth32 = 32,
+    kBrushWidth1 = 4,
+    kBrushWidth2 = 8,
+    kBrushWidth3 = 16,
+    kBrushWidth4 = 32,
     
-    kBrushMax = kBrushWidth32,
+    kBrushMax = kBrushWidth4,
 } BrushWidth;
+
+
+// draw mode
+typedef enum {
+    kPaintModeDraw,
+    kPaintModeErase
+} PaintMode;
 
 
 #endif

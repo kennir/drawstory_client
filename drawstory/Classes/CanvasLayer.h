@@ -19,10 +19,16 @@ public:
     CanvasLayer();
     virtual ~CanvasLayer();
     
+    Brush* brush() const { return brush_; }
+    Brush* eraser() const { return eraser_; }
+    
+    PaintMode paintMode() const { return paintMode_; }
+    
+    void reset();
+    
     virtual bool init();
     virtual void onEnter();
     virtual void onExit();
-    
     
     virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
@@ -30,6 +36,9 @@ public:
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);    
 protected:
     Brush* brush_;
+    Brush* eraser_;
+    
+    PaintMode paintMode_;
 
     CommandQueue commandQueue_;
     

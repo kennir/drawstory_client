@@ -9,35 +9,32 @@
 #include "PaintingLayer.h"
 #include "types.h"
 #include "CanvasLayer.h"
-
+#include "CommandBarLayer.h"
+#include "ToggleButton.h"
 
 
 
 using namespace cocos2d;
 
 
-enum { kZCanvasLayer = 1,kZCommandBar = 2,kZCommandBarButton = 3, };
 
-
-
+// Z Value
 enum { 
-    kTagCanvasLayer = 0,
-    
-    kTagButtonPencil,
-    kTagButtonEraser,
-    kTagButtonDelete,
-    kTagButtonDone,
-    kTagButtonSetup,
-    
-    kTagButtonMin = kTagButtonPencil,
-    kTagButtonMax = kTagButtonSetup
+    kZCanvasLayer = 1,
+    kZCommandBar = 2,
 };
 
-PaintingLayer::PaintingLayer() : canvas_(NULL),trackingNode_(NULL) { 
+
+// Tags
+enum { 
+    kTagCanvasLayer = 100,
+    kTagCommandBarLayer,
+};
+
+PaintingLayer::PaintingLayer() {
 }
 
 PaintingLayer::~PaintingLayer() {
-    CC_SAFE_RELEASE(canvas_);
 }
 
 bool PaintingLayer::init(){
@@ -53,48 +50,15 @@ bool PaintingLayer::init(){
         addChild(title);
 
         CCPoint canvasPosition = CCPointMake(0, 57.0f);
-        canvas_ = CanvasLayer::node();
-        CC_BREAK_IF(!canvas_);
-        canvas_->retain();
-        canvas_->setPosition(canvasPosition);
-        addChild(canvas_,kZCanvasLayer,kTagCanvasLayer);
+        CanvasLayer* canvas = CanvasLayer::node();
+        CC_BREAK_IF(!canvas);
+        canvas->setPosition(canvasPosition);
+        addChild(canvas,kZCanvasLayer,kTagCanvasLayer);
         
-        CCSprite* cmdbar = CCSprite::spriteWithSpriteFrameName("pl_black_mask");
+        CommandBarLayer* cmdbar = CommandBarLayer::node();
         CC_BREAK_IF(!cmdbar);
-        cmdbar->setPosition(CCPointMake(winSize.width * 0.5f, cmdbar->getContentSize().height * 0.5f));
-        addChild(cmdbar,kZCommandBar);
-        
-        
-        CCPoint pencilPosition = CCPointMake(28.0f,28.0f);
-        CCSprite* pencil = CCSprite::spriteWithSpriteFrameName("pl_pencil_s");
-        CC_BREAK_IF(!pencil);
-        pencil->setPosition(pencilPosition);
-        addChild(pencil,kZCommandBarButton,kTagButtonPencil);
-
-        CCPoint eraserPosition = CCPointMake(78.0f, 28.0f);
-        CCSprite* eraser = CCSprite::spriteWithSpriteFrameName("pl_eraser");
-        CC_BREAK_IF(!eraser);
-        eraser->setPosition(eraserPosition);
-        addChild(eraser,kZCommandBarButton,kTagButtonEraser);
-        
-        CCPoint deletePosition = CCPointMake(128.0f, 28.0f);
-        CCSprite* del = CCSprite::spriteWithSpriteFrameName("pl_del");
-        CC_BREAK_IF(!del);
-        del->setPosition(deletePosition);
-        addChild(del,kZCommandBarButton,kTagButtonDelete);
-        
-        CCPoint donePosition = CCPointMake(220.0f, 28.0f);
-        CCSprite* done = CCSprite::spriteWithSpriteFrameName("pl_down");
-        CC_BREAK_IF(!done);
-        done->setPosition(donePosition);
-        addChild(done,kZCommandBarButton,kTagButtonDone);
-        
-        CCPoint setupPosition = CCPointMake(300.0f, 28.0f);
-        CCSprite* setup = CCSprite::spriteWithSpriteFrameName("pl_setup");
-        CC_BREAK_IF(!setup);
-        setup->setPosition(setupPosition);
-        addChild(setup,kZCommandBarButton,kTagButtonSetup);
-        
+        addChild(cmdbar,kZCommandBar,kTagCommandBarLayer);
+        cmdbar->setCanvasLayer(canvas);
         
     
         result = true;
@@ -113,52 +77,6 @@ void PaintingLayer::onExit() {
 }
 
 bool PaintingLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
-    trackingNode_ = hitTest(convertTouchToNodeSpace(touch));
-    if(trackingNode_ != NULL){
-        trackingNode_->setScale(0.9f);
-    }
     return true;
-}
-
-void PaintingLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
-    if(trackingNode_){
-        CCNode* node = hitTest(convertTouchToNodeSpace(touch));
-        if(node != trackingNode_){
-            trackingNode_->setScale(1.0f);
-            trackingNode_ = NULL;
-        }
-    }
-}
-
-void PaintingLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
-    if(trackingNode_){
-        CCNode* node = hitTest(convertTouchToNodeSpace(touch));
-        if(node == trackingNode_){
-            
-        }
-        trackingNode_->setScale(1.0f);
-        trackingNode_ = NULL;
-    }
-}
-
-void PaintingLayer::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
-    if(trackingNode_){
-        trackingNode_->setScale(1.0f);
-        trackingNode_ = NULL;
-    }
-}
-
-CCNode* PaintingLayer::hitTest(const cocos2d::CCPoint &localPos) {
-    CCNode* touched = NULL;
-    for(int begin = kTagButtonMin; begin <= kTagButtonMax; ++begin){
-        CCSprite* button = static_cast<CCSprite*>(getChildByTag(begin));
-        CC_ASSERT(button != NULL);
-        
-        if(CCRect::CCRectContainsPoint(button->boundingBox(), localPos)){
-            touched = static_cast<CCNode*>(button);
-            break;
-        }
-    }
-    return touched;
 }
 
