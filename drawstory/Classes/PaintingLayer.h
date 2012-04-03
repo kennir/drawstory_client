@@ -13,6 +13,10 @@
 #include "Brush.h"
 #include "PaintCommand.h"
 
+
+namespace PaintingScene {
+    
+
 class CommandBarLayer;
 class CanvasLayer;
 class PaintingLayer : public cocos2d::CCLayer{
@@ -32,5 +36,8 @@ public:
 //    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
 protected:    
 };
+    
+    
+}
 
 #endif

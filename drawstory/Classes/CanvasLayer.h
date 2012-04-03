@@ -13,6 +13,9 @@
 #include "Brush.h"
 #include "PaintCommand.h"
 
+
+namespace PaintingScene {
+
 class CanvasLayer : public cocos2d::CCLayer {
 public:
     LAYER_NODE_FUNC(CanvasLayer)
@@ -23,6 +26,7 @@ public:
     Brush* eraser() const { return eraser_; }
     
     PaintMode paintMode() const { return paintMode_; }
+    void setPaintMode(PaintMode newMode) { paintMode_ = newMode; }
     
     void reset();
     
@@ -49,4 +53,6 @@ protected:
     cocos2d::CCRect layerRect_;
 };
 
+}
+    
 #endif

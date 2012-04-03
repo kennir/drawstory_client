@@ -11,6 +11,8 @@
 using namespace cocos2d;
 
 
+namespace PaintingScene{
+
 enum { kTagRenderTexture = 1000 };
 enum { kCanvasHeight = 333 };
 
@@ -84,11 +86,13 @@ void CanvasLayer::onExit() {
 bool CanvasLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
     CCPoint localPos = convertTouchToNodeSpace(touch);
     if (CCRect::CCRectContainsPoint(layerRect_, localPos)) {
-        
         drawing_ = true;
         previousLocalPosition_ = localPos;
-        commandQueue_.beginCommand(new DrawCommand(brush_->width(),brush_->color()));
         
+        if(paintMode_ == kPaintModeDraw)
+            commandQueue_.beginCommand(new DrawCommand(brush_->width(),brush_->color()));
+        else 
+            commandQueue_.beginCommand(new EraseCommand);
         return true;
     }
     
@@ -103,7 +107,9 @@ void CanvasLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
             float distance = ccpDistance(previousLocalPosition_, localPos);
             if(distance > 1){
                 // push to command
-                static_cast<DrawCommand*>(commandQueue_.current())->push(localPos);
+                static_cast<PointsCommand*>(commandQueue_.current())->push(localPos);
+                
+                Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
                 
                 target_->begin();
                 
@@ -112,9 +118,9 @@ void CanvasLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
                     float difx = localPos.x - previousLocalPosition_.x;
                     float dify = localPos.y - previousLocalPosition_.y;
                     float delta = static_cast<float>(i) / distance;
-                    brush_->setPosition(CCPointMake(previousLocalPosition_.x + (difx * delta),
+                    brush->setPosition(CCPointMake(previousLocalPosition_.x + (difx * delta),
                                                     previousLocalPosition_.y + (dify * delta)));
-                    brush_->visit();
+                    brush->visit();
                 }
                 target_->end(false);
                 previousLocalPosition_ = localPos;
@@ -135,11 +141,13 @@ void CanvasLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
         CCPoint localPos = convertTouchToNodeSpace(touch);
         if(CCRect::CCRectContainsPoint(layerRect_, localPos)) {
             
-            static_cast<DrawCommand*>(commandQueue_.current())->push(localPos);
+            static_cast<PointsCommand*>(commandQueue_.current())->push(localPos);
+            
+            Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
             
             target_->begin();
-            brush_->setPosition(localPos);
-            brush_->visit();
+            brush->setPosition(localPos);
+            brush->visit();
             target_->end(true);
         }
         
@@ -154,4 +162,6 @@ void CanvasLayer::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *ev
         target_->begin();
         target_->end(true);
     }
+}
+    
 }

@@ -13,8 +13,8 @@
 
 using namespace cocos2d;
 
-enum { kZGameLabel = 1 };
-enum { kTagGameLabel = 100 };
+enum { kZButton = 1, kZGameLabel = 1 };
+enum { kTagStartGameButton,kTagGameLabel = 100 };
 
 
 GameListLayer::~GameListLayer() {
@@ -30,6 +30,24 @@ bool GameListLayer::init(){
     do {
         CC_BREAK_IF(!CCLayer::init());
         
+        
+        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+        
+        //== start button
+        CCPoint startPos = CCPointMake(0, -28.0f);
+        CCSprite* startgame = CCSprite::spriteWithSpriteFrameName("startgame");
+        CC_BREAK_IF(!startgame);
+        startgame->setPosition(startPos);
+        addChild(startgame,kZButton,kTagStartGameButton);
+        
+        //== playing game
+        CCPoint gameplayPos = CCPointMake(0, -104.0f);
+        CCSprite* gameplay = CCSprite::spriteWithSpriteFrameName("gameplay");
+        CC_BREAK_IF(!gameplay);
+        gameplay->setPosition(gameplayPos);
+        addChild(gameplay);
+
+        
         result = true;
     } while (0);
     return result;
@@ -39,7 +57,7 @@ bool GameListLayer::init(){
 void GameListLayer::synchronizeGameList() {
     removeAllNodes();
     
-    CCPoint position = CCPointMake(0,-35.0f);
+    CCPoint position = CCPointMake(0,-132.0f - 33.5f);
         
     UserProfile* user = UserProfile::sharedUserProfile();
     const std::list<Game*>& games = user->games();

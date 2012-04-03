@@ -29,6 +29,7 @@ typedef enum
     kLogicEventQueryGameForUserFinished,
 } LogicEvent;
 
+
 // priority of touch for layers
 typedef enum {
     kTouchPriorityLobbyScene = 0,
@@ -37,10 +38,8 @@ typedef enum {
 
     kTouchPriorityPaintingLayer = -1,
     kTouchPriorityCanvasLayer = -2,
+    kTouchPriorityTitleBarLayer = -3,
     kTouchPriorityCommandBarLayer = -3,
-
-    
-   
 
 } TouchPriority;
 

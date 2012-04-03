@@ -12,6 +12,8 @@
 using namespace cocos2d;
 
 
+namespace PaintingScene {
+
 
 enum {
     kTextureLength = kBrushMax + 2,
@@ -75,4 +77,4 @@ void Brush::setColor(const cocos2d::ccColor3B &color) {
     }
 }
 
-
+}

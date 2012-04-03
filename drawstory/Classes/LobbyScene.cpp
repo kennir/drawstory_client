@@ -12,21 +12,27 @@
 #include "MessageLayer.h"
 #include "GameListLayer.h"
 #include "PaintingLayer.h"
+#include "TitleBarLayer.h"
 
 using namespace cocos2d;
 
+// height of lobby scene
+static const float kLobbySceneHeight = 200.0f;
 
+
+// tags
 enum { 
     kTagRegisterLayer = 1000,
+    kTagTitleBarLayer,
     kTagGameListLayer,
     kTagMessageLayer,
     kTagPaintingLayer, 
-    kTagStartGameButton 
 };
 
+// z-values
 enum { 
-    kZUIButtons         = 1, 
     kZUILabels          = 1,
+    kZTitleBarLayer     = 2,
     kZGameListLayer     = 2,
     kZRegisterLayer     = 3,
     kZPaintingLayer     = 3,
@@ -50,7 +56,6 @@ CCScene* LobbyScene::scene()
 
 LobbyScene::LobbyScene()
 : logic_(NULL)
-, trackingNode_(NULL)
 , registerLayer_(NULL)
 , messageLayer_(NULL)
 , paintingLayer_(NULL)
@@ -82,6 +87,10 @@ bool LobbyScene::init()
         
         CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 
+        // Create logic system
+        logic_ = new LobbySceneLogic(this);
+        CC_BREAK_IF(!logic_->init());
+        
         
         //== background
         CCSprite* background = CCSprite::spriteWithSpriteFrameName("background");
@@ -89,37 +98,17 @@ bool LobbyScene::init()
         background->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height * 0.5f));
         addChild(background);
         
-        //== top bar
-        CCSprite* bannerup = CCSprite::spriteWithSpriteFrameName("banner_up");
-        CC_BREAK_IF(!bannerup);
-        bannerup->setPosition(CCPointMake(winSize.width * 0.5f, 
-                                          winSize.height - (bannerup->getContentSize().height * 0.5f)));
-        addChild(bannerup);
         
-        //== start button
-        CCSprite* startgame = CCSprite::spriteWithSpriteFrameName("startgame");
-        CC_BREAK_IF(!startgame);
-        startgame->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 100.0f));
-        addChild(startgame,kZUIButtons,kTagStartGameButton);
-        
-        
-        //== playing game
-        CCSprite* gameplay = CCSprite::spriteWithSpriteFrameName("gameplay");
-        CC_BREAK_IF(!gameplay);
-        gameplay->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 180.0f));
-        addChild(gameplay);
-        
-
-        // Create logic system
-        logic_ = new LobbySceneLogic(this);
-        CC_BREAK_IF(!logic_->init());
-        
+        TitleBarLayer* titlebar = TitleBarLayer::node();
+        CC_BREAK_IF(!titlebar);
+        titlebar->setPosition(CCPointMake(0, 422.0f));
+        addChild(titlebar,kZTitleBarLayer,kTagTitleBarLayer);
         
         // add game list node
         gameListLayer_ = GameListLayer::node();
         gameListLayer_->retain();
-        gameListLayer_->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 208.0f));
-        gameListLayer_->setAnchorPoint(CCPointMake(0.5f,1.0f));      // top left conron
+        gameListLayer_->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 100.0f));
+        gameListLayer_->setAnchorPoint(CCPointMake(0.5f,1.0f));      // center left conron
         addChild(gameListLayer_,kZGameListLayer);
         
 
@@ -245,78 +234,6 @@ void LobbyScene::refreshGamesForUser()
     logic_->queryGamesForUser();
 }
 
-void LobbyScene::onEnter()
-{
-    CCLayer::onEnter();
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this,kTouchPriorityLobbyScene, true);
-}
-
-void LobbyScene::onExit()
-{
-    CCLayer::onExit();
-    CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
-}
-
-
-bool LobbyScene::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
-{
-    trackingNode_ = hitTestWithButton(convertTouchToNodeSpace(touch));
-    if(trackingNode_) {
-        trackingNode_->setScale(0.9f);
-    } else {
-        // show painting layer for testing
-        addPaintingLayer();
-    }
-    return true;
-}
-
-void LobbyScene::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
-{
-    if(trackingNode_)
-    {
-        CCSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
-        if(node != trackingNode_)
-        {
-            trackingNode_->setScale(1.0f);
-            trackingNode_ = NULL;
-        }
-    }
-}
-
-void LobbyScene::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
-    if(trackingNode_) {
-        CCSprite* node = hitTestWithButton(convertTouchToNodeSpace(touch));
-        if(node == trackingNode_) {
-            // on button clicked
-            logic_->createRandomGame();
-        }         
-        trackingNode_->setScale(1.0f);
-        trackingNode_ = NULL;
-    }
-}
-
-void LobbyScene::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
-{
-    if(trackingNode_)
-    {
-        trackingNode_->setScale(1.0f);
-        trackingNode_ = NULL;
-    }
-    
-}
-
-
-CCSprite* LobbyScene::hitTestWithButton(const cocos2d::CCPoint &localPos)
-{
-    CCSprite* node = NULL;
-
-    CCSprite* button = static_cast<CCSprite*>(getChildByTag(kTagStartGameButton));
-    CC_ASSERT(button != NULL);
-    if(CCRect::CCRectContainsPoint(button->boundingBox(), localPos))
-        node = button;
-    return node;
-}
-
 
 void LobbyScene::addRegisterLayer()
 {
@@ -369,7 +286,7 @@ void LobbyScene::removeMessageLayer()
 
 void LobbyScene::addPaintingLayer() {
     if(!paintingLayer_) {
-        paintingLayer_ = PaintingLayer::node();
+        paintingLayer_ = PaintingScene::PaintingLayer::node();
         paintingLayer_->retain();
         addChild(paintingLayer_,kZPaintingLayer,kTagPaintingLayer);
     } else {

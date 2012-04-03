@@ -15,6 +15,7 @@
 
 class GameLabelNode;
 class GameListLayer : public cocos2d::CCLayer{
+    typedef enum { kTouchTargetNone = 0, kTouchTargetNode, kTouchTargetLayer } TouchTarget;
 public:
     LAYER_NODE_FUNC(GameListLayer)
     

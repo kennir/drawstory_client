@@ -9,19 +9,23 @@
 #include "PaintingLayer.h"
 #include "types.h"
 #include "CanvasLayer.h"
-#include "CommandBarLayer.h"
+#include "PS_CommandBarLayer.h"
 #include "ToggleButton.h"
+#include "PS_TitleBarLayer.h"
 
 
 
 using namespace cocos2d;
+
+namespace PaintingScene {
 
 
 
 // Z Value
 enum { 
     kZCanvasLayer = 1,
-    kZCommandBar = 2,
+    kZCommandBarLayer = 2,
+    kZTitleBarLayer = 2,
 };
 
 
@@ -29,6 +33,7 @@ enum {
 enum { 
     kTagCanvasLayer = 100,
     kTagCommandBarLayer,
+    kTagTitleBarLayer,
 };
 
 PaintingLayer::PaintingLayer() {
@@ -42,22 +47,21 @@ bool PaintingLayer::init(){
     do {
         CC_BREAK_IF(!CCLayer::init());
         
-        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-        
-        CCSprite* title = CCSprite::spriteWithSpriteFrameName("pl_background_title");
-        CC_BREAK_IF(!title);
-        title->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - (title->getContentSize().height * 0.5f)));
-        addChild(title);
-
         CCPoint canvasPosition = CCPointMake(0, 57.0f);
         CanvasLayer* canvas = CanvasLayer::node();
         CC_BREAK_IF(!canvas);
         canvas->setPosition(canvasPosition);
         addChild(canvas,kZCanvasLayer,kTagCanvasLayer);
         
+        TitleBarLayer* titlebar = TitleBarLayer::node();
+        CC_BREAK_IF(!titlebar);
+        titlebar->setPosition(CCPointMake(0, 57.0f + 333.0f ));
+        addChild(titlebar,kZTitleBarLayer,kTagTitleBarLayer);
+        titlebar->setCanvasLayer(canvas);
+        
         CommandBarLayer* cmdbar = CommandBarLayer::node();
         CC_BREAK_IF(!cmdbar);
-        addChild(cmdbar,kZCommandBar,kTagCommandBarLayer);
+        addChild(cmdbar,kZCommandBarLayer,kTagCommandBarLayer);
         cmdbar->setCanvasLayer(canvas);
         
     
@@ -78,5 +82,8 @@ void PaintingLayer::onExit() {
 
 bool PaintingLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
     return true;
+}
+    
+    
 }
 

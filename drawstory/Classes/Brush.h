@@ -12,7 +12,7 @@
 #include "cocos2d.h"
 #include "types.h"
 
-
+namespace PaintingScene {
 
 class Brush {
 public:
@@ -37,5 +37,8 @@ protected:
     cocos2d::ccColor3B color_;
     BrushWidth width_;
 };
+    
+    
+}
 
 #endif
