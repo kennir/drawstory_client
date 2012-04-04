@@ -9,7 +9,7 @@
 #include "LobbySceneLogic.h"
 #include "LobbyScene.h"
 #include "UserProfile.h"
-
+#include "GlobalData.h"
 
 
 enum {
@@ -278,6 +278,25 @@ void LobbySceneLogic::cancelAllQueryRandomGameRequests() {
     pthread_mutex_unlock(&requestMutex_);
 }
 
+void LobbySceneLogic::playGame(const std::string &gameId) {
+    Game* game = UserProfile::sharedUserProfile()->findGame(gameId);
+    if(!game) {
+        CCLOG("Can't find game for id:%s",gameId.c_str());
+    } else {
+        if(game->hasAnswerReplay()) {
+            CCLOG("goto answer replay scene");
+        } else if(game->hasQuestionReplay()) {
+            CCLOG("goto answer scene");
+        }
+        
+        GlobalData::sharedGlobalData()->setCurrentGameId(gameId);
+        
+        // goto paint scene
+        setCurrentState(kLobbyStatePaintQuestion);
+        
+    }
+}
+
 void LobbySceneLogic::processResponseForRegisterUser(bool curlState,const Json::Value &response)
 {
     if(!curlState)
@@ -428,5 +447,7 @@ void LobbySceneLogic::addReqeust(SimpleHttpRequest *request)
     runningRequests_.push_back(request);
     pthread_mutex_unlock(&requestMutex_);
 }
+
+
 
 

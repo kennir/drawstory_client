@@ -32,11 +32,11 @@ enum {
 // z-values
 enum { 
     kZUILabels          = 1,
-    kZTitleBarLayer     = 2,
+    kZTitleBarLayer     = 3,
     kZGameListLayer     = 2,
-    kZRegisterLayer     = 3,
-    kZPaintingLayer     = 3,
-    kZMessageLayer      = 3, 
+    kZRegisterLayer     = 4,
+    kZPaintingLayer     = 5,
+    kZMessageLayer      = 4, 
 };
 
 enum { kMsgTagWaitingQueryRandomGame = 1, };
@@ -107,7 +107,7 @@ bool LobbyScene::init()
         // add game list node
         gameListLayer_ = GameListLayer::node();
         gameListLayer_->retain();
-        gameListLayer_->setPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 100.0f));
+        gameListLayer_->setOriginPosition(CCPointMake(winSize.width * 0.5f, winSize.height - 100.0f));
         gameListLayer_->setAnchorPoint(CCPointMake(0.5f,1.0f));      // center left conron
         addChild(gameListLayer_,kZGameListLayer);
         
@@ -177,6 +177,9 @@ void LobbyScene::processLogicChanged()
                 break;
             case kLobbyStateIdle:
                 refreshGamesForUser();
+                break;
+            case kLobbyStatePaintQuestion:
+                addPaintingLayer();
                 break;
             default:
                 break;

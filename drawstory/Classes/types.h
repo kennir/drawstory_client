@@ -20,6 +20,10 @@ typedef enum
     kLobbyStateWaitingForLoginUser,
     kLobbyStateIdle,
     kLobbyStateWaitingForCreateRandomGame,
+    kLobbyStateReplayAnswer,
+    kLobbyStateSelectQuestion,
+    kLobbyStatePaintQuestion,
+    kLobbyStateAnswerQuestion,
 } LobbyState;
 
 
@@ -33,13 +37,14 @@ typedef enum
 // priority of touch for layers
 typedef enum {
     kTouchPriorityGameListLayer = 0,
-    kTouchPriorityRegisterLayer = -1, 
-    kTouchPriorityMessageLayer = -2,
+    kTouchPriorityGameLabelLayer = -1,
+    kTouchPriorityRegisterLayer = -2, 
+    kTouchPriorityMessageLayer = -3,
 
-    kTouchPriorityPaintingLayer = -1,
-    kTouchPriorityCanvasLayer = -2,
-    kTouchPriorityTitleBarLayer = -3,
-    kTouchPriorityCommandBarLayer = -3,
+    kTouchPriorityPaintingLayer = -4,
+    kTouchPriorityCanvasLayer = -5,
+    kTouchPriorityTitleBarLayer = -6,
+    kTouchPriorityCommandBarLayer = -6,
 
 } TouchPriority;
 

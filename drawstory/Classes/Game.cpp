@@ -15,18 +15,19 @@ Game* Game::gameFromJson(const Json::Value &json){
     return g;
 }
 
+bool Game::isMyTurn() const {
+    bool myTurn = false;
+    if(isOwner() && (state() == kGameStateOwnerTurn))
+        myTurn = true; 
+    else if(!isOwner() && (state() == kGameStateOpponentTurn))
+        myTurn = true;
+    
+    return myTurn;
+}
 
 
 void Game::updateFromJson(const Json::Value &game) {
     // update email for player
-    std::string anthorEmail = game["opponent"].asString();
-    if(isOwner_){
-        ownerName_ = UserProfile::sharedUserProfile()->email();
-        opponentName_ = anthorEmail;
-    } else {
-        ownerName_ = anthorEmail;
-        opponentName_ = UserProfile::sharedUserProfile()->email();
-    }
     
     // update game detail information
     const Json::Value& detail = game["detail"];
@@ -37,33 +38,30 @@ void Game::updateFromJson(const Json::Value &game) {
     turn_ = detail["turn"].asInt();
     ownerObjectId_ = detail["owner"].asString();
     opponentObjectId_ = detail["opponent"].asString();
+    
+    isOwner_ = (ownerObjectId_ == UserProfile::sharedUserProfile()->objectId());
+    
+    
+    std::string anthorEmail = game["opponent"].asString();
+    if(isOwner_){
+        ownerName_ = UserProfile::sharedUserProfile()->email();
+        opponentName_ = anthorEmail;
+    } else {
+        ownerName_ = anthorEmail;
+        opponentName_ = UserProfile::sharedUserProfile()->email();
+    }
+    
+
+
 }
 
 
 std::string Game::stateString() const {
     std::string message;
-    if(isOwner()) {
-        switch (state()) {
-            case kGameStateWaitingOwnerDraw:
-                message = "绘图回合";
-                break;
-            case kGameStateWaitingOpponentAnswer:
-                message = "等待中";
-                break;
-            default:
-                break;
-        }
+    if(isMyTurn()) {
+        message = "点击开始游戏";
     } else {
-        switch (state()) {
-            case kGameStateWaitingOwnerDraw:
-                message = "等待中";
-                break;
-            case kGameStateWaitingOpponentAnswer:
-                message = "答题回合";
-                break;
-            default:
-                break;
-        }
+        message = "等待对方回合";
     }
     return message;
 }

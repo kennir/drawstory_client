@@ -14,10 +14,14 @@
 
 typedef enum {
     kGameStateWaitingOpponent = 0,
-    kGameStateWaitingOwnerDraw,
-    kGameStateWaitingOpponentAnswer,
-    kGameStateAnswerUploaded,
+    kGameStateOwnerTurn,
+    kGameStateOpponentTurn,
 } GameState;
+
+typedef enum {
+    kDrawerOwner        = 0,
+    kDrawerOpponent,
+} Drawer;
 
 class Game 
 {
@@ -31,6 +35,8 @@ public:
     const std::string& otherPlayerName() const { 
         return (isOwner()) ? ownerName() : opponentName();
     }
+    
+    bool isMyTurn() const;
     
     GameState state() const { return state_; }
     void setState(GameState newState) { state_ = newState; }
@@ -53,14 +59,23 @@ public:
     void setTurn(int newTurn) { turn_ = newTurn; }
     
     void updateFromJson(const Json::Value& game);
+    
+    // 是否存在答题的录像
+    bool hasAnswerReplay() const { return false; }
+    // 是否需要回答对手的问题
+    bool hasQuestionReplay() const { return false; }
+
+    
 protected:
     GameState state_;
     int turn_;                      // current turn
+    Drawer drawer_;                 // who draw the question
     std::string objectId_;          // objectId of game
     std::string ownerObjectId_;     // objectId for owner
     std::string ownerName_;         // owner name
     std::string opponentObjectId_;  // ObjectId for opponent
     std::string opponentName_;      // opponent name
+    
     
     bool isOwner_;  // is owner
 };

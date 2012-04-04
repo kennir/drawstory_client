@@ -102,7 +102,7 @@ bool CanvasLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 void CanvasLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
     if(drawing_){
         CCPoint localPos = convertTouchToNodeSpace(touch);
-        if(CCRect::CCRectContainsPoint(layerRect_, localPos)) {
+//        if(CCRect::CCRectContainsPoint(layerRect_, localPos)) {
             
             float distance = ccpDistance(previousLocalPosition_, localPos);
             if(distance > 1){
@@ -125,12 +125,12 @@ void CanvasLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
                 target_->end(false);
                 previousLocalPosition_ = localPos;
             }
-        } else {
-            drawing_ = false;
-            
-            target_->begin();
-            target_->end(true);
-        }
+//        } else {
+//            drawing_ = false;
+//            
+//            target_->begin();
+//            target_->end(true);
+//        }
     }
 }
 

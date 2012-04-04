@@ -16,7 +16,7 @@ using namespace cocos2d;
 struct FindGameById
 {
     FindGameById(const char* _id) : id(_id) { }
-    
+
     bool operator()(const Game* game) const {
         return (strcmp(game->objectId().c_str(), id) == 0);
     }
@@ -147,6 +147,11 @@ void UserProfile::synchronizeGameList(const Json::Value &games) {
     
     // remove all games still in the temporary
     removeAllGames(temporary);
+}
+
+Game* UserProfile::findGame(const std::string &gameId) const {
+    std::list<Game*>::const_iterator it = std::find_if(games_.begin(), games_.end(), FindGameById(gameId.c_str()));
+    return (it != games_.end()) ? (*it) : NULL;
 }
 
     

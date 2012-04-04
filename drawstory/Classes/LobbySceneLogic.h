@@ -32,6 +32,7 @@ public:
     void queryCurrentRandomGame();
     void cancelQueryCurrentRandomGame();
     void queryGamesForUser();
+    void playGame(const std::string& gameId);
     
     void onResponse(bool result,const Json::Value& response,SimpleHttpRequest* request);
     
