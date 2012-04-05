@@ -34,6 +34,11 @@ public:
         kHttpMethodDelete
     } HttpMethod;
     
+    typedef enum {
+        kPostDataTypeText,
+        kPostDataTypeBinary,
+    } PostDataType;
+    
 public:
     static SimpleHttpRequest* simpleHttpRequestWithURL(const std::string& url,
                                                        HttpMethod method,
@@ -57,8 +62,10 @@ public:
     void setHttpMethod(HttpMethod method) { method_ = method; }
     HttpMethod httpMethod() const { return method_; }
     
-    void setPostField(const std::string& postField) { postField_ = postField; }
-    const std::string& postField() const { return postField_; }
+    void setPostText(const std::string& text) { post_ = text; }
+    const std::string& post() const { return post_; }
+
+    
     
     int tag() const { return tag_; }
     void setTag(int tag) { tag_ = tag; }
@@ -82,8 +89,8 @@ protected:
     std::string url_;
     //
     HttpMethod method_;
-    //
-    std::string postField_;
+    
+    std::string post_;
     // 
     std::string buffer_;
 

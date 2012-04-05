@@ -84,14 +84,17 @@ void GameLabelNode::setGame(const Game *game) {
     gameId_ = game->objectId();
     // update turn
     std::ostringstream oss;
-    oss << std::setw(2) << std::setfill('0') << (game->turn() + 1);
+    oss << std::setw(2) << std::setfill('0') << (game->turn());
     static_cast<CCLabelTTF*>(getChildByTag(kTagTurnLabel))->setString(oss.str().c_str());
     // state
     static_cast<CCLabelTTF*>(getChildByTag(kTagStateLabel))->setString(game->stateString().c_str());
     static_cast<CCLabelTTF*>(getChildByTag(kTagNameLabel))->setString(game->otherPlayerName().c_str());
     
-    getChildByTag(kTagPencilButton)->setIsVisible(game->isMyTurn());
+    bool showPencil = (game->isMyTurn() && game->allDataSent());
+    getChildByTag(kTagPencilButton)->setIsVisible(showPencil);
 }
+
+
 
 bool GameLabelNode::onTouchBegan(const cocos2d::CCPoint &localPos) {
     bool handled = false;

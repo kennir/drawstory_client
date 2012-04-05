@@ -28,7 +28,10 @@ public:
     PaintMode paintMode() const { return paintMode_; }
     void setPaintMode(PaintMode newMode) { paintMode_ = newMode; }
     
-    void reset();
+    const CommandQueue& commandQueue() const { return commandQueue_; }
+    
+    void deletePainting();
+    void resetToInitial();
     
     virtual bool init();
     virtual void onEnter();
@@ -38,16 +41,15 @@ public:
     virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);    
+    
 protected:
     Brush* brush_;
     Brush* eraser_;
     
     PaintMode paintMode_;
-
     CommandQueue commandQueue_;
     
     bool drawing_;
-    
     cocos2d::CCPoint previousLocalPosition_;
     cocos2d::CCRenderTexture* target_;
     cocos2d::CCRect layerRect_;

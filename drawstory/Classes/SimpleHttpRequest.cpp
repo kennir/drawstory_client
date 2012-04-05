@@ -35,26 +35,28 @@ void* SimpleHttpRequest::doRequest(void *param)
     CURL* handle = curl_easy_init();
     if(handle)
     {
+        curl_slist *httpHeaders = NULL;
+        
+        
         curl_easy_setopt(handle, CURLOPT_ERRORBUFFER,curlErrStr);
         curl_easy_setopt(handle, CURLOPT_URL, request->url().c_str());
         curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, SimpleHttpRequest::writeData);
         curl_easy_setopt(handle, CURLOPT_WRITEDATA, request );
+//        curl_easy_setopt(handle, CURLOPT_ENCODING, "gzip");
         
-        switch(request->httpMethod())
-        {
-            case SimpleHttpRequest::kHttpMethodPost:
-                curl_easy_setopt(handle, CURLOPT_POSTFIELDS,request->postField().c_str());
-                break;
-            case SimpleHttpRequest::kHttpMethodDelete:
-                curl_easy_setopt(handle, CURLOPT_POSTFIELDS,request->postField().c_str());
-                curl_easy_setopt(handle, CURLOPT_CUSTOMREQUEST,"DELETE");
-                break;
-            default:
-                break;
+        HttpMethod method = request->httpMethod();
+        if(method == kHttpMethodPost || method == kHttpMethodDelete) {
+            curl_easy_setopt(handle, CURLOPT_POSTFIELDS,request->post().c_str());
+
+            if(method == kHttpMethodDelete)
+                curl_easy_setopt(handle, CURLOPT_CUSTOMREQUEST,"DELETE");    
         }
-               
+        
                
         CURLcode curlErr = curl_easy_perform(handle);
+        
+        if(httpHeaders)
+            curl_slist_free_all(httpHeaders);
         curl_easy_cleanup(handle);
         
         if(curlErr)

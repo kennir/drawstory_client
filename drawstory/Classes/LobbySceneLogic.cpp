@@ -19,6 +19,7 @@ enum {
     kHttpRequestQueryCurrentRandomGame,
     kHttpRequestCancelQueryCurrentRandomGame,
     kHttpRequestQueryGamesForUser,
+    kHttpRequestSendPainting,
 };
 
 enum {
@@ -101,6 +102,9 @@ void LobbySceneLogic::onResponse(bool result, const Json::Value& response,Simple
         case kHttpRequestQueryGamesForUser:
             processResponseForQueryGamesForUser(result, response);
             break;
+        case kHttpRequestSendPainting:
+            processResponseForSendPainting(result,response);
+            break;
         default:
             break;
     }
@@ -125,17 +129,17 @@ void LobbySceneLogic::registerUser(const std::string &email, const std::string &
     CC_ASSERT(currentState() == kLobbyStateRegisterUser);
     
     // make URL
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
+    std::ostringstream url;
     url << _hostURL << "register";
     
-    std::stringstream body(std::stringstream::in | std::stringstream::out);
+    std::ostringstream body;
     body << "email=" << email << "&username=" << username;
     
     SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
                                                                              SimpleHttpRequest::kHttpMethodPost, 
                                                                              this,
                                                                              kHttpRequestRegister);
-    request->setPostField(body.str());
+    request->setPostText(body.str());
     request->retain();
     addReqeust(request);
     request->start();
@@ -149,17 +153,17 @@ void LobbySceneLogic::loginUser()
     
     UserProfile* user = UserProfile::sharedUserProfile();  
     // make URL
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
+    std::ostringstream url;
     url << _hostURL << "login";
     
-    std::stringstream body(std::stringstream::in | std::stringstream::out);
+    std::ostringstream body;
     body << "email=" << user->email() << "&password=" << user->password();
     
     SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
                                                                              SimpleHttpRequest::kHttpMethodPost, 
                                                                              this,
                                                                              kHttpRequestLogin);
-    request->setPostField(body.str());
+    request->setPostText(body.str());
     request->retain();
     addReqeust(request);
     request->start();
@@ -173,17 +177,17 @@ void LobbySceneLogic::createRandomGame()
     CC_ASSERT(logined_);
     
     UserProfile* user = UserProfile::sharedUserProfile();
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
+    std::ostringstream url;
     url << _hostURL << "game/random";
     
-    std::stringstream body(std::stringstream::in | std::stringstream::out);
+    std::ostringstream body;
     body << "email=" << user->email();
     
     SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
                                                                              SimpleHttpRequest::kHttpMethodPost, 
                                                                              this,
                                                                              kHttpRequestCreateRandomGame);
-    request->setPostField(body.str());
+    request->setPostText(body.str());
     request->retain();
     addReqeust(request);
     request->start();
@@ -191,13 +195,17 @@ void LobbySceneLogic::createRandomGame()
     setCurrentState(kLobbyStateWaitingForCreateRandomGame);
 }
 
+void LobbySceneLogic::cancelCreateRandomGame() {
+    cancelAllRequestsForTag(kHttpRequestQueryCurrentRandomGame);
+    setCurrentState(kLobbyStateIdle);
+}
 
 void LobbySceneLogic::queryCurrentRandomGame()
 {
     CC_ASSERT(!objectIdForCurrentGameId_.empty());
     
 //    UserProfile* user = UserProfile::sharedUserProfile();
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
+    std::ostringstream url;
     url << _hostURL << "game/" << objectIdForCurrentGameId_;
         
     SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
@@ -211,14 +219,14 @@ void LobbySceneLogic::queryCurrentRandomGame()
 }
 
 void LobbySceneLogic::cancelQueryCurrentRandomGame() {
-    cancelAllQueryRandomGameRequests();
+    cancelAllRequestsForTag(kHttpRequestQueryCurrentRandomGame);
     
     // notify server to remove game if not paired
 //    UserProfile* user = UserProfile::sharedUserProfile();
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
+    std::ostringstream url;
     url << _hostURL << "game/" << objectIdForCurrentGameId_;
     
-    std::stringstream body(std::stringstream::in | std::stringstream::out);
+    std::ostringstream body;
     body << "owner=" << UserProfile::sharedUserProfile()->objectId();
     
     
@@ -228,7 +236,7 @@ void LobbySceneLogic::cancelQueryCurrentRandomGame() {
                                                                              kHttpRequestCancelQueryCurrentRandomGame);
 
     
-    request->setPostField(body.str());
+    request->setPostText(body.str());
     request->retain();
     addReqeust(request);
     request->start();
@@ -240,39 +248,40 @@ void LobbySceneLogic::cancelQueryCurrentRandomGame() {
 
 void LobbySceneLogic::queryGamesForUser()
 {
-    UserProfile* user = UserProfile::sharedUserProfile();
-    CC_ASSERT(!user->objectId().empty());
-    
-    std::stringstream url( std::stringstream::in | std::stringstream::out );
-    url << _hostURL << "user/games/" << user->objectId();
-    
-    SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
-                                                                             SimpleHttpRequest::kHttpMethodGet, 
-                                                                             this,
-                                                                             kHttpRequestQueryGamesForUser);
-    
-
-    request->retain();
-    addReqeust(request);
-    request->start();
+    // 只有当前没有请求的时候才会查询游戏列表,放在LobbyScene里判断
+//    if(runningRequests_.empty()) {
+        UserProfile* user = UserProfile::sharedUserProfile();
+        CC_ASSERT(!user->objectId().empty());
+        
+        std::ostringstream url;
+        url << _hostURL << "user/games/" << user->objectId();
+        
+        SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
+                                                                                 SimpleHttpRequest::kHttpMethodGet, 
+                                                                                 this,
+                                                                                 kHttpRequestQueryGamesForUser);
+        
+        
+        request->retain();
+        addReqeust(request);
+        request->start();
+//    }
 }
 
-void LobbySceneLogic::cancelAllQueryRandomGameRequests() {
+void LobbySceneLogic::cancelAllRequestsForTag(int tag) {
     pthread_mutex_lock(&requestMutex_);
     
     std::list<SimpleHttpRequest*>::iterator it = runningRequests_.begin();
     while( it != runningRequests_.end())
     {
         SimpleHttpRequest* req = (*it);
-        if(req->tag() == kHttpRequestQueryCurrentRandomGame)
+        if(req->tag() == tag)
         {
             req->cancel();
             req->release();
             it = runningRequests_.erase(it);
-        }
-        else {
+        } else 
             ++it;
-        }
     }
     
     pthread_mutex_unlock(&requestMutex_);
@@ -285,16 +294,73 @@ void LobbySceneLogic::playGame(const std::string &gameId) {
     } else {
         if(game->hasAnswerReplay()) {
             CCLOG("goto answer replay scene");
-        } else if(game->hasQuestionReplay()) {
+        } else if(game->hasPaintingReplay()) {
             CCLOG("goto answer scene");
         }
         
         GlobalData::sharedGlobalData()->setCurrentGameId(gameId);
+        // temporary
+        GlobalData::sharedGlobalData()->setCurrentDifficult(kDifficultEasy);
         
         // goto paint scene
         setCurrentState(kLobbyStatePaintQuestion);
-        
     }
+}
+
+void LobbySceneLogic::sendPainting(const std::string &painting) {
+    GlobalData* gd = GlobalData::sharedGlobalData();
+    CC_ASSERT(!gd->currentGameId().empty());
+    
+    Game* game = UserProfile::sharedUserProfile()->findGame(gd->currentGameId());
+    if(!game) {
+        CCLOG("LobbySceneLogic::sendPainting: Can't find game,already removed?");
+    } else {
+        // write to game
+        CC_ASSERT(game->isMyTurn());
+        game->savePaintingRecord(gd->currentDifficult(), painting);
+        
+        // send request for all games
+        sendPaintingRequestForAllGames();
+    }
+    
+    // switch to idle
+    setCurrentState(kLobbyStateIdle); 
+}
+
+
+void LobbySceneLogic::sendPaintingRequestForAllGames() {    
+    UserProfile* user = UserProfile::sharedUserProfile();
+    
+    std::ostringstream url;
+    std::ostringstream body;
+    std::list<Game*>::const_iterator it = user->games().begin();
+    for(; it != user->games().end(); ++it){
+        Game* game = (*it);
+        
+        if(game->hasDataForWaiting()) {
+            url.str("");
+            url << _hostURL << "painting/" << user->objectId() << "/" << game->objectId() << "/" << game->question().difficult();
+            
+            body.str("");
+            body << "painting=" << game->paintingRecord().base64Data;
+            
+            
+            SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
+                                                                                     SimpleHttpRequest::kHttpMethodPost, 
+                                                                                     this,
+                                                                                     kHttpRequestSendPainting);
+            
+            
+            game->beginSendPaintingRecord();
+            request->setPostText(body.str());
+            request->retain();
+            addReqeust(request);
+            request->start();
+        }
+    }
+    
+    // notify state changed
+    scene_->logicEvent(kLogicEventGameStateChanged);
 }
 
 void LobbySceneLogic::processResponseForRegisterUser(bool curlState,const Json::Value &response)
@@ -368,7 +434,7 @@ void LobbySceneLogic::processResponseForCreateRandomGame(bool curlState, const J
     if(!curlState)
     {
         CCLOG("LobbySceneLogic::processResponseForCreateRandomGame:curl failed:%d",response["reason"].asInt());
-//        setCurrentState(kLobbyStateRegisterUser);
+        setCurrentState(kLobbyStateIdle);
     } 
     else 
     {
@@ -380,12 +446,12 @@ void LobbySceneLogic::processResponseForCreateRandomGame(bool curlState, const J
         }
         else 
         {
-            
+
             int method = response["method"].asInt();
             if(method == kRandomGameCreate)
             {
                 objectIdForCurrentGameId_ = response["gameid"].asString();
-                setCurrentState(kLobbyStateWaitingForCreateRandomGame);
+                setCurrentState(kLobbyStateWaitingForQueryCurrentRandomGame);
             }
             else 
                 setCurrentState(kLobbyStateIdle);
@@ -438,6 +504,27 @@ void LobbySceneLogic::processResponseForQueryGamesForUser(bool curlState, const 
     }
     
     scene_->logicEvent(kLogicEventQueryGameForUserFinished);
+}
+
+void LobbySceneLogic::processResponseForSendPainting(bool curlState, const Json::Value &response) {
+    if(!curlState) {
+        CCLOG("LobbySceneLogic::processResponseForSendPainting:curl failed:%d",response["reason"].asInt());
+    } else {
+        bool result = response["result"].asBool();
+        std::string gameId = response["gameid"].asString();
+        Game* game = UserProfile::sharedUserProfile()->findGame(gameId);
+        if(game){
+            if(result == false) {
+                CCLOG("LobbySceneLogic::processResponseForSendPainting:send painting failed:%d",response["reason"].asInt());
+                game->paintingRecordSent(false);
+            } else {
+                CCLOG("LobbySceneLogic::processResponseForSendPainting:send painting successed:%d",response["reason"].asInt());
+                game->paintingRecordSent(true);
+            }
+        }
+        
+        scene_->logicEvent(kLogicEventGameStateChanged);
+    }
 }
 
 

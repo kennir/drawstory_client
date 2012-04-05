@@ -12,6 +12,8 @@
 #include "cocos2d.h"
 #include "types.h"
 
+
+class LobbySceneLogic;
 namespace PaintingScene {
 
 class Brush;
@@ -50,6 +52,8 @@ protected:
     void collapseEraserWidthMenu();
     
     cocos2d::CCNode* getNodeByWidth(BrushWidth width,int beginTag);
+    LobbySceneLogic* getLogic();
+    
 protected:
     cocos2d::CCNode* trackingNode_;
     bool brushWidthMenuExpanded_;

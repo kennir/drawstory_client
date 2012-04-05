@@ -39,6 +39,7 @@ public:
     virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event); 
     
     void synchronizeGameList();
+    void synchronizeGameListForState();
 protected:
     void removeAllNodes();
     GameLabelNode* createLabelNode();

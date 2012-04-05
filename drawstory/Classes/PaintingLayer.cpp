@@ -78,6 +78,9 @@ void PaintingLayer::onEnter() {
 void PaintingLayer::onExit() {
     CCLayer::onExit();
     CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
+    
+    // reset all 
+    static_cast<CanvasLayer*>(getChildByTag(kTagCanvasLayer))->resetToInitial();
 }
 
 bool PaintingLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {

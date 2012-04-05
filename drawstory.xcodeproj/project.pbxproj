@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BE3ED965152C7CC100EB05B7 /* GlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */; };
+		BE3ED968152CAB7600EB05B7 /* Question.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED967152CAB7600EB05B7 /* Question.cpp */; };
+		BE3ED96A152CBBAE00EB05B7 /* PaintCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */; };
+		BE3ED96E152D9C9400EB05B7 /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED96D152D9C9400EB05B7 /* ybase64.c */; };
 		BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3115249E7D0005D491 /* UserProfile.cpp */; };
 		BE5A7E401524CF820005D491 /* LobbySceneLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */; };
 		BE5A7E47152586CE0005D491 /* RegisterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */; };
@@ -219,6 +222,12 @@
 /* Begin PBXFileReference section */
 		BE3ED962152C7CB100EB05B7 /* GlobalData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GlobalData.h; path = Classes/GlobalData.h; sourceTree = "<group>"; };
 		BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GlobalData.cpp; path = Classes/GlobalData.cpp; sourceTree = "<group>"; };
+		BE3ED966152CA2DC00EB05B7 /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Classes/Question.h; sourceTree = "<group>"; };
+		BE3ED967152CAB7600EB05B7 /* Question.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Question.cpp; path = Classes/Question.cpp; sourceTree = "<group>"; };
+		BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintCommand.cpp; path = Classes/PaintCommand.cpp; sourceTree = "<group>"; };
+		BE3ED96C152D9C6D00EB05B7 /* ybase64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ybase64.h; path = Classes/ybase64.h; sourceTree = "<group>"; };
+		BE3ED96D152D9C9400EB05B7 /* ybase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ybase64.c; path = Classes/ybase64.c; sourceTree = "<group>"; };
+		BE3ED96F152D9CE200EB05B7 /* ydefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ydefines.h; path = Classes/ydefines.h; sourceTree = "<group>"; };
 		BE5A7E3015249E6A0005D491 /* UserProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = Classes/UserProfile.h; sourceTree = "<group>"; };
 		BE5A7E3115249E7D0005D491 /* UserProfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserProfile.cpp; path = Classes/UserProfile.cpp; sourceTree = "<group>"; };
 		BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LobbySceneLogic.h; path = Classes/LobbySceneLogic.h; sourceTree = "<group>"; };
@@ -660,6 +669,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE3ED970152D9CF200EB05B7 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				BE3ED96C152D9C6D00EB05B7 /* ybase64.h */,
+				BE3ED96D152D9C9400EB05B7 /* ybase64.c */,
+				BE3ED96F152D9CE200EB05B7 /* ydefines.h */,
+			);
+			name = base64;
+			sourceTree = "<group>";
+		};
 		BE5A7E2E15249CF50005D491 /* client */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +694,7 @@
 				BE5A7E751528DB330005D491 /* PaintingLayer.h */,
 				BE5A7E761528DB400005D491 /* PaintingLayer.cpp */,
 				BE5A7E9D1529E5390005D491 /* PaintCommand.h */,
+				BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */,
 				BE5A7EA61529F90E0005D491 /* Brush.h */,
 				BE5A7EA71529FA270005D491 /* Brush.cpp */,
 				BE5A7EA9152A0C900005D491 /* CanvasLayer.h */,
@@ -715,6 +735,8 @@
 				BE5A7E3115249E7D0005D491 /* UserProfile.cpp */,
 				BE3ED962152C7CB100EB05B7 /* GlobalData.h */,
 				BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */,
+				BE3ED966152CA2DC00EB05B7 /* Question.h */,
+				BE3ED967152CAB7600EB05B7 /* Question.cpp */,
 			);
 			name = Profiles;
 			sourceTree = "<group>";
@@ -733,6 +755,7 @@
 		BE5A7EBC152ADEEC0005D491 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BE3ED970152D9CF200EB05B7 /* base64 */,
 				BE5A7EC1152AE1F30005D491 /* ToggleButton.h */,
 				BE5A7EC2152AE1FF0005D491 /* ToggleButton.cpp */,
 				BE5A7EB7152A25970005D491 /* DrawSolidCircle.h */,
@@ -1778,6 +1801,9 @@
 				BE5A7ECD152B34E60005D491 /* PS_TitleBarLayer.cpp in Sources */,
 				BE5A7ED0152B62C10005D491 /* TitleBarLayer.cpp in Sources */,
 				BE3ED965152C7CC100EB05B7 /* GlobalData.cpp in Sources */,
+				BE3ED968152CAB7600EB05B7 /* Question.cpp in Sources */,
+				BE3ED96A152CBBAE00EB05B7 /* PaintCommand.cpp in Sources */,
+				BE3ED96E152D9C9400EB05B7 /* ybase64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

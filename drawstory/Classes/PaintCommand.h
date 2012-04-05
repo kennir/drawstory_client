@@ -14,6 +14,8 @@
 #include "vector"
 #include "queue"
 #include "types.h"
+#include "json/json.h"
+
 
 typedef enum {
     kCommandTypeDraw,
@@ -30,6 +32,10 @@ public:
         cocos2d::cc_timeval time;
         cocos2d::CCTime::gettimeofdayCocos2d(&time,NULL);
         return (time.tv_sec * 1000 + time.tv_usec / 1000);
+    }
+    
+    virtual void serialize(Json::Value& value) const {
+        value["type"] = type_;
     }
 protected:
     CommandType type_;
@@ -51,6 +57,8 @@ public:
         nodes_.push_back(PointNode(localPos,nowMillisecond()));
     }
     
+    virtual void serialize(Json::Value& value) const;
+    
 protected:
     std::vector< PointNode > nodes_; 
     
@@ -62,6 +70,8 @@ public:
     DrawCommand(BrushWidth bw,const cocos2d::ccColor3B& bc) 
     : PointsCommand(kCommandTypeDraw), brushWidth_(bw), brushColor_(bc) { }
     virtual ~DrawCommand() { }
+    
+    void serialize(Json::Value& value) const;
 protected:
     BrushWidth brushWidth_;
     cocos2d::ccColor3B brushColor_;
@@ -89,14 +99,23 @@ public:
         _CI(Command* c) : cmd(c), ms(Command::nowMillisecond()) { }
     } CommandInfo;
     
+    virtual ~CommandQueue() {
+        this->clear();
+    }
+    
     void beginCommand(Command* command) { 
-        commands_.push(CommandInfo(command));
+        commands_.push_back(CommandInfo(command));
     }
     
     Command* current() { return commands_.back().cmd; }
     
+    void clear();
+    std::string serialize() const;
 protected:
-    std::queue< CommandInfo > commands_;
+    Json::Value serializeToJson() const;
+    
+protected:
+    std::vector< CommandInfo > commands_;
 };
 
 #endif

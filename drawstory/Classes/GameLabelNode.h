@@ -18,6 +18,9 @@ public:
 public:
     virtual bool init();
     void setGame(const Game* game);
+
+    
+    const std::string& gameId() const { return gameId_; }
     
     bool onTouchBegan(const cocos2d::CCPoint& localPos);
     void onTouchEnded(const cocos2d::CCPoint& localPos);

@@ -20,6 +20,7 @@ typedef enum
     kLobbyStateWaitingForLoginUser,
     kLobbyStateIdle,
     kLobbyStateWaitingForCreateRandomGame,
+    kLobbyStateWaitingForQueryCurrentRandomGame,
     kLobbyStateReplayAnswer,
     kLobbyStateSelectQuestion,
     kLobbyStatePaintQuestion,
@@ -31,6 +32,7 @@ typedef enum
 typedef enum 
 {
     kLogicEventQueryGameForUserFinished,
+    kLogicEventGameStateChanged,
 } LogicEvent;
 
 

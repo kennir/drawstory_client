@@ -23,6 +23,7 @@ enum { kTagStartGameButton = 100,kTagGameLabel };
 static const float kLayerHeightOfEmptyList = 132.0f;
 static const float kGameLabelHeight = 67.0f;
 
+
 // ribber height
 static const float kElasticLength = 40.0f;
 static const float kAutoMoveLength = 5.0f;
@@ -122,6 +123,9 @@ void GameListLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *even
             float distance = localPos.y - beginLocalPos_.y;
             float height = getContentSize().height;
             
+            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+            height = max(winSize.height - kLayerHeightOfEmptyList,height);
+            
             float y = getPositionY();
             y += distance;
             if(y - height > kElasticLength)
@@ -151,6 +155,9 @@ void GameListLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *even
             CCPoint localPos = convertTouchToNodeSpace(touch);
             float distance = localPos.y - beginLocalPos_.y;
             float height = getContentSize().height;
+            
+            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+            height = max(winSize.height - kLayerHeightOfEmptyList,height);
             
             float y = getPositionY();
             y += distance;
@@ -186,6 +193,10 @@ void GameListLayer::ccTouchCancelled(cocos2d::CCTouch *touch, cocos2d::CCEvent *
         } else {
             float y = getPositionY();
             float height = getContentSize().height;
+            
+            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+            height = max(winSize.height - kLayerHeightOfEmptyList,height);
+            
             if(y - height > 0)
                 y = height;
             else if(y < originPosition_.y)
@@ -216,6 +227,20 @@ void GameListLayer::synchronizeGameList() {
     
     setContentSize(CCSizeMake(CCDirector::sharedDirector()->getWinSize().width,
                               (kGameLabelHeight * games.size()) + kLayerHeightOfEmptyList ));
+}
+
+
+void GameListLayer::synchronizeGameListForState() {
+    
+    UserProfile* user = UserProfile::sharedUserProfile();
+    
+    std::list<GameLabelNode*>::iterator it = gameLabels_.begin();
+    for(; it != gameLabels_.end(); ++it) {
+        Game* game = user->findGame((*it)->gameId());
+        if(game) {
+            (*it)->setGame(game);
+        }
+    }
 }
 
 void GameListLayer::removeAllNodes() {

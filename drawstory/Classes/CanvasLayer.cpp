@@ -64,8 +64,18 @@ bool CanvasLayer::init(){
     } while (0);
     return result;
 }
+    
+void CanvasLayer::resetToInitial() {
+    brush_->setWidth(kBrushWidth2);
+    brush_->setColor(ccBLACK);
+    eraser_->setWidth(kBrushWidth2);
+    commandQueue_.clear();
+    
+    target_->beginWithClear(255, 255, 255, 255);
+    target_->end(true);
+}
 
-void CanvasLayer::reset() {
+void CanvasLayer::deletePainting() {
     commandQueue_.beginCommand(new ResetCommand);
     
     target_->beginWithClear(255, 255, 255, 255);

@@ -29,25 +29,31 @@ public:
     void loginUser();
     // create a random game
     void createRandomGame();
+    void cancelCreateRandomGame();
     void queryCurrentRandomGame();
     void cancelQueryCurrentRandomGame();
     void queryGamesForUser();
     void playGame(const std::string& gameId);
-    
+    void sendPainting(const std::string& painting);
+    void sendPaintingRequestForAllGames();
+                      
     void onResponse(bool result,const Json::Value& response,SimpleHttpRequest* request);
     
     void setCurrentState(LobbyState newState);
     LobbyState currentState() const { return state_; }
     LobbyState previousState() const { return previousState_; }
+    
+    bool hasRunningRequest() const { return !runningRequests_.empty(); }
 protected:
     void processResponseForRegisterUser(bool curlState,const Json::Value& response);
     void processResponseForLoginUser(bool curlState,const Json::Value& response);
     void processResponseForCreateRandomGame(bool curlState,const Json::Value& response);
     void processResponseForQueryCurrentRandomGame(bool curlState,const Json::Value& response);
     void processResponseForQueryGamesForUser(bool curlState,const Json::Value& response);
+    void processResponseForSendPainting(bool curlState,const Json::Value& response);
     
     void addReqeust(SimpleHttpRequest* request);
-    void cancelAllQueryRandomGameRequests();
+    void cancelAllRequestsForTag(int tag);
 protected:
     LobbyScene* scene_;
     LobbyState previousState_;

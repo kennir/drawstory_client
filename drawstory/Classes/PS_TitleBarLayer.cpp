@@ -9,6 +9,9 @@
 #include "PS_TitleBarLayer.h"
 #include "types.h"
 #include "CanvasLayer.h"
+#include "GlobalData.h"
+#include "UserProfile.h"
+#include "Game.h"
 
 using namespace cocos2d;
 
@@ -60,7 +63,14 @@ bool TitleBarLayer::init() {
         turnLabel->setColor(ccWHITE);
         addChild(turnLabel,kZLabel,kTagTurnLabel);
         
-        CCLabelTTF* descLabel = CCLabelTTF::labelWithString("你正在为 ken 绘制\"草泥马\"", 
+        Game* game = UserProfile::sharedUserProfile()->findGame(GlobalData::sharedGlobalData()->currentGameId());
+        CC_ASSERT(game != NULL);
+        const Question& question = game->question();
+        const Question::Word& word = question.word(GlobalData::sharedGlobalData()->currentDifficult());
+        std::ostringstream oss;
+        oss << "你正在为" << game->otherPlayerName() << "绘制" << word.word;
+        
+        CCLabelTTF* descLabel = CCLabelTTF::labelWithString(oss.str().c_str(), 
                                                             CCSizeMake(210.0f, 38.0f), 
                                                             CCTextAlignmentLeft, 
                                                             "Arial", 
@@ -68,6 +78,18 @@ bool TitleBarLayer::init() {
         descLabel->setPosition(CCPointMake(205.0f, 75.0f));
         descLabel->setColor(ccBLACK);
         addChild(descLabel,kZLabel,kTagDescriptLabel);
+        
+        oss.str("");
+        oss << "Tips:" << word.prompt;
+        
+        CCLabelTTF* promptLabel = CCLabelTTF::labelWithString(oss.str().c_str(), 
+                                                              CCSizeMake(210.0f, 38.0f), 
+                                                              CCTextAlignmentLeft, 
+                                                              "Arial", 
+                                                              12.0f);
+        promptLabel->setPosition(CCPointMake(205.0f, 55.0f));
+        promptLabel->setColor(ccBLACK);
+        addChild(promptLabel,kZLabel,kTagDescriptLabel);
         
         CCPoint color1Pos = CCPointMake(25.0f, 20.0f);
         CCSprite* color1 = CCSprite::spriteWithSpriteFrameName("pl_c_black");

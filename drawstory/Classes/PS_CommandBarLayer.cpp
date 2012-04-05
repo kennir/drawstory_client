@@ -11,6 +11,8 @@
 #include "ToggleButton.h"
 #include "Brush.h"
 #include "CanvasLayer.h"
+#include "LobbyScene.h"
+#include "LobbySceneLogic.h"
 
 using namespace cocos2d;
 
@@ -216,7 +218,6 @@ void CommandBarLayer::beginTouchNode(cocos2d::CCNode *button) {
             (static_cast<ToggleButton*>(getNodeByWidth(canvas_->eraser()->width(), kTagButtonEraserWidth1)))->setToggled(false);
             (static_cast<ToggleButton*>(button))->setToggled(true);
             break;
-
         default:
             button->setScale(0.9f);
             break;
@@ -309,13 +310,13 @@ void CommandBarLayer::onNodeClicked(cocos2d::CCNode *button) {
             collapseEraserWidthMenu();
             collapseBrushWidthMenu();
             // reset canvas
-            canvas_->reset();
+            canvas_->deletePainting();
             break;
         case kTagButtonDone:
             collapseEraserWidthMenu();
             collapseBrushWidthMenu();
-            // done, send the 
-            
+            // done, send the painting
+            getLogic()->sendPainting(canvas_->commandQueue().serialize());
             break;
             
         default:
@@ -439,6 +440,11 @@ void CommandBarLayer::collapseEraserWidthMenu() {
                          getChildByTag(kTagButtonEraser)->getPosition());
         eraserWidthMenuExpanded_ = false;
     }
+}
+    
+    
+LobbySceneLogic* CommandBarLayer::getLogic() {
+    return static_cast<LobbyScene*>(getParent()->getParent())->logic();
 }
     
 }

@@ -39,7 +39,7 @@ enum {
     kZMessageLayer      = 4, 
 };
 
-enum { kMsgTagWaitingQueryRandomGame = 1, };
+enum { kMsgTagWaitingQueryRandomGame = 1,kMsgTagWaitingCreateRandomGame };
 
 CCScene* LobbyScene::scene()
 {
@@ -150,8 +150,14 @@ void LobbyScene::processLogicChanged()
                 break;
             case kLobbyStateWaitingForCreateRandomGame:
                 removeMessageLayer();
+                break;
+            case kLobbyStateWaitingForQueryCurrentRandomGame:
+                removeMessageLayer();
                 CCLOG("==========unscheduled: queryCurrentRandomGame");
                 unschedule(schedule_selector(LobbyScene::queryCurrentRandomGame));
+                break;
+            case kLobbyStatePaintQuestion:
+                removePaintingLayer();
                 break;
             default:
                 break;
@@ -167,6 +173,13 @@ void LobbyScene::processLogicChanged()
                 break;
             case kLobbyStateWaitingForCreateRandomGame:
                 addMessageLayer("等待匹配玩家...",
+                                true,       // show cancel button
+                                this,       // delegate
+                                callfunc_selector(LobbyScene::onMessageLayerForCreateRandomGameCancelled),
+                                kMsgTagWaitingCreateRandomGame);
+                break;
+            case kLobbyStateWaitingForQueryCurrentRandomGame:
+                addMessageLayer("正在查询...",
                                 true,       // show cancel button
                                 this,       // delegate
                                 callfunc_selector(LobbyScene::onMessageLayerForQueryRandomGameCancelled),
@@ -212,6 +225,9 @@ void LobbyScene::processLogicEvent() {
                 // update game list
                 gameListLayer_->synchronizeGameList();
                 break;
+            case kLogicEventGameStateChanged:
+                gameListLayer_->synchronizeGameListForState();
+                break;
             default:
                 break;
         }
@@ -230,11 +246,17 @@ void LobbyScene::onMessageLayerForQueryRandomGameCancelled()
     logic_->cancelQueryCurrentRandomGame();
 }
 
+void LobbyScene::onMessageLayerForCreateRandomGameCancelled() {
+    logic_->cancelCreateRandomGame();
+}
+
 void LobbyScene::refreshGamesForUser()
 {
     CCLOG("==========unschedule: refreshGamesForUser");
-    unschedule(schedule_selector(LobbyScene::refreshGamesForUser));
-    logic_->queryGamesForUser();
+    if(!logic_->hasRunningRequest()){
+        unschedule(schedule_selector(LobbyScene::refreshGamesForUser));
+        logic_->queryGamesForUser();  
+    }
 }
 
 

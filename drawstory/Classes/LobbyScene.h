@@ -56,6 +56,7 @@ protected:
     void addPaintingLayer();
     void removePaintingLayer();
 
+    void onMessageLayerForCreateRandomGameCancelled();
     void onMessageLayerForQueryRandomGameCancelled();
     
     void queryCurrentRandomGame();
