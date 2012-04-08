@@ -7,6 +7,7 @@
 //
 
 #include "GlobalData.h"
+#include "ybase64.h"
 
 static GlobalData* _globalData = NULL;
 
@@ -22,6 +23,7 @@ void GlobalData::purgeGlobalData() {
     delete _globalData;
     _globalData = NULL;
 }
+
 
 
 

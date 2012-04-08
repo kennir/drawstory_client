@@ -15,6 +15,12 @@ Game* Game::gameFromJson(const Json::Value &json){
     return g;
 }
 
+
+Game::Game() 
+: replaySendState_(kSendStateIdle) {
+    
+}
+
 bool Game::isMyTurn() const {
     bool myTurn = false;
     if(isOwner() && (state() == kGameStateOwnerTurn))
@@ -28,7 +34,7 @@ bool Game::isMyTurn() const {
 
 void Game::updateFromJson(const Json::Value &game) {
     
-    if(allDataSent()){
+    if(replaySent()){
         // update game detail information
         const Json::Value& detail = game["detail"];
         
@@ -64,7 +70,7 @@ void Game::updateFromJson(const Json::Value &game) {
 
 std::string Game::stateString() const {
     std::string message;
-    if(!allDataSent()) {
+    if(!replaySent()) {
         message = "发送中...";
     } else {
         if(isMyTurn()) {
@@ -76,18 +82,25 @@ std::string Game::stateString() const {
     return message;
 }
 
-void Game::paintingRecordSent(bool result) {
+void Game::endSendReplay(bool result) {
     if(result) {
         state_ = kGameStateUnknown;
-        paintingRecord_.state = kSendStateIdle;
+        replaySendState_ = kSendStateIdle;
         CCLOG("Game::paintingRecordSent:%d",state_);
     } else {
-        paintingRecord_.state = kSendStateIdle;
+        replaySendState_ = kSendStateIdle;
     }
 }
 
-void Game::savePaintingRecord(Difficult diff,const std::string& record) {
+void Game::commitTurn(Difficult diff, 
+                      const std::string &paintRecord, 
+                      size_t paintRecordSize, 
+                      const std::string &solveRecord, 
+                      size_t solveRecordSize) {
     question_.setDifficult(diff);
-    paintingRecord_.state = kSendStateWaiting;
-    paintingRecord_.base64Data = record;
+    replay_.setPaintReplay(paintRecord, paintRecordSize);
+    replay_.setSolveReplay(solveRecord, solveRecordSize);
+    
+    replaySendState_ = kSendStateWaiting;
 }
+

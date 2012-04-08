@@ -31,8 +31,7 @@ public:
     Word& word(Difficult diff) { return words_[diff]; }
     const Word& word(Difficult diff) const { return words_[diff]; }
     
-    const std::string& paintingId() const { return paintingId_; }
-    const std::string& answeringId() const { return answeringId_; }
+    const std::string& replayId() const { return replayId_; }
     
     void setDifficult(Difficult dif) { difficult_ = dif; }
     Difficult difficult() const { return difficult_; }
@@ -41,8 +40,7 @@ public:
 protected:
     Word words_[kDifficultCount];
     Difficult difficult_;   // difficult used
-    std::string paintingId_;
-    std::string answeringId_;
+    std::string replayId_;
 };
 
 

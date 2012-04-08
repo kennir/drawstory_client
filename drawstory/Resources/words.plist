@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>b_a</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_b</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_c</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_d</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_e</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_f</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_g</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 141}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 141}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_h</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 165}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 165}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_i</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_j</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_k</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_l</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_m</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_n</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 0}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 0}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_o</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_p</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_q</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_r</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_s</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_t</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 141}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 141}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_u</key>
+		<dict>
+			<key>frame</key>
+			<string>{{29, 165}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{29, 165}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_v</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_w</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_x</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_y</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>b_z</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 24}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 24}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_a</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_b</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_c</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_d</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_e</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 47}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 47}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_f</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_g</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_h</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_i</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 141}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 141}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_j</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 165}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 165}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_k</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_l</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_m</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_n</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 71}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 71}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_o</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_p</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_q</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 141}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 141}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_r</key>
+		<dict>
+			<key>frame</key>
+			<string>{{87, 165}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{87, 165}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_s</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_t</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_u</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 94}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 94}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_v</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_w</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 141}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 141}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_x</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 165}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 165}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_y</key>
+		<dict>
+			<key>frame</key>
+			<string>{{145, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{145, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+		<key>w_z</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 118}, {26, 21}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 118}, {26, 21}}</string>
+			<key>sourceSize</key>
+			<string>{26, 21}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{202, 186}</string>
+	</dict>
+</dict>
+</plist>

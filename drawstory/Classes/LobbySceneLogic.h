@@ -34,8 +34,10 @@ public:
     void cancelQueryCurrentRandomGame();
     void queryGamesForUser();
     void playGame(const std::string& gameId);
-    void sendPainting(const std::string& painting);
+    void sendPainting(const std::string& painting,size_t originSize);
     void sendPaintingRequestForAllGames();
+    void queryReplay();
+    void cancelQueryReplay();
                       
     void onResponse(bool result,const Json::Value& response,SimpleHttpRequest* request);
     
@@ -51,6 +53,7 @@ protected:
     void processResponseForQueryCurrentRandomGame(bool curlState,const Json::Value& response);
     void processResponseForQueryGamesForUser(bool curlState,const Json::Value& response);
     void processResponseForSendPainting(bool curlState,const Json::Value& response);
+    void processResponseForQueryReplay(bool curlState,const Json::Value& response);
     
     void addReqeust(SimpleHttpRequest* request);
     void cancelAllRequestsForTag(int tag);
@@ -64,7 +67,7 @@ protected:
     
     bool logined_;
     
-    std::string objectIdForCurrentGameId_;
+//    std::string objectIdForCurrentGameId_;
 };
 
 #endif

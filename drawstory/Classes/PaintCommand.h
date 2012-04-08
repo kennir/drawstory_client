@@ -91,7 +91,7 @@ public:
     virtual ~ResetCommand() { }
 };
 
-class CommandQueue {
+class PaintCommandQueue {
 public:
     typedef struct _CI{
         Command* cmd;
@@ -99,7 +99,7 @@ public:
         _CI(Command* c) : cmd(c), ms(Command::nowMillisecond()) { }
     } CommandInfo;
     
-    virtual ~CommandQueue() {
+    virtual ~PaintCommandQueue() {
         this->clear();
     }
     
@@ -110,7 +110,12 @@ public:
     Command* current() { return commands_.back().cmd; }
     
     void clear();
-    std::string serialize() const;
+    
+    const std::vector<CommandInfo>& commands() const { return commands_; }
+    
+    // Return size of origin data
+    // data: zipped and base64ed string
+    size_t serialize(std::string& data) const;
 protected:
     Json::Value serializeToJson() const;
     

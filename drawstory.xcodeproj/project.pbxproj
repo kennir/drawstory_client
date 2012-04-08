@@ -12,7 +12,19 @@
 		BE3ED96A152CBBAE00EB05B7 /* PaintCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */; };
 		BE3ED96E152D9C9400EB05B7 /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED96D152D9C9400EB05B7 /* ybase64.c */; };
 		BE3ED97E15315E6000EB05B7 /* PaintingReplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED97D15315E6000EB05B7 /* PaintingReplayLayer.cpp */; };
-		BE3ED981153167AF00EB05B7 /* PaintingCanvasLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED980153167AE00EB05B7 /* PaintingCanvasLayer.cpp */; };
+		BE3ED981153167AF00EB05B7 /* PaintingScene_PaintingCanvasLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED980153167AE00EB05B7 /* PaintingScene_PaintingCanvasLayer.cpp */; };
+		BE3ED98A15317C8300EB05B7 /* words-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98615317C8300EB05B7 /* words-hd.plist */; };
+		BE3ED98B15317C8300EB05B7 /* words-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98715317C8300EB05B7 /* words-hd.png */; };
+		BE3ED98C15317C8300EB05B7 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98815317C8300EB05B7 /* words.plist */; };
+		BE3ED98D15317C8300EB05B7 /* words.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98915317C8300EB05B7 /* words.png */; };
+		BE3ED99215317C8A00EB05B7 /* solvelayer-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98E15317C8A00EB05B7 /* solvelayer-hd.plist */; };
+		BE3ED99315317C8A00EB05B7 /* solvelayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED98F15317C8A00EB05B7 /* solvelayer-hd.png */; };
+		BE3ED99415317C8A00EB05B7 /* solvelayer.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED99015317C8A00EB05B7 /* solvelayer.plist */; };
+		BE3ED99515317C8A00EB05B7 /* solvelayer.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3ED99115317C8A00EB05B7 /* solvelayer.png */; };
+		BE3ED99815317CC300EB05B7 /* SolvingScene_TitleBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED99715317CC200EB05B7 /* SolvingScene_TitleBarLayer.cpp */; };
+		BE3ED99F153184AE00EB05B7 /* SolvingScene_SolvingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED99E153184AE00EB05B7 /* SolvingScene_SolvingLayer.cpp */; };
+		BE3ED9A81531EB0400EB05B7 /* KeyboardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED9A71531EB0300EB05B7 /* KeyboardLayer.cpp */; };
+		BE3ED9AB1531EC6E00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED9AA1531EC6D00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp */; };
 		BE5A7E3215249E7D0005D491 /* UserProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3115249E7D0005D491 /* UserProfile.cpp */; };
 		BE5A7E401524CF820005D491 /* LobbySceneLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E3F1524CF820005D491 /* LobbySceneLogic.cpp */; };
 		BE5A7E47152586CE0005D491 /* RegisterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E46152586CE0005D491 /* RegisterLayer.cpp */; };
@@ -22,7 +34,7 @@
 		BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E5B1526F7390005D491 /* LoginLayer.cpp */; };
 		BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6A15275D640005D491 /* MessageLayer.cpp */; };
 		BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E6D15282C6C0005D491 /* Game.cpp */; };
-		BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E761528DB400005D491 /* PaintingLayer.cpp */; };
+		BE5A7E771528DB420005D491 /* PaintingScene_PaintingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7E761528DB400005D491 /* PaintingScene_PaintingLayer.cpp */; };
 		BE5A7E8A1529A3FA0005D491 /* textures-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E861529A3FA0005D491 /* textures-hd.plist */; };
 		BE5A7E8B1529A3FA0005D491 /* textures-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E871529A3FA0005D491 /* textures-hd.png */; };
 		BE5A7E8C1529A3FA0005D491 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7E881529A3FA0005D491 /* textures.plist */; };
@@ -37,8 +49,8 @@
 		BE5A7EB3152A24B90005D491 /* paintinglayer.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5A7EAF152A24B90005D491 /* paintinglayer.png */; };
 		BE5A7EB6152A25410005D491 /* DrawSolidCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EB5152A25400005D491 /* DrawSolidCircle.cpp */; };
 		BE5A7EC3152AE1FF0005D491 /* ToggleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EC2152AE1FF0005D491 /* ToggleButton.cpp */; };
-		BE5A7ECA152AFC850005D491 /* PS_CommandBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EC9152AFC840005D491 /* PS_CommandBarLayer.cpp */; };
-		BE5A7ECD152B34E60005D491 /* PS_TitleBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7ECC152B34E50005D491 /* PS_TitleBarLayer.cpp */; };
+		BE5A7ECA152AFC850005D491 /* PaintingScene_CommandBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7EC9152AFC840005D491 /* PaintingScene_CommandBarLayer.cpp */; };
+		BE5A7ECD152B34E60005D491 /* PaintingScene_TitleBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7ECC152B34E50005D491 /* PaintingScene_TitleBarLayer.cpp */; };
 		BE5A7ED0152B62C10005D491 /* TitleBarLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE5A7ECF152B62C00005D491 /* TitleBarLayer.cpp */; };
 		BEE30DD3152462F500F8AAE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD2152462F500F8AAE7 /* QuartzCore.framework */; };
 		BEE30DD5152462F500F8AAE7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE30DD4152462F500F8AAE7 /* OpenGLES.framework */; };
@@ -232,8 +244,25 @@
 		BE3ED96F152D9CE200EB05B7 /* ydefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ydefines.h; path = Classes/ydefines.h; sourceTree = "<group>"; };
 		BE3ED97C15315E4F00EB05B7 /* PaintingReplayLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingReplayLayer.h; path = Classes/PaintingReplayLayer.h; sourceTree = "<group>"; };
 		BE3ED97D15315E6000EB05B7 /* PaintingReplayLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingReplayLayer.cpp; path = Classes/PaintingReplayLayer.cpp; sourceTree = "<group>"; };
-		BE3ED97F153167A000EB05B7 /* PaintingCanvasLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingCanvasLayer.h; path = Classes/PaintingCanvasLayer.h; sourceTree = "<group>"; };
-		BE3ED980153167AE00EB05B7 /* PaintingCanvasLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingCanvasLayer.cpp; path = Classes/PaintingCanvasLayer.cpp; sourceTree = "<group>"; };
+		BE3ED97F153167A000EB05B7 /* PaintingScene_PaintingCanvasLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingScene_PaintingCanvasLayer.h; path = Classes/PaintingScene_PaintingCanvasLayer.h; sourceTree = "<group>"; };
+		BE3ED980153167AE00EB05B7 /* PaintingScene_PaintingCanvasLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingScene_PaintingCanvasLayer.cpp; path = Classes/PaintingScene_PaintingCanvasLayer.cpp; sourceTree = "<group>"; };
+		BE3ED9831531738000EB05B7 /* SolvingScene_SolvingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SolvingScene_SolvingLayer.h; path = Classes/SolvingScene_SolvingLayer.h; sourceTree = "<group>"; };
+		BE3ED98615317C8300EB05B7 /* words-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "words-hd.plist"; path = "Resources/words-hd.plist"; sourceTree = "<group>"; };
+		BE3ED98715317C8300EB05B7 /* words-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "words-hd.png"; path = "Resources/words-hd.png"; sourceTree = "<group>"; };
+		BE3ED98815317C8300EB05B7 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = words.plist; path = Resources/words.plist; sourceTree = "<group>"; };
+		BE3ED98915317C8300EB05B7 /* words.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = words.png; path = Resources/words.png; sourceTree = "<group>"; };
+		BE3ED98E15317C8A00EB05B7 /* solvelayer-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "solvelayer-hd.plist"; path = "Resources/solvelayer-hd.plist"; sourceTree = "<group>"; };
+		BE3ED98F15317C8A00EB05B7 /* solvelayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "solvelayer-hd.png"; path = "Resources/solvelayer-hd.png"; sourceTree = "<group>"; };
+		BE3ED99015317C8A00EB05B7 /* solvelayer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = solvelayer.plist; path = Resources/solvelayer.plist; sourceTree = "<group>"; };
+		BE3ED99115317C8A00EB05B7 /* solvelayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = solvelayer.png; path = Resources/solvelayer.png; sourceTree = "<group>"; };
+		BE3ED99615317CB100EB05B7 /* SolvingScene_TitleBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SolvingScene_TitleBarLayer.h; path = Classes/SolvingScene_TitleBarLayer.h; sourceTree = "<group>"; };
+		BE3ED99715317CC200EB05B7 /* SolvingScene_TitleBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SolvingScene_TitleBarLayer.cpp; path = Classes/SolvingScene_TitleBarLayer.cpp; sourceTree = "<group>"; };
+		BE3ED99E153184AE00EB05B7 /* SolvingScene_SolvingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SolvingScene_SolvingLayer.cpp; path = Classes/SolvingScene_SolvingLayer.cpp; sourceTree = "<group>"; };
+		BE3ED9A51531C6E900EB05B7 /* Replay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Replay.h; path = Classes/Replay.h; sourceTree = "<group>"; };
+		BE3ED9A61531EAF500EB05B7 /* KeyboardLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KeyboardLayer.h; path = Classes/KeyboardLayer.h; sourceTree = "<group>"; };
+		BE3ED9A71531EB0300EB05B7 /* KeyboardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KeyboardLayer.cpp; path = Classes/KeyboardLayer.cpp; sourceTree = "<group>"; };
+		BE3ED9A91531EC5800EB05B7 /* SolvingScene_SolveKeyboardLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SolvingScene_SolveKeyboardLayer.h; path = Classes/SolvingScene_SolveKeyboardLayer.h; sourceTree = "<group>"; };
+		BE3ED9AA1531EC6D00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SolvingScene_SolveKeyboardLayer.cpp; path = Classes/SolvingScene_SolveKeyboardLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E3015249E6A0005D491 /* UserProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = Classes/UserProfile.h; sourceTree = "<group>"; };
 		BE5A7E3115249E7D0005D491 /* UserProfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserProfile.cpp; path = Classes/UserProfile.cpp; sourceTree = "<group>"; };
 		BE5A7E3E1524CF640005D491 /* LobbySceneLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LobbySceneLogic.h; path = Classes/LobbySceneLogic.h; sourceTree = "<group>"; };
@@ -253,8 +282,8 @@
 		BE5A7E6C15282C580005D491 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Classes/Game.h; sourceTree = "<group>"; };
 		BE5A7E6D15282C6C0005D491 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = Classes/Game.cpp; sourceTree = "<group>"; };
 		BE5A7E741528C2C50005D491 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = Classes/types.h; sourceTree = "<group>"; };
-		BE5A7E751528DB330005D491 /* PaintingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingLayer.h; path = Classes/PaintingLayer.h; sourceTree = "<group>"; };
-		BE5A7E761528DB400005D491 /* PaintingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingLayer.cpp; path = Classes/PaintingLayer.cpp; sourceTree = "<group>"; };
+		BE5A7E751528DB330005D491 /* PaintingScene_PaintingLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingScene_PaintingLayer.h; path = Classes/PaintingScene_PaintingLayer.h; sourceTree = "<group>"; };
+		BE5A7E761528DB400005D491 /* PaintingScene_PaintingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingScene_PaintingLayer.cpp; path = Classes/PaintingScene_PaintingLayer.cpp; sourceTree = "<group>"; };
 		BE5A7E861529A3FA0005D491 /* textures-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "textures-hd.plist"; path = "Resources/textures-hd.plist"; sourceTree = "<group>"; };
 		BE5A7E871529A3FA0005D491 /* textures-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textures-hd.png"; path = "Resources/textures-hd.png"; sourceTree = "<group>"; };
 		BE5A7E881529A3FA0005D491 /* textures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = textures.plist; path = Resources/textures.plist; sourceTree = "<group>"; };
@@ -276,10 +305,10 @@
 		BE5A7EB7152A25970005D491 /* DrawSolidCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawSolidCircle.h; path = Classes/DrawSolidCircle.h; sourceTree = "<group>"; };
 		BE5A7EC1152AE1F30005D491 /* ToggleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToggleButton.h; path = Classes/ToggleButton.h; sourceTree = "<group>"; };
 		BE5A7EC2152AE1FF0005D491 /* ToggleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ToggleButton.cpp; path = Classes/ToggleButton.cpp; sourceTree = "<group>"; };
-		BE5A7EC8152AFC770005D491 /* PS_CommandBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PS_CommandBarLayer.h; path = Classes/PS_CommandBarLayer.h; sourceTree = "<group>"; };
-		BE5A7EC9152AFC840005D491 /* PS_CommandBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PS_CommandBarLayer.cpp; path = Classes/PS_CommandBarLayer.cpp; sourceTree = "<group>"; };
-		BE5A7ECB152B34D00005D491 /* PS_TitleBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PS_TitleBarLayer.h; path = Classes/PS_TitleBarLayer.h; sourceTree = "<group>"; };
-		BE5A7ECC152B34E50005D491 /* PS_TitleBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PS_TitleBarLayer.cpp; path = Classes/PS_TitleBarLayer.cpp; sourceTree = "<group>"; };
+		BE5A7EC8152AFC770005D491 /* PaintingScene_CommandBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingScene_CommandBarLayer.h; path = Classes/PaintingScene_CommandBarLayer.h; sourceTree = "<group>"; };
+		BE5A7EC9152AFC840005D491 /* PaintingScene_CommandBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingScene_CommandBarLayer.cpp; path = Classes/PaintingScene_CommandBarLayer.cpp; sourceTree = "<group>"; };
+		BE5A7ECB152B34D00005D491 /* PaintingScene_TitleBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PaintingScene_TitleBarLayer.h; path = Classes/PaintingScene_TitleBarLayer.h; sourceTree = "<group>"; };
+		BE5A7ECC152B34E50005D491 /* PaintingScene_TitleBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PaintingScene_TitleBarLayer.cpp; path = Classes/PaintingScene_TitleBarLayer.cpp; sourceTree = "<group>"; };
 		BE5A7ECE152B62940005D491 /* TitleBarLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TitleBarLayer.h; path = Classes/TitleBarLayer.h; sourceTree = "<group>"; };
 		BE5A7ECF152B62C00005D491 /* TitleBarLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TitleBarLayer.cpp; path = Classes/TitleBarLayer.cpp; sourceTree = "<group>"; };
 		BEE30DCE152462F500F8AAE7 /* drawstory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawstory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -685,29 +714,34 @@
 			name = base64;
 			sourceTree = "<group>";
 		};
-		BE3ED979152F075100EB05B7 /* solvescene */ = {
+		BE3ED979152F075100EB05B7 /* solvingscene */ = {
 			isa = PBXGroup;
 			children = (
+				BE3ED9831531738000EB05B7 /* SolvingScene_SolvingLayer.h */,
+				BE3ED99E153184AE00EB05B7 /* SolvingScene_SolvingLayer.cpp */,
+				BE3ED99615317CB100EB05B7 /* SolvingScene_TitleBarLayer.h */,
+				BE3ED99715317CC200EB05B7 /* SolvingScene_TitleBarLayer.cpp */,
+				BE3ED9A91531EC5800EB05B7 /* SolvingScene_SolveKeyboardLayer.h */,
+				BE3ED9AA1531EC6D00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp */,
 			);
-			name = solvescene;
+			name = solvingscene;
 			sourceTree = "<group>";
 		};
-		BE3ED97B152F079C00EB05B7 /* paintingreplaylayer */ = {
+		BE3ED98215316F4100EB05B7 /* basiclayers */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A7EA61529F90E0005D491 /* Brush.h */,
+				BE5A7EA71529FA270005D491 /* Brush.cpp */,
 				BE3ED97C15315E4F00EB05B7 /* PaintingReplayLayer.h */,
 				BE3ED97D15315E6000EB05B7 /* PaintingReplayLayer.cpp */,
-			);
-			name = paintingreplaylayer;
-			sourceTree = "<group>";
-		};
-		BE3ED98215316F4100EB05B7 /* canvaslayers */ = {
-			isa = PBXGroup;
-			children = (
+				BE5A7E9D1529E5390005D491 /* PaintCommand.h */,
+				BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */,
 				BE5A7EA9152A0C900005D491 /* CanvasLayer.h */,
 				BE5A7EAA152A0C9C0005D491 /* CanvasLayer.cpp */,
+				BE3ED9A61531EAF500EB05B7 /* KeyboardLayer.h */,
+				BE3ED9A71531EB0300EB05B7 /* KeyboardLayer.cpp */,
 			);
-			name = canvaslayers;
+			name = basiclayers;
 			sourceTree = "<group>";
 		};
 		BE5A7E2E15249CF50005D491 /* client */ = {
@@ -722,18 +756,14 @@
 		BE5A7E3C1524CF240005D491 /* paintscene */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A7E751528DB330005D491 /* PaintingLayer.h */,
-				BE5A7E761528DB400005D491 /* PaintingLayer.cpp */,
-				BE5A7E9D1529E5390005D491 /* PaintCommand.h */,
-				BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */,
-				BE5A7EA61529F90E0005D491 /* Brush.h */,
-				BE5A7EA71529FA270005D491 /* Brush.cpp */,
-				BE5A7EC8152AFC770005D491 /* PS_CommandBarLayer.h */,
-				BE5A7EC9152AFC840005D491 /* PS_CommandBarLayer.cpp */,
-				BE5A7ECB152B34D00005D491 /* PS_TitleBarLayer.h */,
-				BE5A7ECC152B34E50005D491 /* PS_TitleBarLayer.cpp */,
-				BE3ED97F153167A000EB05B7 /* PaintingCanvasLayer.h */,
-				BE3ED980153167AE00EB05B7 /* PaintingCanvasLayer.cpp */,
+				BE5A7E751528DB330005D491 /* PaintingScene_PaintingLayer.h */,
+				BE5A7E761528DB400005D491 /* PaintingScene_PaintingLayer.cpp */,
+				BE5A7EC8152AFC770005D491 /* PaintingScene_CommandBarLayer.h */,
+				BE5A7EC9152AFC840005D491 /* PaintingScene_CommandBarLayer.cpp */,
+				BE5A7ECB152B34D00005D491 /* PaintingScene_TitleBarLayer.h */,
+				BE5A7ECC152B34E50005D491 /* PaintingScene_TitleBarLayer.cpp */,
+				BE3ED97F153167A000EB05B7 /* PaintingScene_PaintingCanvasLayer.h */,
+				BE3ED980153167AE00EB05B7 /* PaintingScene_PaintingCanvasLayer.cpp */,
 			);
 			name = paintscene;
 			sourceTree = "<group>";
@@ -768,6 +798,7 @@
 				BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */,
 				BE3ED966152CA2DC00EB05B7 /* Question.h */,
 				BE3ED967152CAB7600EB05B7 /* Question.cpp */,
+				BE3ED9A51531C6E900EB05B7 /* Replay.h */,
 			);
 			name = Profiles;
 			sourceTree = "<group>";
@@ -843,6 +874,14 @@
 		BEE30DE3152462F500F8AAE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE3ED98E15317C8A00EB05B7 /* solvelayer-hd.plist */,
+				BE3ED98F15317C8A00EB05B7 /* solvelayer-hd.png */,
+				BE3ED99015317C8A00EB05B7 /* solvelayer.plist */,
+				BE3ED99115317C8A00EB05B7 /* solvelayer.png */,
+				BE3ED98615317C8300EB05B7 /* words-hd.plist */,
+				BE3ED98715317C8300EB05B7 /* words-hd.png */,
+				BE3ED98815317C8300EB05B7 /* words.plist */,
+				BE3ED98915317C8300EB05B7 /* words.png */,
 				BE5A7EAC152A24B80005D491 /* paintinglayer-hd.plist */,
 				BE5A7EAD152A24B90005D491 /* paintinglayer-hd.png */,
 				BE5A7EAE152A24B90005D491 /* paintinglayer.plist */,
@@ -1532,9 +1571,8 @@
 		BEE31018152462FA00F8AAE7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BE3ED98215316F4100EB05B7 /* canvaslayers */,
-				BE3ED97B152F079C00EB05B7 /* paintingreplaylayer */,
-				BE3ED979152F075100EB05B7 /* solvescene */,
+				BE3ED98215316F4100EB05B7 /* basiclayers */,
+				BE3ED979152F075100EB05B7 /* solvingscene */,
 				BE5A7EBC152ADEEC0005D491 /* Utils */,
 				BE5A7E731528418C0005D491 /* Profiles */,
 				BE5A7E3C1524CF240005D491 /* paintscene */,
@@ -1646,6 +1684,14 @@
 				BE5A7EB1152A24B90005D491 /* paintinglayer-hd.png in Resources */,
 				BE5A7EB2152A24B90005D491 /* paintinglayer.plist in Resources */,
 				BE5A7EB3152A24B90005D491 /* paintinglayer.png in Resources */,
+				BE3ED98A15317C8300EB05B7 /* words-hd.plist in Resources */,
+				BE3ED98B15317C8300EB05B7 /* words-hd.png in Resources */,
+				BE3ED98C15317C8300EB05B7 /* words.plist in Resources */,
+				BE3ED98D15317C8300EB05B7 /* words.png in Resources */,
+				BE3ED99215317C8A00EB05B7 /* solvelayer-hd.plist in Resources */,
+				BE3ED99315317C8A00EB05B7 /* solvelayer-hd.png in Resources */,
+				BE3ED99415317C8A00EB05B7 /* solvelayer.plist in Resources */,
+				BE3ED99515317C8A00EB05B7 /* solvelayer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1824,22 +1870,26 @@
 				BE5A7E5C1526F7390005D491 /* LoginLayer.cpp in Sources */,
 				BE5A7E6B15275D640005D491 /* MessageLayer.cpp in Sources */,
 				BE5A7E6E15282C6C0005D491 /* Game.cpp in Sources */,
-				BE5A7E771528DB420005D491 /* PaintingLayer.cpp in Sources */,
+				BE5A7E771528DB420005D491 /* PaintingScene_PaintingLayer.cpp in Sources */,
 				BE5A7E951529CA5A0005D491 /* GameLabelNode.cpp in Sources */,
 				BE5A7E981529CC6A0005D491 /* GameListLayer.cpp in Sources */,
 				BE5A7EA81529FA280005D491 /* Brush.cpp in Sources */,
 				BE5A7EAB152A0C9D0005D491 /* CanvasLayer.cpp in Sources */,
 				BE5A7EB6152A25410005D491 /* DrawSolidCircle.cpp in Sources */,
 				BE5A7EC3152AE1FF0005D491 /* ToggleButton.cpp in Sources */,
-				BE5A7ECA152AFC850005D491 /* PS_CommandBarLayer.cpp in Sources */,
-				BE5A7ECD152B34E60005D491 /* PS_TitleBarLayer.cpp in Sources */,
+				BE5A7ECA152AFC850005D491 /* PaintingScene_CommandBarLayer.cpp in Sources */,
+				BE5A7ECD152B34E60005D491 /* PaintingScene_TitleBarLayer.cpp in Sources */,
 				BE5A7ED0152B62C10005D491 /* TitleBarLayer.cpp in Sources */,
 				BE3ED965152C7CC100EB05B7 /* GlobalData.cpp in Sources */,
 				BE3ED968152CAB7600EB05B7 /* Question.cpp in Sources */,
 				BE3ED96A152CBBAE00EB05B7 /* PaintCommand.cpp in Sources */,
 				BE3ED96E152D9C9400EB05B7 /* ybase64.c in Sources */,
 				BE3ED97E15315E6000EB05B7 /* PaintingReplayLayer.cpp in Sources */,
-				BE3ED981153167AF00EB05B7 /* PaintingCanvasLayer.cpp in Sources */,
+				BE3ED981153167AF00EB05B7 /* PaintingScene_PaintingCanvasLayer.cpp in Sources */,
+				BE3ED99815317CC300EB05B7 /* SolvingScene_TitleBarLayer.cpp in Sources */,
+				BE3ED99F153184AE00EB05B7 /* SolvingScene_SolvingLayer.cpp in Sources */,
+				BE3ED9A81531EB0400EB05B7 /* KeyboardLayer.cpp in Sources */,
+				BE3ED9AB1531EC6E00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

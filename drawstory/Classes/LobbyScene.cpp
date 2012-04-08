@@ -11,8 +11,9 @@
 #include "RegisterLayer.h"
 #include "MessageLayer.h"
 #include "GameListLayer.h"
-#include "PaintingLayer.h"
 #include "TitleBarLayer.h"
+#include "PaintingScene_PaintingLayer.h"
+#include "SolvingScene_SolvingLayer.h"
 
 using namespace cocos2d;
 
@@ -27,6 +28,7 @@ enum {
     kTagGameListLayer,
     kTagMessageLayer,
     kTagPaintingLayer, 
+    kTagSolvingLayer,
 };
 
 // z-values
@@ -35,11 +37,16 @@ enum {
     kZTitleBarLayer     = 3,
     kZGameListLayer     = 2,
     kZRegisterLayer     = 4,
-    kZPaintingLayer     = 5,
     kZMessageLayer      = 4, 
+    kZPaintingLayer     = 5,
+    kZSolvingLayer      = 5,
 };
 
-enum { kMsgTagWaitingQueryRandomGame = 1,kMsgTagWaitingCreateRandomGame };
+enum { 
+    kMsgTagWaitingQueryRandomGame = 1,
+    kMsgTagWaitingCreateRandomGame,
+    kMsgTagWaitingQueryRecords
+};
 
 CCScene* LobbyScene::scene()
 {
@@ -59,6 +66,7 @@ LobbyScene::LobbyScene()
 , registerLayer_(NULL)
 , messageLayer_(NULL)
 , paintingLayer_(NULL)
+, solvingLayer_(NULL)
 {
     pthread_mutex_init(&stateMutex_, NULL);
     pthread_mutex_init(&eventMutex_, NULL);
@@ -73,6 +81,7 @@ LobbyScene::~LobbyScene()
     CC_SAFE_RELEASE_NULL(messageLayer_);
     CC_SAFE_RELEASE_NULL(gameListLayer_);
     CC_SAFE_RELEASE_NULL(paintingLayer_);
+    CC_SAFE_RELEASE_NULL(solvingLayer_);
     
     delete logic_;
 }
@@ -159,6 +168,13 @@ void LobbyScene::processLogicChanged()
             case kLobbyStatePaintQuestion:
                 removePaintingLayer();
                 break;
+            case kLobbyStateSolveQuestion:
+                removeSolvingLayer();
+                break;
+            case kLobbyStateWaitingForQueryReplay:
+                removeMessageLayer();
+                break;
+                
             default:
                 break;
         }
@@ -189,10 +205,23 @@ void LobbyScene::processLogicChanged()
                 schedule(schedule_selector(LobbyScene::queryCurrentRandomGame),5.0f);
                 break;
             case kLobbyStateIdle:
-                refreshGamesForUser();
+//                refreshGamesForUser();
+                CCLOG("==========scheduled: queryCurrentRandomGame");
+                schedule(schedule_selector(LobbyScene::refreshGamesForUser),5.0f);
+                break;
+            case kLobbyStateWaitingForQueryReplay:
+                addMessageLayer("加载绘图...",
+                                true,       // show cancel button
+                                this,       // delegate
+                                callfunc_selector(LobbyScene::onMessageLayerForQueryReplayCancelled),
+                                kMsgTagWaitingQueryRecords);
+                
                 break;
             case kLobbyStatePaintQuestion:
                 addPaintingLayer();
+                break;
+            case kLobbyStateSolveQuestion:
+                addSolvingLayer();
                 break;
             default:
                 break;
@@ -250,10 +279,14 @@ void LobbyScene::onMessageLayerForCreateRandomGameCancelled() {
     logic_->cancelCreateRandomGame();
 }
 
+void LobbyScene::onMessageLayerForQueryReplayCancelled() {
+    logic_->cancelQueryReplay();
+}
+
 void LobbyScene::refreshGamesForUser()
 {
-    CCLOG("==========unschedule: refreshGamesForUser");
     if(!logic_->hasRunningRequest()){
+        CCLOG("==========unschedule: refreshGamesForUser");
         unschedule(schedule_selector(LobbyScene::refreshGamesForUser));
         logic_->queryGamesForUser();  
     }
@@ -323,4 +356,22 @@ void LobbyScene::addPaintingLayer() {
 void LobbyScene::removePaintingLayer() {
     removeChildByTag(kTagPaintingLayer, false);
 }
+
+void LobbyScene::addSolvingLayer() {
+    if(!solvingLayer_) {
+        solvingLayer_ = SolvingScene::SolvingLayer::node();
+        solvingLayer_->retain();
+        addChild(solvingLayer_,kZSolvingLayer,kTagSolvingLayer);
+    } else {
+        if(!getChildByTag(kTagPaintingLayer))
+            addChild(solvingLayer_,kZSolvingLayer,kTagSolvingLayer);
+    }
+}
+
+
+void LobbyScene::removeSolvingLayer() {
+    removeChildByTag(kTagSolvingLayer, false);
+}
+
+
 

@@ -13,6 +13,7 @@
 #include "string"
 #include "Question.h"
 
+
 class GlobalData {
 public:
     static GlobalData* sharedGlobalData();
@@ -23,6 +24,10 @@ public:
     
     void setCurrentGameId(const std::string& gameId) { currentGameId_ = gameId; }
     const std::string& currentGameId() const { return currentGameId_; }
+    
+protected:
+
+    
 protected:
     Difficult currentDifficult_;
     std::string currentGameId_;

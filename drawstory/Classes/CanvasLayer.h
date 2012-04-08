@@ -21,14 +21,14 @@ public:
     CanvasLayer();
     virtual ~CanvasLayer();
     
-    const CommandQueue& commandQueue() const { return commandQueue_; }
+    const PaintCommandQueue& commandQueue() const { return commandQueue_; }
     
     virtual bool init();
     virtual void resetToInitial();
     void deletePainting();
 protected:
 
-    CommandQueue commandQueue_;
+    PaintCommandQueue commandQueue_;
     
 
     cocos2d::CCRenderTexture* target_;

@@ -21,10 +21,10 @@ typedef enum
     kLobbyStateIdle,
     kLobbyStateWaitingForCreateRandomGame,
     kLobbyStateWaitingForQueryCurrentRandomGame,
-    kLobbyStateReplayAnswer,
-    kLobbyStateSelectQuestion,
+    kLobbyStateWaitingForQueryReplay,
     kLobbyStatePaintQuestion,
-    kLobbyStateAnswerQuestion,
+    kLobbyStateSolveQuestion,
+    kLobbyStateReplayResult,
 } LobbyState;
 
 
@@ -47,6 +47,8 @@ typedef enum {
     kTouchPriorityCanvasLayer = -5,
     kTouchPriorityTitleBarLayer = -6,
     kTouchPriorityCommandBarLayer = -6,
+    
+    kTouchPrioritySolvingLayer = -4,
 
 } TouchPriority;
 

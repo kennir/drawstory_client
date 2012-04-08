@@ -22,7 +22,6 @@ void Question::updateFromJson(const Json::Value &question) {
     }
     
     // get painting id
-    paintingId_ = question["paintingid"].asString();
-    answeringId_ = question["answeringid"].asString();
+    replayId_ = question["replayid"].asString();
 }
 

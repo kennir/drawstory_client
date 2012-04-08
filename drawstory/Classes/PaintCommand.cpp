@@ -40,10 +40,12 @@ void DrawCommand::serialize(Json::Value &value) const {
     value["brushColor"]["b"] = brushColor_.b;
 }
 
-std::string CommandQueue::serialize() const {
+size_t PaintCommandQueue::serialize(std::string& data) const {
     Json::Value value = serializeToJson();
     Json::FastWriter writer;
     std::string output = writer.write(value);
+    
+    size_t originSize = output.size();
     
     // compress it 
     uLong length = compressBound(output.size());
@@ -57,20 +59,24 @@ std::string CommandQueue::serialize() const {
         buffer.resize(length);
     }
     
-    // release output
+    // free buffer
     output.clear(); 
 
-    // then compress to bese64
+    // compress to bese64
     size_t sizeofBase64 = 0;
     char* base64 = static_cast<char*>(ybase64_encode_alloc(&buffer.front(), buffer.size(), &sizeofBase64));
     
-    // release buffer
-    //buffer.clear();
-
+    // free buffer
+    buffer.clear();
+    
+    // copy to data
     CCLOG("base64 size is:%u",sizeofBase64);
-    std::string base64String(base64);
-    // release base64 buffer
+    data = base64;
+
+    
+    // free buffer
     free(base64);
+
     
 //    // try uncompress back
 //    size_t unbase64Size;
@@ -89,11 +95,11 @@ std::string CommandQueue::serialize() const {
 //    free(unbase64);
 //    delete[] unzipBuffer;
     
-    return base64String;
+    return originSize;
 }
 
 
-Json::Value CommandQueue::serializeToJson() const {
+Json::Value PaintCommandQueue::serializeToJson() const {
     Json::Value value;
     
     long timeInMs = 0;
@@ -117,7 +123,7 @@ Json::Value CommandQueue::serializeToJson() const {
     return value;
 }
 
-void CommandQueue::clear() { 
+void PaintCommandQueue::clear() { 
     std::vector< CommandInfo >::iterator it = commands_.begin();
     while (it != commands_.end()) {
         delete (*it).cmd;

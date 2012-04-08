@@ -9,7 +9,7 @@
 #include "CanvasLayer.h"
 
 using namespace cocos2d;
-using namespace PaintingScene;
+
 
 
 

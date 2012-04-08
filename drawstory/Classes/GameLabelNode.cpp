@@ -90,7 +90,7 @@ void GameLabelNode::setGame(const Game *game) {
     static_cast<CCLabelTTF*>(getChildByTag(kTagStateLabel))->setString(game->stateString().c_str());
     static_cast<CCLabelTTF*>(getChildByTag(kTagNameLabel))->setString(game->otherPlayerName().c_str());
     
-    bool showPencil = (game->isMyTurn() && game->allDataSent());
+    bool showPencil = (game->isMyTurn() && game->replaySent());
     getChildByTag(kTagPencilButton)->setIsVisible(showPencil);
 }
 

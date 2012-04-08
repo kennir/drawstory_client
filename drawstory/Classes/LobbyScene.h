@@ -15,6 +15,7 @@
 #include <queue>
 
 namespace PaintingScene { class PaintingLayer; }
+namespace SolvingScene { class SolvingLayer; }
 
 
 
@@ -55,9 +56,13 @@ protected:
     
     void addPaintingLayer();
     void removePaintingLayer();
+    
+    void addSolvingLayer();
+    void removeSolvingLayer();
 
     void onMessageLayerForCreateRandomGameCancelled();
     void onMessageLayerForQueryRandomGameCancelled();
+    void onMessageLayerForQueryReplayCancelled();
     
     void queryCurrentRandomGame();
     void refreshGamesForUser();
@@ -70,6 +75,7 @@ protected:
     RegisterLayer* registerLayer_;
     MessageLayer* messageLayer_;
     PaintingScene::PaintingLayer* paintingLayer_;
+    SolvingScene::SolvingLayer* solvingLayer_;
     
     // game list node
     GameListLayer* gameListLayer_;

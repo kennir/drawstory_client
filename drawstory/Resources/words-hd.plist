@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>b_a</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_b</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_c</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_d</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_e</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_f</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_g</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 282}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 282}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_h</key>
+		<dict>
+			<key>frame</key>
+			<string>{{0, 330}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 330}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_i</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_j</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_k</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_l</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_m</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_n</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 0}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 0}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_o</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_p</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_q</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_r</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_s</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_t</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 282}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 282}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_u</key>
+		<dict>
+			<key>frame</key>
+			<string>{{58, 330}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{58, 330}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_v</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_w</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_x</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_y</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>b_z</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 48}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 48}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_a</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_b</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_c</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_d</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_e</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 94}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 94}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_f</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_g</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_h</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_i</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 282}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 282}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_j</key>
+		<dict>
+			<key>frame</key>
+			<string>{{116, 330}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{116, 330}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_k</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_l</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_m</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_n</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 142}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 142}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_o</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_p</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_q</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 282}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 282}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_r</key>
+		<dict>
+			<key>frame</key>
+			<string>{{174, 330}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{174, 330}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_s</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_t</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_u</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 188}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 188}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_v</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_w</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 282}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 282}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_x</key>
+		<dict>
+			<key>frame</key>
+			<string>{{232, 330}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{232, 330}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_y</key>
+		<dict>
+			<key>frame</key>
+			<string>{{290, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{290, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+		<key>w_z</key>
+		<dict>
+			<key>frame</key>
+			<string>{{348, 236}, {53, 42}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{348, 236}, {53, 42}}</string>
+			<key>sourceSize</key>
+			<string>{53, 42}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{404, 372}</string>
+	</dict>
+</dict>
+</plist>

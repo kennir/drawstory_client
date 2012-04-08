@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "Question.h"
 #include "json/json.h"
+#include "Replay.h"
 
 typedef enum {
     kGameStateWaitingOpponent = 0,
@@ -31,17 +32,14 @@ typedef enum {
     kSendStateIdle,
 } SendState;
 
-typedef struct _DataForSend {
-    SendState state;
-    std::string base64Data;
-    _DataForSend() : state(kSendStateIdle) { }
-} DataForSend;
-
 class Game 
 {
 public:
     static Game* gameFromJson(const Json::Value& json);
 public:
+    Game();
+    
+    
     const std::string& objectId() const { return objectId_; }
     
     bool isOwner() const { return isOwner_; }
@@ -74,30 +72,37 @@ public:
     
     void updateFromJson(const Json::Value& game);
     
-    // 是否存在答题的录像
-    bool hasAnswerReplay() const { return (!question_.answeringId().empty()); }
-    // 是否需要回答对手的问题
-    bool hasPaintingReplay() const { return (!question_.paintingId().empty()); }
 
     const Question& question() const { return question_; }
     
 
     
     // there has data for send
-    bool allDataSent() const { return (!hasDataForWaiting() && !hasDataForSending()); }
-    bool hasDataForWaiting() const { return (paintingRecord_.state == kSendStateWaiting); }
-    bool hasDataForSending() const { return (paintingRecord_.state == kSendStateSending); }
+    SendState replaySendState() const { return replaySendState_; }
+    bool replaySent() const { return (replaySendState_ == kSendStateIdle); }
+
+    void beginSendReplay() { replaySendState_ = kSendStateSending; }
+    void endSendReplay(bool result);
     
+    void commitTurn(Difficult diff,
+                    const std::string& paintRecord,
+                    size_t paintRecordSize,
+                    const std::string& solveRecord,
+                    size_t solveRecordSize);
     
-    void savePaintingRecord(Difficult diff,const std::string& record);
-    void beginSendPaintingRecord() { paintingRecord_.state = kSendStateSending; }
-    void paintingRecordSent(bool result);
-    const DataForSend& paintingRecord() const { return paintingRecord_; }
+    void receiveReplay(const std::string& paintReplay,size_t paintReplaySize,const std::string& solveReplay,size_t solveReplaySize) {
+        replay_.setPaintReplay(paintReplay, paintReplaySize);
+        replay_.setSolveReplay(solveReplay, solveReplaySize);
+    }
+    
+
+    const Replay& replay() const { return replay_; }
+   
 protected:
-    GameState state_;
-    Drawer drawer_;                 // who draw the question
-    bool isOwner_;  // is owner
     int turn_;                      // current turn
+    GameState state_;
+    bool isOwner_;  // is owner
+    
 
     std::string objectId_;          // objectId of game
     std::string ownerObjectId_;     // objectId for owner
@@ -107,7 +112,8 @@ protected:
     
     Question question_;
     
-    DataForSend paintingRecord_; // compressed painting record
+    SendState replaySendState_;
+    Replay replay_;
 };
 
 

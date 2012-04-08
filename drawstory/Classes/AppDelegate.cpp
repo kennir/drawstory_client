@@ -98,6 +98,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     // add sprite frame cache
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("textures.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("paintinglayer.plist");
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("solvelayer.plist");
     
 
 	// create a scene. it's an autorelease object
