@@ -174,25 +174,25 @@ void LobbySceneLogic::loginUser()
 
 void LobbySceneLogic::createRandomGame()
 {
-    CC_ASSERT(logined_);
-    
-    UserProfile* user = UserProfile::sharedUserProfile();
-    std::ostringstream url;
-    url << _hostURL << "game/random";
-    
-    std::ostringstream body;
-    body << "email=" << user->email();
-    
-    SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
-                                                                             SimpleHttpRequest::kHttpMethodPost, 
-                                                                             this,
-                                                                             kHttpRequestCreateRandomGame);
-    request->setPostText(body.str());
-    request->retain();
-    addReqeust(request);
-    request->start();
-    
-    setCurrentState(kLobbyStateWaitingForCreateRandomGame);
+    if(logined_) {
+        UserProfile* user = UserProfile::sharedUserProfile();
+        std::ostringstream url;
+        url << _hostURL << "game/random";
+        
+        std::ostringstream body;
+        body << "email=" << user->email();
+        
+        SimpleHttpRequest* request = SimpleHttpRequest::simpleHttpRequestWithURL(url.str(), 
+                                                                                 SimpleHttpRequest::kHttpMethodPost, 
+                                                                                 this,
+                                                                                 kHttpRequestCreateRandomGame);
+        request->setPostText(body.str());
+        request->retain();
+        addReqeust(request);
+        request->start();
+        
+        setCurrentState(kLobbyStateWaitingForCreateRandomGame);
+    }
 }
 
 void LobbySceneLogic::cancelCreateRandomGame() {
@@ -298,9 +298,11 @@ void LobbySceneLogic::playGame(const std::string &gameId) {
             CCLOG("goto answer scene");
         }
         
-        GlobalData::sharedGlobalData()->setCurrentGameId(gameId);
+        
+        GlobalData* data = GlobalData::sharedGlobalData();
+        data->setCurrentGameId(gameId);
         // temporary
-        GlobalData::sharedGlobalData()->setCurrentDifficult(kDifficultEasy);
+        data->setCurrentDifficult(kDifficultEasy);
         
         // goto paint scene
         setCurrentState(kLobbyStatePaintQuestion);

@@ -16,26 +16,23 @@
 
 namespace PaintingScene {
     
-
-class CommandBarLayer;
-class CanvasLayer;
-class PaintingLayer : public cocos2d::CCLayer{
-public:
-    LAYER_NODE_FUNC(PaintingLayer)
-    PaintingLayer();
-    virtual ~PaintingLayer();
     
-    virtual bool init();
-    virtual void onEnter();
-    virtual void onExit();
-    
-    
-    virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-//    virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-//    virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-//    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-protected:    
-};
+    class CommandBarLayer;
+    class PaintingCanvasLayer;
+    class PaintingLayer : public cocos2d::CCLayer{
+    public:
+        LAYER_NODE_FUNC(PaintingLayer)
+        PaintingLayer();
+        virtual ~PaintingLayer();
+        
+        virtual bool init();
+        virtual void onEnter();
+        virtual void onExit();
+        
+        
+        virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+    protected:    
+    };
     
     
 }

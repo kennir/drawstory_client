@@ -14,47 +14,27 @@
 #include "PaintCommand.h"
 
 
-namespace PaintingScene {
+
 
 class CanvasLayer : public cocos2d::CCLayer {
 public:
-    LAYER_NODE_FUNC(CanvasLayer)
     CanvasLayer();
     virtual ~CanvasLayer();
     
-    Brush* brush() const { return brush_; }
-    Brush* eraser() const { return eraser_; }
-    
-    PaintMode paintMode() const { return paintMode_; }
-    void setPaintMode(PaintMode newMode) { paintMode_ = newMode; }
-    
     const CommandQueue& commandQueue() const { return commandQueue_; }
     
-    void deletePainting();
-    void resetToInitial();
-    
     virtual bool init();
-    virtual void onEnter();
-    virtual void onExit();
-    
-    virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
-    virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);    
-    
+    virtual void resetToInitial();
+    void deletePainting();
 protected:
-    Brush* brush_;
-    Brush* eraser_;
-    
-    PaintMode paintMode_;
+
     CommandQueue commandQueue_;
     
-    bool drawing_;
-    cocos2d::CCPoint previousLocalPosition_;
+
     cocos2d::CCRenderTexture* target_;
     cocos2d::CCRect layerRect_;
 };
 
-}
+
     
 #endif

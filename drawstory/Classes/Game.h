@@ -75,9 +75,9 @@ public:
     void updateFromJson(const Json::Value& game);
     
     // 是否存在答题的录像
-    bool hasAnswerReplay() const { return false; }
+    bool hasAnswerReplay() const { return (!question_.answeringId().empty()); }
     // 是否需要回答对手的问题
-    bool hasPaintingReplay() const { return false; }
+    bool hasPaintingReplay() const { return (!question_.paintingId().empty()); }
 
     const Question& question() const { return question_; }
     
