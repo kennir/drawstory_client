@@ -47,7 +47,7 @@ namespace PaintingScene {
         void slideUpButtons(int beginTag,int endTag,const cocos2d::CCPoint& moveFrom);
         void slideDownButtons(int beginTag,int endTag,const cocos2d::CCPoint& moveTo);
         
-        void prepareWidthMenuItems(Brush* brush,int beginTag,int endTag);
+        void prepareWidthMenuItems(BrushWidth brushWidth,int beginTag,int endTag);
         void collapseBrushWidthMenu();
         void collapseEraserWidthMenu();
         

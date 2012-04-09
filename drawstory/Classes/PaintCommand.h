@@ -18,14 +18,23 @@
 
 
 typedef enum {
-    kCommandTypeDraw,
-    kCommandTypeErase,
-    kCommandTypeReset
+    kCommandTypeTouchBegan = 1,
+    kCommandTypeTouchMoved,
+    kCommandTypeTouchEnded,
+    kCommandTypeReset,
+    kCommandTypeSetPaintMode,
+    kCommandTypeSetWidth,
+    kCommandTypeSetColor,
 } CommandType;
 
 class Command {
 public:
-    Command(CommandType ct) : type_(ct) { }
+    Command(CommandType ct) : type_(ct),ms_(nowMillisecond()) { }
+    Command(const Json::Value& value)
+    : type_(static_cast<CommandType>(value["type"].asInt()))
+    , ms_(static_cast<long>(value["ms"].asUInt()))
+    {  }
+    
     CommandType type() const { return type_; }
     
     static long nowMillisecond() { 
@@ -34,93 +43,136 @@ public:
         return (time.tv_sec * 1000 + time.tv_usec / 1000);
     }
     
-    virtual void serialize(Json::Value& value) const {
+    virtual void serialize(Json::Value& value,long startMs) const {
         value["type"] = type_;
+        value["ms"] = static_cast<Json::UInt>(ms_ - startMs);
     }
+    
+    long millisecond() const { return ms_; }
 protected:
     CommandType type_;
+    long ms_;
 };
 
 
-class PointsCommand : public Command {
+
+
+class TouchCommand : public Command {
 public:
-    typedef struct _PN {
-        cocos2d::CCPoint pt;
-        long ms;
-        _PN(const cocos2d::CCPoint& p,long m) : pt(p), ms(m) {  }
-    } PointNode;
-    
-    PointsCommand(CommandType ct) : Command(ct) { }
-    virtual ~PointsCommand() { }
-    
-    void push(const cocos2d::CCPoint& localPos) { 
-        nodes_.push_back(PointNode(localPos,nowMillisecond()));
+    TouchCommand(CommandType type,const cocos2d::CCPoint& touchedPoint)
+    : Command(type), touchedPoint_(touchedPoint) {
+        CC_ASSERT(type == kCommandTypeTouchBegan ||
+                  type == kCommandTypeTouchMoved ||
+                  type == kCommandTypeTouchEnded);
+    }
+    TouchCommand(const Json::Value& value) 
+    : Command(value) {
+        touchedPoint_.x = value["x"].asFloat();
+        touchedPoint_.y = value["y"].asFloat();
     }
     
-    virtual void serialize(Json::Value& value) const;
+    virtual ~TouchCommand() { }
+    
+    virtual void serialize(Json::Value& value,long startMs) const {
+        Command::serialize(value,startMs);
+        value["x"] = touchedPoint_.x;
+        value["y"] = touchedPoint_.y;
+    }
     
 protected:
-    std::vector< PointNode > nodes_; 
-    
+    cocos2d::CCPoint touchedPoint_;
 };
 
-
-class DrawCommand : public PointsCommand {
-public:
-    DrawCommand(BrushWidth bw,const cocos2d::ccColor3B& bc) 
-    : PointsCommand(kCommandTypeDraw), brushWidth_(bw), brushColor_(bc) { }
-    virtual ~DrawCommand() { }
-    
-    void serialize(Json::Value& value) const;
-protected:
-    BrushWidth brushWidth_;
-    cocos2d::ccColor3B brushColor_;
-};
-
-
-class EraseCommand : public PointsCommand {
-public:
-    EraseCommand() : PointsCommand(kCommandTypeErase) { }
-    virtual ~EraseCommand() { }
-};
 
 
 class ResetCommand : public Command {
 public:
+    ResetCommand(const Json::Value& value) : Command(value) { }
     ResetCommand() : Command(kCommandTypeReset) { }
+
     virtual ~ResetCommand() { }
 };
 
+class SetPaintModeCommand : public Command {
+public:
+    SetPaintModeCommand(const Json::Value& value) : Command(value) {
+        mode_ = static_cast<PaintMode>(value["mode"].asInt());
+    }
+    
+    SetPaintModeCommand(PaintMode mode) : Command(kCommandTypeSetPaintMode), mode_(mode) { }
+    virtual ~SetPaintModeCommand() { }
+    
+    virtual void serialize(Json::Value& value,long startMs) const {
+        Command::serialize(value,startMs);
+        value["mode"] = mode_;
+    }
+protected:
+    PaintMode mode_;
+};
+
+class SetWidthCommand : public Command {
+public:
+    SetWidthCommand(const Json::Value& value) : Command(value) {
+        width_ = static_cast<BrushWidth>(value["width"].asInt());
+    }
+    
+    SetWidthCommand(BrushWidth width) : Command(kCommandTypeSetWidth), width_(width) { }
+    virtual ~SetWidthCommand() { }
+    
+    virtual void serialize(Json::Value& value,long startMs) const {
+        Command::serialize(value,startMs);
+        value["width"] = width_;
+    }
+protected:
+    BrushWidth width_;
+};
+
+
+class SetColorCommand : public Command {
+public:
+    SetColorCommand(const Json::Value& value) : Command(value) {
+        color_ = cocos2d::ccc3(value["r"].asInt(), value["g"].asInt(), value["b"].asInt());
+    }
+    
+    SetColorCommand(const cocos2d::ccColor3B& color) : Command(kCommandTypeSetColor), color_(color) { }
+    virtual ~SetColorCommand() { }
+    
+    virtual void serialize(Json::Value& value,long startMs) const {
+        Command::serialize(value,startMs);
+        value["r"] = color_.r;
+        value["g"] = color_.g;
+        value["b"] = color_.b;
+    }
+protected:
+    cocos2d::ccColor3B color_;
+};
+
+
+
 class PaintCommandQueue {
 public:
-    typedef struct _CI{
-        Command* cmd;
-        long ms;    // ms for push
-        _CI(Command* c) : cmd(c), ms(Command::nowMillisecond()) { }
-    } CommandInfo;
-    
     virtual ~PaintCommandQueue() {
         this->clear();
     }
     
-    void beginCommand(Command* command) { 
-        commands_.push_back(CommandInfo(command));
-    }
+    void push(Command* cmd) { commands_.push_back(cmd); }
     
-    Command* current() { return commands_.back().cmd; }
-    
+    bool empty() const { return commands_.empty(); }
     void clear();
     
-    const std::vector<CommandInfo>& commands() const { return commands_; }
+    const std::vector<Command*>& commands() const { return commands_; }
     
     // Return size of origin data
     // data: zipped and base64ed string
     size_t serialize(std::string& data) const;
+    
+    bool deserialize(const std::string& data,size_t originSize);
 protected:
-    Json::Value serializeToJson() const;
+    Json::Value serialize() const;
+    void deserialize(const Json::Value& value);
     
 protected:
-    std::vector< CommandInfo > commands_;
+    std::vector< Command* > commands_;
 };
 
 #endif

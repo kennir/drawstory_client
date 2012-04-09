@@ -61,7 +61,7 @@ void CanvasLayer::resetToInitial() {
 }
 
 void CanvasLayer::deletePainting() {
-    commandQueue_.beginCommand(new ResetCommand);
+    commandQueue_.push(new ResetCommand);
     
     target_->beginWithClear(255, 255, 255, 255);
     target_->end(true);

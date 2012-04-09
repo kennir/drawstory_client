@@ -7,6 +7,9 @@
 //
 
 #include "PaintingReplayLayer.h"
+#include "Game.h"
+#include "UserProfile.h"
+#include "GlobalData.h"
 
 
 PaintingReplayLayer::PaintingReplayLayer()
@@ -19,11 +22,7 @@ bool PaintingReplayLayer::init() {
     do {
         CC_BREAK_IF(!CanvasLayer::init());
         
-        if(!commandQueue().commands().empty())
-        {
-            currentIt_ = commandQueue().commands().begin();
-            scheduleUpdate();
-        }
+        
         
         result = true;
     } while (0);
@@ -31,13 +30,22 @@ bool PaintingReplayLayer::init() {
 }
 
 
+void PaintingReplayLayer::onEnter() {
+    CanvasLayer::onEnter();
+    
+    // load replay
+    Game* game = UserProfile::sharedUserProfile()->findGame(GlobalData::sharedGlobalData()->currentGameId());
+    CC_ASSERT(game != NULL);
+    const Replay& replay = game->replay();
+    commandQueue_.deserialize(replay.paintReplay().d(), replay.paintReplay().originSize);
+    
+
+}
+
+
 void PaintingReplayLayer::update(cocos2d::ccTime dt) {
     timePassed_ += dt;
-    // check commands
-    if(currentIt_ != commandQueue().commands().end()) {
 
-        
-    }
 }
 
 

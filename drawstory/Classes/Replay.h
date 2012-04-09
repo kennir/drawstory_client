@@ -18,6 +18,8 @@ public:
         std::string data;
         
         void set(const std::string& d,size_t s) { data = d; originSize = s; }
+        
+        const std::string& d() const { return data; }
     } Data;
 public:
     bool hasPaintReplay() const { return (!paintReplay_.data.empty()); }

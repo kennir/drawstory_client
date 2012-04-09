@@ -200,19 +200,19 @@ namespace PaintingScene {
         switch(tag) {
             case kTagColor1:
                 canvas_->setPaintMode(kPaintModeDraw);
-                canvas_->brush()->setColor(ccBLACK);
+                canvas_->setBrushColor(ccBLACK);
                 break;
             case kTagColor2:
                 canvas_->setPaintMode(kPaintModeDraw);
-                canvas_->brush()->setColor(ccRED);
+                canvas_->setBrushColor(ccRED);
                 break;
             case kTagColor3:
                 canvas_->setPaintMode(kPaintModeDraw);
-                canvas_->brush()->setColor(ccYELLOW);
+                canvas_->setBrushColor(ccYELLOW);
                 break;
             case kTagColor4:
                 canvas_->setPaintMode(kPaintModeDraw);
-                canvas_->brush()->setColor(ccBLUE);
+                canvas_->setBrushColor(ccBLUE);
                 break;
             default:
                 break;

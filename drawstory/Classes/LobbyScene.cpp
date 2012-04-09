@@ -206,7 +206,7 @@ void LobbyScene::processLogicChanged()
                 break;
             case kLobbyStateIdle:
 //                refreshGamesForUser();
-                CCLOG("==========scheduled: queryCurrentRandomGame");
+                CCLOG("==========scheduled: refreshGamesForUser");
                 schedule(schedule_selector(LobbyScene::refreshGamesForUser),5.0f);
                 break;
             case kLobbyStateWaitingForQueryReplay:

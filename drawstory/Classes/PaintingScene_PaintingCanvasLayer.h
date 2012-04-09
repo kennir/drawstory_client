@@ -32,11 +32,20 @@ namespace PaintingScene {
         virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
         virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event); 
         
-        Brush* brush() const { return brush_; }
-        Brush* eraser() const { return eraser_; }
+//        Brush* brush() const { return brush_; }
+//        Brush* eraser() const { return eraser_; }
         
         PaintMode paintMode() const { return paintMode_; }
-        void setPaintMode(PaintMode newMode) { paintMode_ = newMode; }
+        void setPaintMode(PaintMode newMode);
+        
+        void setBrushWidth(BrushWidth width);
+        BrushWidth brushWidth() const { return brush_->width(); }
+        
+        void setBrushColor(const cocos2d::ccColor3B& color);
+        const cocos2d::ccColor3B& brushColor() const { return brush_->color(); }
+        
+        void setEraserWidth(BrushWidth width);
+        BrushWidth eraserWidth() const { return eraser_->width(); }
     protected:
         PaintMode paintMode_;
         Brush* brush_;

@@ -13,6 +13,7 @@
 #include "Brush.h"
 #include "LobbyScene.h"
 #include "LobbySceneLogic.h"
+#include "PaintCommand.h"
 
 using namespace cocos2d;
 
@@ -208,14 +209,14 @@ namespace PaintingScene {
             case kTagButtonBrushWidth2:
             case kTagButtonBrushWidth3:
             case kTagButtonBrushWidth4:
-                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->brush()->width(), kTagButtonBrushWidth1)))->setToggled(false);
+                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->brushWidth(), kTagButtonBrushWidth1)))->setToggled(false);
                 (static_cast<ToggleButton*>(button))->setToggled(true);
                 break;
             case kTagButtonEraserWidth1:
             case kTagButtonEraserWidth2:
             case kTagButtonEraserWidth3:
             case kTagButtonEraserWidth4:
-                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->eraser()->width(), kTagButtonEraserWidth1)))->setToggled(false);
+                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->eraserWidth(), kTagButtonEraserWidth1)))->setToggled(false);
                 (static_cast<ToggleButton*>(button))->setToggled(true);
                 break;
             default:
@@ -232,14 +233,14 @@ namespace PaintingScene {
             case kTagButtonBrushWidth2:
             case kTagButtonBrushWidth3:
             case kTagButtonBrushWidth4:
-                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->brush()->width(), kTagButtonBrushWidth1)))->setToggled(true);
+                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->brushWidth(), kTagButtonBrushWidth1)))->setToggled(true);
                 (static_cast<ToggleButton*>(button))->setToggled(false);
                 break;
             case kTagButtonEraserWidth1:
             case kTagButtonEraserWidth2:
             case kTagButtonEraserWidth3:
             case kTagButtonEraserWidth4:
-                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->eraser()->width(), kTagButtonEraserWidth1)))->setToggled(true);
+                (static_cast<ToggleButton*>(getNodeByWidth(canvas_->eraserWidth(), kTagButtonEraserWidth1)))->setToggled(true);
                 (static_cast<ToggleButton*>(button))->setToggled(false);
                 break;
                 
@@ -254,7 +255,7 @@ namespace PaintingScene {
         switch (tag) {
             case kTagButtonPencil:
                 if(!brushWidthMenuExpanded_) {
-                    prepareWidthMenuItems(canvas_->brush(), kTagButtonBrushWidthMin, kTagButtonBrushWidthMax);
+                    prepareWidthMenuItems(canvas_->brushWidth(), kTagButtonBrushWidthMin, kTagButtonBrushWidthMax);
                     slideUpButtons(kTagButtonBrushWidthMin,kTagButtonBrushWidthMax,button->getPosition());
                     brushWidthMenuExpanded_ = true;
                 } else
@@ -265,24 +266,24 @@ namespace PaintingScene {
                 collapseEraserWidthMenu();
                 break;
             case kTagButtonBrushWidth1:
-                canvas_->brush()->setWidth(kBrushWidth1);
+                canvas_->setBrushWidth(kBrushWidth1);
                 collapseBrushWidthMenu();
                 break;
             case kTagButtonBrushWidth2:
-                canvas_->brush()->setWidth(kBrushWidth2);
+                canvas_->setBrushWidth(kBrushWidth2);
                 collapseBrushWidthMenu();
                 break;
             case kTagButtonBrushWidth3:
-                canvas_->brush()->setWidth(kBrushWidth3);
+                canvas_->setBrushWidth(kBrushWidth3);
                 collapseBrushWidthMenu();
                 break;
             case kTagButtonBrushWidth4:
-                canvas_->brush()->setWidth(kBrushWidth4);
+                canvas_->setBrushWidth(kBrushWidth4);
                 collapseBrushWidthMenu();
                 break;
             case kTagButtonEraser:
                 if(!eraserWidthMenuExpanded_){
-                    prepareWidthMenuItems(canvas_->eraser(), kTagButtonEraserWidthMin, kTagButtonEraserWidthMax);
+                    prepareWidthMenuItems(canvas_->eraserWidth(), kTagButtonEraserWidthMin, kTagButtonEraserWidthMax);
                     slideUpButtons(kTagButtonEraserWidthMin, kTagButtonEraserWidthMax, button->getPosition());
                     eraserWidthMenuExpanded_ = true;
                 } else
@@ -291,19 +292,19 @@ namespace PaintingScene {
                 collapseBrushWidthMenu();
                 break;
             case kTagButtonEraserWidth1:
-                canvas_->eraser()->setWidth(kBrushWidth1);
+                canvas_->setEraserWidth(kBrushWidth1);
                 collapseEraserWidthMenu();
                 break;
             case kTagButtonEraserWidth2:
-                canvas_->eraser()->setWidth(kBrushWidth2);
+                canvas_->setEraserWidth(kBrushWidth2);
                 collapseEraserWidthMenu();
                 break;            
             case kTagButtonEraserWidth3:
-                canvas_->eraser()->setWidth(kBrushWidth3);
+                canvas_->setEraserWidth(kBrushWidth3);
                 collapseEraserWidthMenu();
                 break;
             case kTagButtonEraserWidth4:
-                canvas_->eraser()->setWidth(kBrushWidth4);
+                canvas_->setEraserWidth(kBrushWidth4);
                 collapseEraserWidthMenu();
                 break;
             case kTagButtonDelete:
@@ -398,11 +399,11 @@ namespace PaintingScene {
     }
     
     
-    void CommandBarLayer::prepareWidthMenuItems(Brush* brush,int beginTag,int endTag) {
+    void CommandBarLayer::prepareWidthMenuItems(BrushWidth brushWidth,int beginTag,int endTag) {
         for(int tag = beginTag; tag <= endTag; ++tag) {
             static_cast<ToggleButton*>(getChildByTag(tag))->setToggled(false);
         }
-        (static_cast<ToggleButton*>(getNodeByWidth(brush->width(), beginTag)))->setToggled(true);
+        (static_cast<ToggleButton*>(getNodeByWidth(brushWidth, beginTag)))->setToggled(true);
     }
     
     

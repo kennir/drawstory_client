@@ -52,6 +52,36 @@ namespace PaintingScene {
         eraser_->setWidth(kBrushWidth2);
     }
     
+    void PaintingCanvasLayer::setPaintMode(PaintMode newMode) {
+        if(paintMode_ != newMode) {
+            paintMode_ = newMode;     
+            commandQueue_.push(new SetPaintModeCommand(newMode));
+        }
+    }
+    
+    void PaintingCanvasLayer::setBrushWidth(BrushWidth width) {
+        if(brush_->width() != width) {
+            brush_->setWidth(width);
+            
+            commandQueue_.push(new SetWidthCommand(width));
+        }
+    }
+    
+    void PaintingCanvasLayer::setBrushColor(const cocos2d::ccColor3B &color) {
+        if(brush_->color().r != color.r || brush_->color().g != color.g || brush_->color().b != color.b){
+            brush_->setColor(color);
+            
+            commandQueue_.push(new SetColorCommand(color));
+        }
+    }
+    
+    void PaintingCanvasLayer::setEraserWidth(BrushWidth width) {
+        if(eraser_->width() != width){
+            eraser_->setWidth(width);
+            
+            commandQueue_.push(new SetWidthCommand(width));
+        }
+    }
     
     void PaintingCanvasLayer::onEnter() {
         CanvasLayer::onEnter();
@@ -70,10 +100,8 @@ namespace PaintingScene {
             drawing_ = true;
             previousLocalPosition_ = localPos;
             
-            if(paintMode_ == kPaintModeDraw)
-                commandQueue_.beginCommand(new DrawCommand(brush_->width(),brush_->color()));
-            else 
-                commandQueue_.beginCommand(new EraseCommand);
+            commandQueue_.push(new TouchCommand(kCommandTypeTouchBegan,localPos));
+            
             return true;
         }
         
@@ -88,7 +116,7 @@ namespace PaintingScene {
             float distance = ccpDistance(previousLocalPosition_, localPos);
             if(distance > 1){
                 // push to command
-                static_cast<PointsCommand*>(commandQueue_.current())->push(localPos);
+                commandQueue_.push(new TouchCommand(kCommandTypeTouchMoved,localPos));
                 
                 Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
                 
@@ -122,7 +150,8 @@ namespace PaintingScene {
             CCPoint localPos = convertTouchToNodeSpace(touch);
             if(CCRect::CCRectContainsPoint(layerRect_, localPos)) {
                 
-                static_cast<PointsCommand*>(commandQueue_.current())->push(localPos);
+                commandQueue_.push(new TouchCommand(kCommandTypeTouchEnded,localPos));
+                
                 
                 Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
                 

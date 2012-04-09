@@ -7,7 +7,6 @@
 //
 
 #include "GlobalData.h"
-#include "ybase64.h"
 
 static GlobalData* _globalData = NULL;
 

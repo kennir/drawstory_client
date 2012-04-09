@@ -22,12 +22,13 @@ public:
     PaintingReplayLayer();
     
     virtual bool init();
+    virtual void onEnter();
     virtual void update(cocos2d::ccTime dt);
 protected:
     
     float timePassed_;
     
-    std::vector<PaintCommandQueue::CommandInfo>::const_iterator currentIt_;
+
 };
 
     

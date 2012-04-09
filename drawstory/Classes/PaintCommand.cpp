@@ -8,125 +8,105 @@
 
 #include "PaintCommand.h"
 #include "zlib.h"
-#include "ybase64.h"
+#include "base64cpp.h"
+#include "zlibcpp.h"
 
-void PointsCommand::serialize(Json::Value& value) const {
-    Command::serialize(value);
-    Json::Value& points = value["points"];
-    
-    long timeInMs = 0;
-    long previousTimeInMs = 0;
-    
-    points.resize(nodes_.size());
-    for(int index = 0; index < nodes_.size(); ++index) {
-        Json::Value& point = points[index];
-        point["pt"]["x"] = nodes_[index].pt.x;
-        point["pt"]["y"] = nodes_[index].pt.y;
-        
-        timeInMs = (!index) ? 0 : (nodes_[index].ms - previousTimeInMs);
-        
-        CC_ASSERT(timeInMs >= 0);
-        point["ms"] = (Json::UInt)timeInMs;
-        previousTimeInMs = nodes_[index].ms;
-    }
-}
-
-void DrawCommand::serialize(Json::Value &value) const {
-    PointsCommand::serialize(value);
-    // write brush width and color
-    value["brushwidth"] = brushWidth_;
-    value["brushColor"]["r"] = brushColor_.r;
-    value["brushColor"]["g"] = brushColor_.g;
-    value["brushColor"]["b"] = brushColor_.b;
-}
 
 size_t PaintCommandQueue::serialize(std::string& data) const {
-    Json::Value value = serializeToJson();
-    Json::FastWriter writer;
-    std::string output = writer.write(value);
-    
-    size_t originSize = output.size();
-    
-    // compress it 
-    uLong length = compressBound(output.size());
-    std::vector<unsigned char> buffer(length);
-    int compressRet = compress2(&buffer.front(), &length, (unsigned char*)output.c_str(), output.size(), Z_BEST_COMPRESSION);
-    if(compressRet != Z_OK){
-        CCLOG("Can't compress painting record");
-        buffer.clear();
-    } else {
-        CCLOG("painting command queue compressed: origin size:%u, new size:%u",output.size(),length);
-        buffer.resize(length);
-    }
-    
-    // free buffer
-    output.clear(); 
+    size_t result = 0;
+    do {
+        Json::FastWriter writer;
+        // JSON
+        std::string json = writer.write(serialize());
+        // ZIP
+        std::vector<unsigned char> zippedData = zlib_compress((const unsigned char*)json.c_str(),json.size());
+        CC_BREAK_IF(zippedData.empty());
+        // BASE64
+        data = base64_encode(&zippedData.front(), zippedData.size());
 
-    // compress to bese64
-    size_t sizeofBase64 = 0;
-    char* base64 = static_cast<char*>(ybase64_encode_alloc(&buffer.front(), buffer.size(), &sizeofBase64));
-    
-    // free buffer
-    buffer.clear();
-    
-    // copy to data
-    CCLOG("base64 size is:%u",sizeofBase64);
-    data = base64;
-
-    
-    // free buffer
-    free(base64);
-
-    
-//    // try uncompress back
-//    size_t unbase64Size;
-//    char* unbase64 = static_cast<char*>(ybase64_decode_alloc(base64String.c_str(), base64String.size(), &unbase64Size));
-//    CCLOG("unbase64 size is:%u",unbase64Size);
-//    
-//    int issame = memcmp((void*)unbase64, &buffer.front(), buffer.size());
-//    CCLOG("issame is:%d",issame);
-//
-//    // try uncompress
-//    unsigned char* unzipBuffer = new unsigned char[1024*1024];
-//    uLongf unzipLen = 1024*1024;
-//    int uncompressRet = uncompress(unzipBuffer, &unzipLen, (unsigned char*)unbase64, unbase64Size);
-//    CCLOG("unzip size is:%u ret is:%d",unzipLen,uncompressRet);
-//    
-//    free(unbase64);
-//    delete[] unzipBuffer;
-    
-    return originSize;
+        result = json.size();
+    } while (0);
+    return result;
 }
 
 
-Json::Value PaintCommandQueue::serializeToJson() const {
+Json::Value PaintCommandQueue::serialize() const {
     Json::Value value;
-    
-    long timeInMs = 0;
-    long previousTimeInMs = 0;
-    
-    value.resize(commands_.size());
-    for (int index = 0; index < commands_.size(); ++index) {
-        Json::Value& ci = value[index];
+
+    if(!commands_.empty()) {
+        long startMs = commands_.front()->millisecond();
         
-        timeInMs = (!index) ? 0 : (commands_[index].ms - previousTimeInMs);
-        
-        CC_ASSERT(timeInMs >= 0);
-        
-        ci["ms"] = (Json::UInt)timeInMs;
-        previousTimeInMs = commands_[index].ms;
-        
-        Json::Value& cmd = ci["cmd"];
-        commands_[index].cmd->serialize(cmd);
+        value.resize(commands_.size());
+        for (int index = 0; index < commands_.size(); ++index) {
+            commands_[index]->serialize(value[index], startMs);
+        }
     }
-    
     return value;
 }
 
+
+bool PaintCommandQueue::deserialize(const std::string &data, size_t originSize) {
+    bool result = false;
+    do {
+        // UNBASE64
+        std::vector<unsigned char> unbase64Data = base64_decode(data);
+        CCLOG("zipped data length:%u",unbase64Data.size());
+        // UNZIP
+        std::vector<unsigned char> unzippedData = zlib_decompress(&unbase64Data.front(), unbase64Data.size(), originSize);
+        CC_BREAK_IF(unzippedData.empty());
+        
+        
+        Json::Value value;
+        
+        Json::Reader reader;
+        bool ret = reader.parse((const char*)&unzippedData.front(), 
+                                (const char*)&unzippedData.front() + unzippedData.size(),
+                                value);
+
+        CC_BREAK_IF(!ret);
+        
+        deserialize(value);
+        
+        result = true;
+    } while (0);
+
+    return result;
+}
+
 void PaintCommandQueue::clear() { 
-    std::vector< CommandInfo >::iterator it = commands_.begin();
+    std::vector< Command* >::iterator it = commands_.begin();
     while (it != commands_.end()) {
-        delete (*it).cmd;
+        delete (*it);
         it = commands_.erase(it);
+    }
+}
+
+void PaintCommandQueue::deserialize(const Json::Value &value) {
+    for (int i = 0; i < value.size(); ++i) {
+        const Json::Value& node = value[i];
+        
+        CommandType type = static_cast<CommandType>(node["type"].asInt());
+        switch (type) {
+            case kCommandTypeTouchBegan:
+            case kCommandTypeTouchMoved:
+            case kCommandTypeTouchEnded:
+                push(new TouchCommand(node));
+                break;
+            case kCommandTypeReset:
+                push(new ResetCommand(node));
+                break;
+            case kCommandTypeSetColor:
+                push(new SetColorCommand(node));
+                break;
+            case kCommandTypeSetWidth:
+                push(new SetWidthCommand(node));
+                break;
+            case kCommandTypeSetPaintMode:
+                push(new SetPaintModeCommand(node));
+                break;
+            default:
+                CCLOG("WARNNING:Unknown command type:%d",type);
+                break;
+        }
     }
 }
