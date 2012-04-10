@@ -19,6 +19,7 @@ namespace SolvingScene {
         LAYER_NODE_FUNC(SolveKeyboardLayer)
         
         virtual bool init();
+    protected:
         
     };
     

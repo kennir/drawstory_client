@@ -20,15 +20,28 @@ public:
     LAYER_NODE_FUNC(PaintingReplayLayer)
     
     PaintingReplayLayer();
+    virtual ~PaintingReplayLayer();
     
     virtual bool init();
     virtual void onEnter();
     virtual void update(cocos2d::ccTime dt);
+    
+    
+protected:    
+    void processCommand(const Command* command);
+    void processCommandTouchMoved(const TouchCommand* command);
+    void processCommandTouchEnded(const TouchCommand* command);
+    
 protected:
+    long timePassed_;
     
-    float timePassed_;
+    PaintMode paintMode_;
+    Brush* brush_;
+    Brush* eraser_;
     
-
+    cocos2d::CCPoint previousPosition_;
+    
+    std::vector< Command* >::const_iterator currentPos_;
 };
 
     

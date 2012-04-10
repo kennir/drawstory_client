@@ -17,6 +17,7 @@ public:
     
     virtual bool init();
 protected:
+    std::string candidate_;
 };
 
 #endif

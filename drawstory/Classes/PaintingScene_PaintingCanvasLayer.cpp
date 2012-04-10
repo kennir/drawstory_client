@@ -111,8 +111,6 @@ namespace PaintingScene {
     void PaintingCanvasLayer::ccTouchMoved(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
         if(drawing_){
             CCPoint localPos = convertTouchToNodeSpace(touch);
-            //        if(CCRect::CCRectContainsPoint(layerRect_, localPos)) {
-            
             float distance = ccpDistance(previousLocalPosition_, localPos);
             if(distance > 1){
                 // push to command
@@ -134,12 +132,7 @@ namespace PaintingScene {
                 target_->end(false);
                 previousLocalPosition_ = localPos;
             }
-            //        } else {
-            //            drawing_ = false;
-            //            
-            //            target_->begin();
-            //            target_->end(true);
-            //        }
+
         }
     }
     
@@ -153,11 +146,11 @@ namespace PaintingScene {
                 commandQueue_.push(new TouchCommand(kCommandTypeTouchEnded,localPos));
                 
                 
-                Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
+//                Brush* brush = (paintMode_ == kPaintModeDraw) ? brush_ : eraser_;
                 
                 target_->begin();
-                brush->setPosition(localPos);
-                brush->visit();
+//                brush->setPosition(localPos);
+//                brush->visit();
                 target_->end(true);
             }
             

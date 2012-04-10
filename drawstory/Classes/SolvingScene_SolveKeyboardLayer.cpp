@@ -18,6 +18,8 @@ namespace SolvingScene {
             CC_BREAK_IF(!KeyboardLayer::init());
             
             
+            
+            
             result = true;
         } while (0);
         return result;

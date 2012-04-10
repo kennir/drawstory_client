@@ -162,7 +162,7 @@ void GameListLayer::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *even
             float y = getPositionY();
             y += distance;
             if(y - height > 0)
-                y = height;
+                y = originPosition_.y;
             else if(y < originPosition_.y)
                 y = originPosition_.y;
             else {

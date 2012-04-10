@@ -36,6 +36,7 @@ public:
     {  }
     
     CommandType type() const { return type_; }
+    long millisecond() const { return ms_; }
     
     static long nowMillisecond() { 
         cocos2d::cc_timeval time;
@@ -48,7 +49,7 @@ public:
         value["ms"] = static_cast<Json::UInt>(ms_ - startMs);
     }
     
-    long millisecond() const { return ms_; }
+    
 protected:
     CommandType type_;
     long ms_;
@@ -79,6 +80,8 @@ public:
         value["y"] = touchedPoint_.y;
     }
     
+    const cocos2d::CCPoint& touchedPoint() const { return touchedPoint_; }
+    
 protected:
     cocos2d::CCPoint touchedPoint_;
 };
@@ -106,6 +109,8 @@ public:
         Command::serialize(value,startMs);
         value["mode"] = mode_;
     }
+    
+    PaintMode paintMode() const { return mode_; }
 protected:
     PaintMode mode_;
 };
@@ -123,6 +128,8 @@ public:
         Command::serialize(value,startMs);
         value["width"] = width_;
     }
+    
+    BrushWidth width() const { return width_; }
 protected:
     BrushWidth width_;
 };
@@ -143,6 +150,8 @@ public:
         value["g"] = color_.g;
         value["b"] = color_.b;
     }
+    
+    const cocos2d::ccColor3B& color() const { return color_; }
 protected:
     cocos2d::ccColor3B color_;
 };

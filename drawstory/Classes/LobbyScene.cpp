@@ -249,7 +249,7 @@ void LobbyScene::processLogicEvent() {
         
         switch (e) {
             case kLogicEventQueryGameForUserFinished:
-                CCLOG("==========scheduled: refreshGamesForUser");
+                CCLOG("==========scheduled: refreshGamesForUser @ LobbyScene::processLogicEvent()");
                 schedule(schedule_selector(LobbyScene::refreshGamesForUser),30.0f);
                 // update game list
                 gameListLayer_->synchronizeGameList();

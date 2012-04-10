@@ -21,6 +21,8 @@ namespace SolvingScene {
         virtual bool init();
         virtual void onEnter();
         virtual void onExit();
+        
+        virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
     };
 
 }

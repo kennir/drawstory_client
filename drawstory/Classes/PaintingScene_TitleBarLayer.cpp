@@ -28,6 +28,7 @@ namespace PaintingScene {
     enum { 
         kTagTurnLabel = 100,
         kTagDescriptLabel,
+        kTagPromptLabel,
         
         // hit test begin
         kTagColor1,
@@ -60,25 +61,18 @@ namespace PaintingScene {
             title->setPosition(CCPointMake(winSize.width * 0.5f, title->getContentSize().height * 0.5f));
             addChild(title);
             
-            Game* game = UserProfile::sharedUserProfile()->findGame(GlobalData::sharedGlobalData()->currentGameId());
-            CC_ASSERT(game != NULL);
-            
-            std::ostringstream oss;
-            oss << std::setw(2) << std::setfill('0') << (game->turn());
+
             
             CCPoint turnPosition = CCPointMake(25.0f,75.0f);
-            CCLabelTTF* turnLabel = CCLabelTTF::labelWithString(oss.str().c_str(), "Arial-BoldMT", 24.0f);
+            CCLabelTTF* turnLabel = CCLabelTTF::labelWithString("", "Arial-BoldMT", 24.0f);
             turnLabel->setPosition(turnPosition);
             turnLabel->setColor(ccWHITE);
             addChild(turnLabel,kZLabel,kTagTurnLabel);
             
 
-            const Question& question = game->question();
-            const Question::Word& word = question.word(GlobalData::sharedGlobalData()->currentDifficult());
-            oss.str("");
-            oss << "你正在为" << game->otherPlayerName() << "绘制" << word.word;
+
             
-            CCLabelTTF* descLabel = CCLabelTTF::labelWithString(oss.str().c_str(), 
+            CCLabelTTF* descLabel = CCLabelTTF::labelWithString("", 
                                                                 CCSizeMake(210.0f, 38.0f), 
                                                                 CCTextAlignmentLeft, 
                                                                 "Arial", 
@@ -87,17 +81,16 @@ namespace PaintingScene {
             descLabel->setColor(ccBLACK);
             addChild(descLabel,kZLabel,kTagDescriptLabel);
             
-            oss.str("");
-            oss << "Tips:" << word.prompt;
+
             
-            CCLabelTTF* promptLabel = CCLabelTTF::labelWithString(oss.str().c_str(), 
+            CCLabelTTF* promptLabel = CCLabelTTF::labelWithString("", 
                                                                   CCSizeMake(210.0f, 38.0f), 
                                                                   CCTextAlignmentLeft, 
                                                                   "Arial", 
                                                                   12.0f);
             promptLabel->setPosition(CCPointMake(205.0f, 55.0f));
             promptLabel->setColor(ccBLACK);
-            addChild(promptLabel,kZLabel,kTagDescriptLabel);
+            addChild(promptLabel,kZLabel,kTagPromptLabel);
             
             CCPoint color1Pos = CCPointMake(25.0f, 20.0f);
             CCSprite* color1 = CCSprite::spriteWithSpriteFrameName("pl_c_black");
@@ -133,6 +126,28 @@ namespace PaintingScene {
     void TitleBarLayer::onEnter() {
         CCLayer::onEnter();
         CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, kTouchPriorityTitleBarLayer, true);
+        
+        Game* game = UserProfile::sharedUserProfile()->findGame(GlobalData::sharedGlobalData()->currentGameId());
+        CC_ASSERT(game != NULL);
+        
+        std::ostringstream oss;
+        oss << std::setw(2) << std::setfill('0') << (game->turn());
+        CCLabelTTF* turn = static_cast<CCLabelTTF*>(getChildByTag(kTagTurnLabel));
+        turn->setString(oss.str().c_str());
+        
+        const Question& question = game->question();
+        const Question::Word& word = question.word(GlobalData::sharedGlobalData()->currentDifficult());
+        oss.str("");
+        oss << "你正在为" << game->otherPlayerName() << "绘制" << word.word;
+        CCLabelTTF* desc = static_cast<CCLabelTTF*>(getChildByTag(kTagDescriptLabel));
+        desc->setString(oss.str().c_str());
+        
+        
+        oss.str("");
+        oss << "Tips:" << word.prompt;
+        CCLabelTTF* prompt = static_cast<CCLabelTTF*>(getChildByTag(kTagPromptLabel));
+        prompt->setString(oss.str().c_str());
+        
     }
     
     void TitleBarLayer::onExit() {

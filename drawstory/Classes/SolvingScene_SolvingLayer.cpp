@@ -74,6 +74,10 @@ namespace SolvingScene {
         static_cast<CanvasLayer*>(getChildByTag(kTagReplayLayer))->resetToInitial();
     }
     
+    
+    bool SolvingLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+        return true;
+    }
 }
 
 
