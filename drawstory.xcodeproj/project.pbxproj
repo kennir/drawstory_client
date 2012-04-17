@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE113E0A153C521F0096C2E5 /* CharacterBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE113E09153C521F0096C2E5 /* CharacterBox.cpp */; };
 		BE3ED965152C7CC100EB05B7 /* GlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */; };
 		BE3ED968152CAB7600EB05B7 /* Question.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED967152CAB7600EB05B7 /* Question.cpp */; };
 		BE3ED96A152CBBAE00EB05B7 /* PaintCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE3ED969152CBBAE00EB05B7 /* PaintCommand.cpp */; };
@@ -235,6 +236,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE113E08153C52100096C2E5 /* CharacterBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharacterBox.h; path = Classes/CharacterBox.h; sourceTree = "<group>"; };
+		BE113E09153C521F0096C2E5 /* CharacterBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CharacterBox.cpp; path = Classes/CharacterBox.cpp; sourceTree = "<group>"; };
 		BE3ED962152C7CB100EB05B7 /* GlobalData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GlobalData.h; path = Classes/GlobalData.h; sourceTree = "<group>"; };
 		BE3ED964152C7CC100EB05B7 /* GlobalData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GlobalData.cpp; path = Classes/GlobalData.cpp; sourceTree = "<group>"; };
 		BE3ED966152CA2DC00EB05B7 /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Classes/Question.h; sourceTree = "<group>"; };
@@ -741,6 +744,8 @@
 				BE5A7EAA152A0C9C0005D491 /* CanvasLayer.cpp */,
 				BE3ED9A61531EAF500EB05B7 /* KeyboardLayer.h */,
 				BE3ED9A71531EB0300EB05B7 /* KeyboardLayer.cpp */,
+				BE113E08153C52100096C2E5 /* CharacterBox.h */,
+				BE113E09153C521F0096C2E5 /* CharacterBox.cpp */,
 			);
 			name = basiclayers;
 			sourceTree = "<group>";
@@ -1902,6 +1907,7 @@
 				BE3ED9AB1531EC6E00EB05B7 /* SolvingScene_SolveKeyboardLayer.cpp in Sources */,
 				BE3ED9AE1532A37200EB05B7 /* base64cpp.cpp in Sources */,
 				BE3ED9B21532AF4000EB05B7 /* zlibcpp.cpp in Sources */,
+				BE113E0A153C521F0096C2E5 /* CharacterBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1912,6 +1918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1932,6 +1939,8 @@
 					"\"$(PROJECT_NAME)/Classes/Jsoncpp\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1940,6 +1949,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1958,6 +1968,8 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

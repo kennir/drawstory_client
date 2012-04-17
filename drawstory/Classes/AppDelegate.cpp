@@ -99,7 +99,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("textures.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("paintinglayer.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("solvelayer.plist");
-    
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("words.plist");    
 
 	// create a scene. it's an autorelease object
 	CCScene *pScene = LobbyScene::scene();

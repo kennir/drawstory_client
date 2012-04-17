@@ -19,8 +19,14 @@ namespace SolvingScene {
         LAYER_NODE_FUNC(SolveKeyboardLayer)
         
         virtual bool init();
-    protected:
+        virtual void onEnter();
+        virtual void onExit();
         
+        virtual bool ccTouchBegan(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+        virtual void ccTouchMoved(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+        virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
+        virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);  
+    protected:
     };
     
 }

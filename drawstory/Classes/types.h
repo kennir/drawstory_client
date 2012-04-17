@@ -47,8 +47,9 @@ typedef enum {
     kTouchPriorityCanvasLayer = -5,
     kTouchPriorityTitleBarLayer = -6,
     kTouchPriorityCommandBarLayer = -6,
-    
+        
     kTouchPrioritySolvingLayer = -4,
+    kTouchPriorityKeyboardLayer = -5,
 
 } TouchPriority;
 
