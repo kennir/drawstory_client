@@ -45,3 +45,7 @@ void CharacterBox::setCharacter(char ch) {
 
 
 
+char CharacterBox::getCharacter()
+{
+    return character_;
+}

@@ -27,6 +27,7 @@ namespace SolvingScene {
         virtual void ccTouchEnded(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);
         virtual void ccTouchCancelled(cocos2d::CCTouch* touch,cocos2d::CCEvent* event);  
     protected:
+        bool checkPlayerAnswer();
     };
     
 }

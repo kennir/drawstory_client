@@ -28,7 +28,7 @@ enum {
     kRandomGameJoin,
 };
 
-static const char* _hostURL = "http://192.168.254.101:3000/";
+static const char* _hostURL = "http://5.44.94.85:3000/";
 
 LobbySceneLogic::LobbySceneLogic(LobbyScene* scene)
 : scene_(scene)

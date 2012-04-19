@@ -12,6 +12,7 @@
 #include "UserProfile.h"
 #include "GlobalData.h"
 #include "types.h"
+#include "CharacterBox.h"
 
 using namespace cocos2d;
 
@@ -67,6 +68,33 @@ namespace SolvingScene {
     
     
     bool SolveKeyboardLayer::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event) {
+        
+        CCPoint localPos = convertTouchToNodeSpace(touch);
+        
+        do {
+            
+            // hit answer button
+            if(hitTestWithAnswerCharacters(localPos))
+                break;
+            
+            // hit candidate button if hit test is true check player answer
+            if(!hitTestWithCandidateCharacters(localPos))
+                break;
+            
+            if(checkPlayerAnswer()){
+                // test code
+                CCLabelTTF* descLabel = CCLabelTTF::labelWithString("Win Test", 
+                                                                    CCSizeMake(210.0f, 380.0f), 
+                                                                    CCTextAlignmentLeft, 
+                                                                    "Arial", 
+                                                                    30.0f);
+                descLabel->setPosition(CCPointMake(205.0f, 380.0f));
+                descLabel->setColor(ccRED);
+                addChild(descLabel,10,110);
+
+            }
+        } while (0);
+        
         return true;
     }
     
@@ -83,6 +111,18 @@ namespace SolvingScene {
     }
  
     
+    bool SolveKeyboardLayer::checkPlayerAnswer()
+    {
+        CharacterBox* characterBox;
+        std::ostringstream oss;
+        for (std::vector<CharacterBox*>::iterator iter = answerCharacters_.begin(); iter != answerCharacters_.end(); iter++) {
+            characterBox = *iter;
+            oss << characterBox->getCharacter();
+        }
+        CCLOG("checkPlayerAnswer answer=%s play=%s check=%d", answer_.c_str(),oss.str().c_str(),(answer_.compare(oss.str())) == 0 ? true : false);
+        return (answer_.compare(oss.str())) == 0 ? true : false;
+    }    
+
 }
 
 

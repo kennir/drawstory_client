@@ -19,6 +19,7 @@ public:
     CharacterBox() : character_(' ') { }
     
     void setCharacter(char ch);
+    char getCharacter();
     bool isSpace() const { return (character_ == ' '); }
 protected:
     char character_;

@@ -26,15 +26,15 @@ protected:
     void layoutCandidate();
     void layoutAnswerCharacterFrame();
     // create sprite
-    cocos2d::CCSprite* createCharacterButton(char ch) const;
-    // return -1 indicate not hitted
-    int hitTestWithCandidateCharacters(const cocos2d::CCPoint& localPos);
+    CharacterBox* createCharacterButton(char ch) const;
     
+    bool hitTestWithCandidateCharacters(const cocos2d::CCPoint& localPos);
+    bool hitTestWithAnswerCharacters(const cocos2d::CCPoint& localPos);
 protected:
     std::string candidate_;
     std::string answer_;
     // sprites
-    std::vector<cocos2d::CCSprite*> candidateCharacters_;
+    std::vector<CharacterBox*> candidateCharacters_;
     std::vector<CharacterBox*> answerCharacters_;
 };
 

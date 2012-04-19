@@ -47,7 +47,7 @@ void KeyboardLayer::layoutCandidate() {
     
     for(int line = 0; line < kLines; ++line) {
         for(int ch = 0; ch < kCharPerLine; ++ch,++index) {
-            CCSprite* button = createCharacterButton(candidate_[index]);
+            CharacterBox* button = createCharacterButton(candidate_[index]);
             button->setPosition(position);
             addChild(button,1,CANDIDATE_INDEX_TO_TAG(index));
             
@@ -60,10 +60,11 @@ void KeyboardLayer::layoutCandidate() {
     }
 }
 
-CCSprite* KeyboardLayer::createCharacterButton(char ch) const {
+CharacterBox* KeyboardLayer::createCharacterButton(char ch) const {
     // create button border first
-    CCSprite* border = CCSprite::spriteWithSpriteFrameName("button");
+    CharacterBox* border = CharacterBox::characterBoxWithSpriteFrameName("button");
     CC_ASSERT(border != NULL);
+    
     // create words
     std::ostringstream oss;
     oss << "w_" << ch;
@@ -73,6 +74,7 @@ CCSprite* KeyboardLayer::createCharacterButton(char ch) const {
     CCSize buttonSize = border->getContentSize();
     character->setPosition(CCPointMake(buttonSize.width * 0.5f, buttonSize.height * 0.5f));
     
+    border->setCharacter(ch);
     border->addChild(character);
     
     return border;
@@ -98,6 +100,80 @@ void KeyboardLayer::layoutAnswerCharacterFrame() {
                 
         startPos.x += (36.0f + SPACE);
     }
+}
+
+bool KeyboardLayer::hitTestWithCandidateCharacters(const cocos2d::CCPoint& localPos)
+{
+    CharacterBox* candidate;
+    bool loopEnd = false;
+    
+    // check all candidate
+    for (std::vector<CharacterBox*>::iterator candidateIter = candidateCharacters_.begin(); !loopEnd && candidateIter != candidateCharacters_.end(); candidateIter++) {
+        
+        candidate = *candidateIter;
+        
+        // check
+        if(CCRect::CCRectContainsPoint(candidate->boundingBox(), localPos))
+        {
+            // check first space answer button
+            for (std::vector<CharacterBox*>::iterator answerIter = answerCharacters_.begin(); !loopEnd && answerIter != answerCharacters_.end(); answerIter++) {
+                
+                CharacterBox* answerBox = *answerIter;
+                if(answerBox != NULL && answerBox->isSpace())
+                {
+                    answerBox->setCharacter(candidate->getCharacter());
+                    candidateCharacters_.erase(candidateIter);
+                    removeChild(candidate, true);
+                    CCLOG("hitTestWithCandidateCharacters candidateCharacters_=%d",candidateCharacters_.capacity());
+                    CCLOG("hitTestWithCandidateCharacters answerCharacters_=%d",answerCharacters_.capacity());
+                    loopEnd = true;
+                }
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
+bool KeyboardLayer::hitTestWithAnswerCharacters(const cocos2d::CCPoint& localPos)
+{
+    CharacterBox* answerBox;
+    CCPoint position = CCPointMake(32.0f, 70.0f);
+    bool loopEnd = false;
+    
+    // check all answer button
+    for (std::vector<CharacterBox*>::iterator iter = answerCharacters_.begin(); !loopEnd && iter != answerCharacters_.end(); iter++) {
+        
+        answerBox = *iter;
+        
+        if(CCRect::CCRectContainsPoint(answerBox->boundingBox(), localPos) && (answerBox->getCharacter() != ' '))
+        {
+            int index = 0;
+            
+            //renew a characterbox
+            for(int line = 0; line < kLines && !loopEnd; ++line) {
+                for(int ch = 0; ch < kCharPerLine && !loopEnd; ++ch,++index) {
+                    CharacterBox* button = static_cast<CharacterBox*>(getChildByTag(CANDIDATE_INDEX_TO_TAG(index)));
+                    if(button == NULL)
+                    {
+                        button = createCharacterButton(answerBox->getCharacter());
+                        position.x += ch * 44.0f;
+                        position.y -= (index-ch)/kCharPerLine*44.0f;
+                        button->setPosition(position);
+                        addChild(button,1,CANDIDATE_INDEX_TO_TAG(index));
+                        candidateCharacters_.push_back(button);
+                        CCLOG("hitTestWithAnswerCharacters candidateCharacters_=%d",candidateCharacters_.capacity());
+                        CCLOG("hitTestWithAnswerCharacters answerCharacters_=%d",answerCharacters_.capacity());
+                        loopEnd = true;
+                    }
+                }
+            }
+            answerBox->setCharacter(' ');
+            CCLOG("hitTestWithAnswerCharacters");
+            return true;
+        }
+    }
+    return false;
 }
 
 void KeyboardLayer::onExit() {
