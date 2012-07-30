@@ -33,6 +33,8 @@
 //"abcdefghijklmnopqrstuvwxyz"
 //"0123456789+/";
 
+
+// 为了兼容URL，所以将+/两个符号改为-_
 static const std::string base64_chars = 
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "abcdefghijklmnopqrstuvwxyz"
